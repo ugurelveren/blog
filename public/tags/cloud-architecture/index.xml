@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud Architecture on Ugur&#39;s Personal Documentation</title>
+    <link>https://blog.ugurelveren.com/tags/cloud-architecture/</link>
+    <description>Recent content in Cloud Architecture on Ugur&#39;s Personal Documentation</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 24 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.ugurelveren.com/tags/cloud-architecture/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cloud Design Patterns</title>
+      <link>https://blog.ugurelveren.com/post/cloud-design-patterns/</link>
+      <pubDate>Fri, 24 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/cloud-design-patterns/</guid>
+      <description>&lt;p&gt;The cloud is vast. Azure docs have around a hundred thousand pages, and AWS is just as big. Other cloud providers are out there too. Each gives you lots of apps, different rules, and dozens of integrations, so creating cloud-native ones has its challenges.&lt;/p&gt;&#xA;&lt;p&gt;They&amp;rsquo;re not identical, but big providers offer similar solutions. For example, Google Cloud Storage is like AWS S3 and Azure&amp;rsquo;s durable function is similar to AWS step functions. Details and rules can differ, but the main idea of the tech is similar, along with the challenges.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

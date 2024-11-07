@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud on Ugur&#39;s Personal Documentation</title>
+    <link>https://blog.ugurelveren.com/categories/cloud/</link>
+    <description>Recent content in Cloud on Ugur&#39;s Personal Documentation</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 29 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.ugurelveren.com/categories/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure Durable Functions</title>
+      <link>https://blog.ugurelveren.com/post/azure-durable-functions/</link>
+      <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/azure-durable-functions/</guid>
+      <description>&lt;h2 id=&#34;azure-functions-and-azure-durable-functions&#34;&gt;Azure Functions and Azure Durable Functions&lt;/h2&gt;&#xA;&lt;p&gt;Microsoft Azure is a constantly expanding collection of cloud services. Among these services, Azure Functions and Azure Durable Functions are critical in enabling serverless computing. In this article, we will look at Azure Functions and Azure Durable Functions, distinguish between the two, and learn about the key concepts surrounding Azure Durable Functions.&lt;/p&gt;&#xA;&lt;h3 id=&#34;what-is-an-azure-function&#34;&gt;What is an Azure Function?&lt;/h3&gt;&#xA;&lt;p&gt;Azure Functions is a serverless computing service designed to effortlessly run small code snippets (functions) without any concern about the underlying infrastructure. This cloud-based solution empowers developers to focus solely on their code while leaving the infrastructure management worries behind.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

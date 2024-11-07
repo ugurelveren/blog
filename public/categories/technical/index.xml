@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Technical on Ugur&#39;s Personal Documentation</title>
+    <link>https://blog.ugurelveren.com/categories/technical/</link>
+    <description>Recent content in Technical on Ugur&#39;s Personal Documentation</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.ugurelveren.com/categories/technical/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Saga Design Pattern: Choreography and Orchestration</title>
+      <link>https://blog.ugurelveren.com/post/saga-design-pattern/</link>
+      <pubDate>Tue, 18 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/saga-design-pattern/</guid>
+      <description>&lt;p&gt;In this article, I will discuss the Saga design pattern. First, we&amp;rsquo;ll address some technical challenges of creating ACID transactions. Then, we&amp;rsquo;ll explore the Saga design pattern and how to implement it.&lt;/p&gt;&#xA;&lt;h2 id=&#34;database-per-service-pattern&#34;&gt;Database Per Service Pattern&lt;/h2&gt;&#xA;&lt;p&gt;First, let&amp;rsquo;s talk about microservice architecture and the database per service pattern. Basically, each microservice in an application has its own dedicated database. This allows each microservice to manage its data independently, making it easier to develop, deploy, and scale each service without affecting the others. For instance, in an online store, the user service, order service, and inventory service each have their own databases. This isolation improves flexibility, as each service can choose the best database type for its needs and makes the system more resilient to failures.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Dependency Injection</title>
+      <link>https://blog.ugurelveren.com/post/dependency-injection/</link>
+      <pubDate>Wed, 05 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/dependency-injection/</guid>
+      <description>&lt;p&gt;At my company, we hold a weekly “Lunch and Learn” event that I really like. It lets us share our experiences and expertise. Recently, during a chat with my colleagues, I got some basic questions about dependency injection (DI). This made me think that it would be a good idea to use one of these sessions to go over DI with the team. Also, I plan to write an article about dependency injection and its best practices. In the article, I&amp;rsquo;ll explain what DI is, how to use it effectively, and what the best practices are.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Understanding .NET Dependency Injection Lifetimes</title>
+      <link>https://blog.ugurelveren.com/post/understanding-net-dependency-injection-lifetimes/</link>
+      <pubDate>Wed, 05 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/understanding-net-dependency-injection-lifetimes/</guid>
+      <description>&lt;p&gt;In the last article, we discussed how dependency injection (DI) helps keep our app&amp;rsquo;s parts separate, making them easier to handle and test. This time, I&amp;rsquo;ll focus on an important part of DI in .NET: lifetimes.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ll explain the different lifetimes in .NET: Transient, Scoped, and Singleton, and how to pick and use them for your app.&lt;/p&gt;&#xA;&lt;h2 id=&#34;understanding-di-lifetime-scopes&#34;&gt;Understanding DI Lifetime Scopes&lt;/h2&gt;&#xA;&lt;p&gt;Dependency injection (DI) lifetime scope refers to how long a dependency is used and stored in an application. Managing these lifetimes is important for efficient resource use, good performance, and clean code. DI frameworks offer several lifetime options for different needs and situations.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cloud Design Patterns: Circuit Breaker Pattern</title>
+      <link>https://blog.ugurelveren.com/post/circuit-breaker-pattern/</link>
+      <pubDate>Wed, 29 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/circuit-breaker-pattern/</guid>
+      <description>&lt;p&gt;The circuit breaker pattern stops a service from trying again to call another service when the previous attempts have failed multiple times. It&amp;rsquo;s similar to electrical circuit breakers that automatically cut off the current when there&amp;rsquo;s abnormal activity.&lt;/p&gt;&#xA;&lt;p&gt;In a distributed environment, calls to remote resources may fail due to reasons such as application exceptions, timeouts, authentication issues, or overloaded systems. Usually, resilient cloud applications automatically fix these issues over time, and the calling application manages these errors using a retry pattern.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cloud Design Patterns</title>
+      <link>https://blog.ugurelveren.com/post/cloud-design-patterns/</link>
+      <pubDate>Fri, 24 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/cloud-design-patterns/</guid>
+      <description>&lt;p&gt;The cloud is vast. Azure docs have around a hundred thousand pages, and AWS is just as big. Other cloud providers are out there too. Each gives you lots of apps, different rules, and dozens of integrations, so creating cloud-native ones has its challenges.&lt;/p&gt;&#xA;&lt;p&gt;They&amp;rsquo;re not identical, but big providers offer similar solutions. For example, Google Cloud Storage is like AWS S3 and Azure&amp;rsquo;s durable function is similar to AWS step functions. Details and rules can differ, but the main idea of the tech is similar, along with the challenges.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure Durable Functions</title>
+      <link>https://blog.ugurelveren.com/post/azure-durable-functions/</link>
+      <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/azure-durable-functions/</guid>
+      <description>&lt;h2 id=&#34;azure-functions-and-azure-durable-functions&#34;&gt;Azure Functions and Azure Durable Functions&lt;/h2&gt;&#xA;&lt;p&gt;Microsoft Azure is a constantly expanding collection of cloud services. Among these services, Azure Functions and Azure Durable Functions are critical in enabling serverless computing. In this article, we will look at Azure Functions and Azure Durable Functions, distinguish between the two, and learn about the key concepts surrounding Azure Durable Functions.&lt;/p&gt;&#xA;&lt;h3 id=&#34;what-is-an-azure-function&#34;&gt;What is an Azure Function?&lt;/h3&gt;&#xA;&lt;p&gt;Azure Functions is a serverless computing service designed to effortlessly run small code snippets (functions) without any concern about the underlying infrastructure. This cloud-based solution empowers developers to focus solely on their code while leaving the infrastructure management worries behind.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Automating Script Execution with Systemd on Linux</title>
+      <link>https://blog.ugurelveren.com/post/automating-script-execution-systemd/</link>
+      <pubDate>Thu, 23 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/automating-script-execution-systemd/</guid>
+      <description>&lt;p&gt;In my previous blog post, I created a script that controls the fan speed on my Raspberry Pi. However, I encountered a problem – every time I restarted my Raspberry Pi, I had to manually run the script again, which was not ideal.&lt;/p&gt;&#xA;&lt;p&gt;In this blog post, I will demonstrate how to automate the execution of any script using Systemd. Systemd is a system and service manager for Linux operating systems.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to control Raspberry Pi Fan</title>
+      <link>https://blog.ugurelveren.com/post/how-to-control-raspberry-pi-fan/</link>
+      <pubDate>Wed, 22 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/how-to-control-raspberry-pi-fan/</guid>
+      <description>&lt;p&gt;Last week, I did something unplanned: I bought a Raspberry Pi without any specific project in mind. I came across a Mastodon account (@rpilocator@mastodon.social) that helps people locate Raspberry Pis and I decided to get one. And now, here it is! I&amp;rsquo;m writing my first blog post about the Raspberry Pi Fan Control.&lt;/p&gt;&#xA;&lt;p&gt;Along with the Raspberry Pi, I purchased a case, some heatsinks, and a fan. My first blog post is about controlling the fan using your own software. I&amp;rsquo;ll be honest, I didn&amp;rsquo;t plan on developing anything at first but decided to give it a try.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Arrays: Prefix Sum Technique</title>
+      <link>https://blog.ugurelveren.com/post/arrays-prefix-sum-technique/</link>
+      <pubDate>Fri, 24 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/arrays-prefix-sum-technique/</guid>
+      <description>&lt;p&gt;Hello there! The prefix sum technique involves creating an array where the &lt;code&gt;prefix[i]&lt;/code&gt; is the sum of all elements up to index &lt;code&gt;i&lt;/code&gt;. This technique can also be referred to as the cumulative sum, inclusive scan, or simply scan.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;prefix[0] = nums[0]&#xA;prefix[1] = nums[0] + nums[1]&#xA;prefix[2] = nums[0] + nums[1] + nums[2]&#xA;prefix[i] = nums[0] + nums[1]+ nums[2] + .. + nums[i]&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For example, if the original array is &lt;code&gt;[1, 2, 3, 4]&lt;/code&gt;, the prefix sum array would be &lt;code&gt;[1, 3, 6, 10]&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Arrays: Sliding Windows Technique</title>
+      <link>https://blog.ugurelveren.com/post/arrays-sliding-windows-technique/</link>
+      <pubDate>Thu, 16 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/arrays-sliding-windows-technique/</guid>
+      <description>&lt;p&gt;Window Sliding Technique is a strategy that aims to reduce nested loops for solving problems where you need to analyze a sequence of elements, like an array or a string. The technique reduces the use of a nested loop and replaces it with a single loop, reducing the time complexity.&lt;/p&gt;&#xA;&lt;p&gt;The sliding window technique is efficient because it avoids unnecessary computations. By moving the window only one step at a time, you avoid repeating calculations already done for the previous window. This can save a lot of time and make the algorithm more efficient.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Arrays: Two Pointer Technique</title>
+      <link>https://blog.ugurelveren.com/post/arrays-two-pointer-technique/</link>
+      <pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/arrays-two-pointer-technique/</guid>
+      <description>&lt;p&gt;The two-pointer technique is an easy method used to solve some array-related problems. It involves using two pointers, one starting from the beginning of the array and the other from the end, to traverse the array and find a solution. This technique is helpful because it reduces the time complexity of the algorithm and increases its efficiency.&lt;/p&gt;&#xA;&lt;p&gt;The two-pointer technique is used in various solutions such as finding the sum of two numbers in an array that equals a given target, finding the length of the longest subarray with a given sum, and finding the shortest subarray with a given sum. The basic idea behind this technique is to start from the two ends of the array and move the pointers towards each other until a solution is found or it becomes clear that a solution does not exist.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

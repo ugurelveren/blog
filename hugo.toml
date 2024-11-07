@@ -1,0 +1,50 @@
+baseURL = "https://blog.ugurelveren.com"
+languageCode = "en-us"
+title = "Ugur's Personal Documentation"
+theme = "mainroad"
+author = "Ugur Elveren"
+
+
+[Params.sidebar]
+  home = "right"
+  list = "right"
+  single = "right"
+  widgets = ["search", "recent", "categories", "taglist", "social"]
+
+[Params.widgets.search]
+  url = "https://duckduckgo.com/"  
+  [Params.widgets.search.input]
+    name = "sites"
+    pre = ""
+
+
+[[Params.widgets.social.custom]]
+  title = "My Home Page"
+  url = "https://ugurelveren.com"
+  rel = "me"
+
+[Params]
+  post_meta = ["author", "date", "categories", "translations"]
+
+
+[menus]
+  [[menus.main]]
+    name = "Home"
+    url = "/"
+    weight = 10
+  [[menus.main]]
+    name = "Personal"
+    url = "/categories/personal"
+    weight = 20
+  [[menus.main]]
+    name = "Technical"
+    url = "/categories/technical"
+    weight = 30
+  [[menus.main]]
+    name = 'Photos'
+    pre = '<i class="fa fa-heart"></i>'
+    url = 'https://photos.ugurelveren.com'
+    weight = 40
+    [menus.main.params]
+      rel = 'external'
+      class = 'right'
