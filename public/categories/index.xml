@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Ugur&#39;s Personal Documentation</title>
+    <link>https://blog.ugurelveren.com/categories/</link>
+    <description>Recent content in Categories on Ugur&#39;s Personal Documentation</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 14 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.ugurelveren.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Personal</title>
+      <link>https://blog.ugurelveren.com/categories/personal/</link>
+      <pubDate>Sat, 14 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/categories/personal/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cloud Design Patterns</title>
+      <link>https://blog.ugurelveren.com/categories/cloud-design-patterns/</link>
+      <pubDate>Tue, 18 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/categories/cloud-design-patterns/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Technical</title>
+      <link>https://blog.ugurelveren.com/categories/technical/</link>
+      <pubDate>Tue, 18 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/categories/technical/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cloud</title>
+      <link>https://blog.ugurelveren.com/categories/cloud/</link>
+      <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/categories/cloud/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>https://blog.ugurelveren.com/categories/linux/</link>
+      <pubDate>Thu, 23 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/categories/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Algorithm</title>
+      <link>https://blog.ugurelveren.com/categories/algorithm/</link>
+      <pubDate>Fri, 24 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/categories/algorithm/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

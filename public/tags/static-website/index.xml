@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Static Website on Ugur&#39;s Personal Documentation</title>
+    <link>https://blog.ugurelveren.com/tags/static-website/</link>
+    <description>Recent content in Static Website on Ugur&#39;s Personal Documentation</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 14 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.ugurelveren.com/tags/static-website/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>I Moved My Blog to GitHub Again</title>
+      <link>https://blog.ugurelveren.com/post/i-have-done-something/</link>
+      <pubDate>Sat, 14 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/i-have-done-something/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve done something.&lt;/p&gt;&#xA;&lt;p&gt;Again.&lt;/p&gt;&#xA;&lt;p&gt;My cat is on my lap, I&amp;rsquo;m listening to music with my headset, and I&amp;rsquo;m writing a blog post about how I moved my blog to another platform. Well, not another platform, actually. I moved it to old friend GitHub again.&lt;/p&gt;&#xA;&lt;p&gt;This time, though, I developed something simple so I can manage my blog with my own solution.&lt;/p&gt;&#xA;&lt;h2 id=&#34;starting-from-the-beginning&#34;&gt;Starting From the Beginning&lt;/h2&gt;&#xA;&lt;p&gt;What was the previous platform I was using? I was using Write.as. It&amp;rsquo;s a simple platform where you can share your posts on the Fediverse. The UI is minimal, and the main goal of the CMS platform is clear: just write and share your articles.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

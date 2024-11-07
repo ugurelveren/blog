@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Ugur&#39;s Personal Documentation</title>
+    <link>https://blog.ugurelveren.com/post/</link>
+    <description>Recent content in Posts on Ugur&#39;s Personal Documentation</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 14 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.ugurelveren.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>I Moved My Blog to GitHub Again</title>
+      <link>https://blog.ugurelveren.com/post/i-have-done-something/</link>
+      <pubDate>Sat, 14 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/i-have-done-something/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve done something.&lt;/p&gt;&#xA;&lt;p&gt;Again.&lt;/p&gt;&#xA;&lt;p&gt;My cat is on my lap, I&amp;rsquo;m listening to music with my headset, and I&amp;rsquo;m writing a blog post about how I moved my blog to another platform. Well, not another platform, actually. I moved it to old friend GitHub again.&lt;/p&gt;&#xA;&lt;p&gt;This time, though, I developed something simple so I can manage my blog with my own solution.&lt;/p&gt;&#xA;&lt;h2 id=&#34;starting-from-the-beginning&#34;&gt;Starting From the Beginning&lt;/h2&gt;&#xA;&lt;p&gt;What was the previous platform I was using? I was using Write.as. It&amp;rsquo;s a simple platform where you can share your posts on the Fediverse. The UI is minimal, and the main goal of the CMS platform is clear: just write and share your articles.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Saga Design Pattern: Choreography and Orchestration</title>
+      <link>https://blog.ugurelveren.com/post/saga-design-pattern/</link>
+      <pubDate>Tue, 18 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/saga-design-pattern/</guid>
+      <description>&lt;p&gt;In this article, I will discuss the Saga design pattern. First, we&amp;rsquo;ll address some technical challenges of creating ACID transactions. Then, we&amp;rsquo;ll explore the Saga design pattern and how to implement it.&lt;/p&gt;&#xA;&lt;h2 id=&#34;database-per-service-pattern&#34;&gt;Database Per Service Pattern&lt;/h2&gt;&#xA;&lt;p&gt;First, let&amp;rsquo;s talk about microservice architecture and the database per service pattern. Basically, each microservice in an application has its own dedicated database. This allows each microservice to manage its data independently, making it easier to develop, deploy, and scale each service without affecting the others. For instance, in an online store, the user service, order service, and inventory service each have their own databases. This isolation improves flexibility, as each service can choose the best database type for its needs and makes the system more resilient to failures.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Dependency Injection</title>
+      <link>https://blog.ugurelveren.com/post/dependency-injection/</link>
+      <pubDate>Wed, 05 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/dependency-injection/</guid>
+      <description>&lt;p&gt;At my company, we hold a weekly “Lunch and Learn” event that I really like. It lets us share our experiences and expertise. Recently, during a chat with my colleagues, I got some basic questions about dependency injection (DI). This made me think that it would be a good idea to use one of these sessions to go over DI with the team. Also, I plan to write an article about dependency injection and its best practices. In the article, I&amp;rsquo;ll explain what DI is, how to use it effectively, and what the best practices are.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Understanding .NET Dependency Injection Lifetimes</title>
+      <link>https://blog.ugurelveren.com/post/understanding-net-dependency-injection-lifetimes/</link>
+      <pubDate>Wed, 05 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/understanding-net-dependency-injection-lifetimes/</guid>
+      <description>&lt;p&gt;In the last article, we discussed how dependency injection (DI) helps keep our app&amp;rsquo;s parts separate, making them easier to handle and test. This time, I&amp;rsquo;ll focus on an important part of DI in .NET: lifetimes.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ll explain the different lifetimes in .NET: Transient, Scoped, and Singleton, and how to pick and use them for your app.&lt;/p&gt;&#xA;&lt;h2 id=&#34;understanding-di-lifetime-scopes&#34;&gt;Understanding DI Lifetime Scopes&lt;/h2&gt;&#xA;&lt;p&gt;Dependency injection (DI) lifetime scope refers to how long a dependency is used and stored in an application. Managing these lifetimes is important for efficient resource use, good performance, and clean code. DI frameworks offer several lifetime options for different needs and situations.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A Casual Exploration of Ingredient Awareness and Global Food Regulations</title>
+      <link>https://blog.ugurelveren.com/post/ingredient-awareness/</link>
+      <pubDate>Wed, 03 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/ingredient-awareness/</guid>
+      <description>&lt;p&gt;I often find my mind wandering to different topics, interrupting phone calls, meetings, or reading sessions. These thoughts take center stage, making it challenging to refocus on the original task.&lt;/p&gt;&#xA;&lt;p&gt;Interestingly, this mental game sometimes proves helpful. Whether it&amp;rsquo;s a forgotten task during a book or a work-related bug that surfaces while spending time with family, these moments can be both distracting and beneficial.&lt;/p&gt;&#xA;&lt;p&gt;A peculiar incident occurred last week when, despite my usual preference for organic food, I accidentally purchased non-organic sourdough bread. Initially trying to ignore it after enjoying a slice for breakfast, curiosity led me to search for its ingredients. The search took me down a rabbit hole of articles and comparisons between the European Union and the United States, accompanied by alarming posters like &amp;ldquo;Stop Eating Cancer.&amp;rdquo;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cloud Design Patterns: Circuit Breaker Pattern</title>
+      <link>https://blog.ugurelveren.com/post/circuit-breaker-pattern/</link>
+      <pubDate>Wed, 29 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/circuit-breaker-pattern/</guid>
+      <description>&lt;p&gt;The circuit breaker pattern stops a service from trying again to call another service when the previous attempts have failed multiple times. It&amp;rsquo;s similar to electrical circuit breakers that automatically cut off the current when there&amp;rsquo;s abnormal activity.&lt;/p&gt;&#xA;&lt;p&gt;In a distributed environment, calls to remote resources may fail due to reasons such as application exceptions, timeouts, authentication issues, or overloaded systems. Usually, resilient cloud applications automatically fix these issues over time, and the calling application manages these errors using a retry pattern.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cloud Design Patterns</title>
+      <link>https://blog.ugurelveren.com/post/cloud-design-patterns/</link>
+      <pubDate>Fri, 24 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/cloud-design-patterns/</guid>
+      <description>&lt;p&gt;The cloud is vast. Azure docs have around a hundred thousand pages, and AWS is just as big. Other cloud providers are out there too. Each gives you lots of apps, different rules, and dozens of integrations, so creating cloud-native ones has its challenges.&lt;/p&gt;&#xA;&lt;p&gt;They&amp;rsquo;re not identical, but big providers offer similar solutions. For example, Google Cloud Storage is like AWS S3 and Azure&amp;rsquo;s durable function is similar to AWS step functions. Details and rules can differ, but the main idea of the tech is similar, along with the challenges.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Battling Mosquitoes: A Personal Journey</title>
+      <link>https://blog.ugurelveren.com/post/battling-mosquitoes/</link>
+      <pubDate>Wed, 08 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/battling-mosquitoes/</guid>
+      <description>&lt;p&gt;In late August, southern California faced a mosquito invasion. These tiny pests seemed to appear out of nowhere, leaving their itchy marks on unsuspecting victims. Whether you had a bug screen or not, they found their way into your home, and you&amp;rsquo;d wake up with irritating mosquito bites. At first, you might not notice them, but as time passed, the incessant itching would become undeniable.&lt;/p&gt;&#xA;&lt;p&gt;These mosquitoes were notorious for targeting ankles, leaving small, pink, and itchy bites. Sometimes, you&amp;rsquo;d wake up with not just one or two but possibly three or more bites. The constant itching would make you want to scratch your ankles, especially when walking. It was nearly impossible to scratch them all the time, like when driving, where you&amp;rsquo;d long for relief.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Goodbye HashNode, Welcome Writefreely</title>
+      <link>https://blog.ugurelveren.com/post/goodbye-hashnode-welcome-writefreely/</link>
+      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/goodbye-hashnode-welcome-writefreely/</guid>
+      <description>&lt;p&gt;Since the beginning of the pandemic, I&amp;rsquo;ve noticed a repetitive pattern of content on the internet across various platforms. Whether it&amp;rsquo;s on Reddit, different social media sites, or news websites and popular blogs, the same or similar content keeps circulating. Additionally, Google searches have taken a peculiar turn. When searching in English, the results often differ from the same websites, and in other languages like Turkish, you might encounter clickbait websites with strong SEO but weak content.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure Durable Functions</title>
+      <link>https://blog.ugurelveren.com/post/azure-durable-functions/</link>
+      <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/azure-durable-functions/</guid>
+      <description>&lt;h2 id=&#34;azure-functions-and-azure-durable-functions&#34;&gt;Azure Functions and Azure Durable Functions&lt;/h2&gt;&#xA;&lt;p&gt;Microsoft Azure is a constantly expanding collection of cloud services. Among these services, Azure Functions and Azure Durable Functions are critical in enabling serverless computing. In this article, we will look at Azure Functions and Azure Durable Functions, distinguish between the two, and learn about the key concepts surrounding Azure Durable Functions.&lt;/p&gt;&#xA;&lt;h3 id=&#34;what-is-an-azure-function&#34;&gt;What is an Azure Function?&lt;/h3&gt;&#xA;&lt;p&gt;Azure Functions is a serverless computing service designed to effortlessly run small code snippets (functions) without any concern about the underlying infrastructure. This cloud-based solution empowers developers to focus solely on their code while leaving the infrastructure management worries behind.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Automating Script Execution with Systemd on Linux</title>
+      <link>https://blog.ugurelveren.com/post/automating-script-execution-systemd/</link>
+      <pubDate>Thu, 23 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/automating-script-execution-systemd/</guid>
+      <description>&lt;p&gt;In my previous blog post, I created a script that controls the fan speed on my Raspberry Pi. However, I encountered a problem – every time I restarted my Raspberry Pi, I had to manually run the script again, which was not ideal.&lt;/p&gt;&#xA;&lt;p&gt;In this blog post, I will demonstrate how to automate the execution of any script using Systemd. Systemd is a system and service manager for Linux operating systems.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to control Raspberry Pi Fan</title>
+      <link>https://blog.ugurelveren.com/post/how-to-control-raspberry-pi-fan/</link>
+      <pubDate>Wed, 22 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/how-to-control-raspberry-pi-fan/</guid>
+      <description>&lt;p&gt;Last week, I did something unplanned: I bought a Raspberry Pi without any specific project in mind. I came across a Mastodon account (@rpilocator@mastodon.social) that helps people locate Raspberry Pis and I decided to get one. And now, here it is! I&amp;rsquo;m writing my first blog post about the Raspberry Pi Fan Control.&lt;/p&gt;&#xA;&lt;p&gt;Along with the Raspberry Pi, I purchased a case, some heatsinks, and a fan. My first blog post is about controlling the fan using your own software. I&amp;rsquo;ll be honest, I didn&amp;rsquo;t plan on developing anything at first but decided to give it a try.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Arrays: Prefix Sum Technique</title>
+      <link>https://blog.ugurelveren.com/post/arrays-prefix-sum-technique/</link>
+      <pubDate>Fri, 24 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/arrays-prefix-sum-technique/</guid>
+      <description>&lt;p&gt;Hello there! The prefix sum technique involves creating an array where the &lt;code&gt;prefix[i]&lt;/code&gt; is the sum of all elements up to index &lt;code&gt;i&lt;/code&gt;. This technique can also be referred to as the cumulative sum, inclusive scan, or simply scan.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;prefix[0] = nums[0]&#xA;prefix[1] = nums[0] + nums[1]&#xA;prefix[2] = nums[0] + nums[1] + nums[2]&#xA;prefix[i] = nums[0] + nums[1]+ nums[2] + .. + nums[i]&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For example, if the original array is &lt;code&gt;[1, 2, 3, 4]&lt;/code&gt;, the prefix sum array would be &lt;code&gt;[1, 3, 6, 10]&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Arrays: Sliding Windows Technique</title>
+      <link>https://blog.ugurelveren.com/post/arrays-sliding-windows-technique/</link>
+      <pubDate>Thu, 16 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/arrays-sliding-windows-technique/</guid>
+      <description>&lt;p&gt;Window Sliding Technique is a strategy that aims to reduce nested loops for solving problems where you need to analyze a sequence of elements, like an array or a string. The technique reduces the use of a nested loop and replaces it with a single loop, reducing the time complexity.&lt;/p&gt;&#xA;&lt;p&gt;The sliding window technique is efficient because it avoids unnecessary computations. By moving the window only one step at a time, you avoid repeating calculations already done for the previous window. This can save a lot of time and make the algorithm more efficient.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Arrays: Two Pointer Technique</title>
+      <link>https://blog.ugurelveren.com/post/arrays-two-pointer-technique/</link>
+      <pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/arrays-two-pointer-technique/</guid>
+      <description>&lt;p&gt;The two-pointer technique is an easy method used to solve some array-related problems. It involves using two pointers, one starting from the beginning of the array and the other from the end, to traverse the array and find a solution. This technique is helpful because it reduces the time complexity of the algorithm and increases its efficiency.&lt;/p&gt;&#xA;&lt;p&gt;The two-pointer technique is used in various solutions such as finding the sum of two numbers in an array that equals a given target, finding the length of the longest subarray with a given sum, and finding the shortest subarray with a given sum. The basic idea behind this technique is to start from the two ends of the array and move the pointers towards each other until a solution is found or it becomes clear that a solution does not exist.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://blog.ugurelveren.com/post/learning-hub/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/learning-hub/</guid>
+      <description>&lt;h1 id=&#34;learning-hub&#34;&gt;Learning Hub.&lt;/h1&gt;&#xA;&lt;p&gt;This won&amp;rsquo;t be a post but rather another page or something similar. I’d like to include a list of courses or books that I want to complete. This list will expand over time.&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Topic&lt;/th&gt;&#xA;          &lt;th&gt;Link&lt;/th&gt;&#xA;          &lt;th&gt;Type&lt;/th&gt;&#xA;          &lt;th&gt;Added Time&lt;/th&gt;&#xA;          &lt;th&gt;Status&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Go Big Picture&lt;/td&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;https://app.pluralsight.com/library/courses/big-picture-go&#34;&gt;https://app.pluralsight.com/library/courses/big-picture-go&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td&gt;PluralSight&lt;/td&gt;&#xA;          &lt;td&gt;09/15/2024&lt;/td&gt;&#xA;          &lt;td&gt;Completed&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Go Fundementals&lt;/td&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;https://app.pluralsight.com/library/courses/fundamentals-go&#34;&gt;https://app.pluralsight.com/library/courses/fundamentals-go&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td&gt;PluralSight&lt;/td&gt;&#xA;          &lt;td&gt;09/15/2024&lt;/td&gt;&#xA;          &lt;td&gt;In-Progress&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Designing Data-Intensive Applications&lt;/td&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/&#34;&gt;https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Book&lt;/td&gt;&#xA;          &lt;td&gt;09/17/2024&lt;/td&gt;&#xA;          &lt;td&gt;Upcoming&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Creating Web Services with Go 1&lt;/td&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;https://app.pluralsight.com/library/courses/creating-web-services-go&#34;&gt;https://app.pluralsight.com/library/courses/creating-web-services-go&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td&gt;PluralSight&lt;/td&gt;&#xA;          &lt;td&gt;09/15/2024&lt;/td&gt;&#xA;          &lt;td&gt;Upcoming&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://blog.ugurelveren.com/post/monitoring-observability/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/monitoring-observability/</guid>
+      <description>&lt;h2 id=&#34;identifying-and-resolving-monitoring-smells-for-reliable-production-systems&#34;&gt;Identifying and Resolving Monitoring &amp;lsquo;Smells&amp;rsquo; for Reliable Production Systems&lt;/h2&gt;&#xA;&lt;p&gt;Maintaining the health and reliability of production systems is a constant challenge for any organization. Are your production services running as expected? Are background processes working efficiently? During high-traffic periods, can your system handle the load without bottlenecks or failures? And what about external dependencies—are cloud services stable, or are there issues with third-party APIs? These are everyday challenges for DevOps and SRE teams alike.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Books</title>
+      <link>https://blog.ugurelveren.com/post/books/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/books/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;Cannery Row&lt;/li&gt;&#xA;&lt;li&gt;On Becoming Baby Wise: Giving Your Infant the Gift of Nighttime Sleep&lt;/li&gt;&#xA;&lt;li&gt;Why the North Star Stands Still and Other Indian Legends&lt;/li&gt;&#xA;&lt;li&gt;The Sun Also Rises&lt;/li&gt;&#xA;&lt;li&gt;The Power of Now: A Guide to Spiritual Enlightenment&lt;/li&gt;&#xA;&lt;li&gt;The Tao of Pooh&lt;/li&gt;&#xA;&lt;li&gt;All Quiet on the Western Front&lt;/li&gt;&#xA;&lt;li&gt;Saving Capitalism: For the Many, Not the Few&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

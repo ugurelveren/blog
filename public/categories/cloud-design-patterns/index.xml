@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud Design Patterns on Ugur&#39;s Personal Documentation</title>
+    <link>https://blog.ugurelveren.com/categories/cloud-design-patterns/</link>
+    <description>Recent content in Cloud Design Patterns on Ugur&#39;s Personal Documentation</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.ugurelveren.com/categories/cloud-design-patterns/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Saga Design Pattern: Choreography and Orchestration</title>
+      <link>https://blog.ugurelveren.com/post/saga-design-pattern/</link>
+      <pubDate>Tue, 18 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/saga-design-pattern/</guid>
+      <description>&lt;p&gt;In this article, I will discuss the Saga design pattern. First, we&amp;rsquo;ll address some technical challenges of creating ACID transactions. Then, we&amp;rsquo;ll explore the Saga design pattern and how to implement it.&lt;/p&gt;&#xA;&lt;h2 id=&#34;database-per-service-pattern&#34;&gt;Database Per Service Pattern&lt;/h2&gt;&#xA;&lt;p&gt;First, let&amp;rsquo;s talk about microservice architecture and the database per service pattern. Basically, each microservice in an application has its own dedicated database. This allows each microservice to manage its data independently, making it easier to develop, deploy, and scale each service without affecting the others. For instance, in an online store, the user service, order service, and inventory service each have their own databases. This isolation improves flexibility, as each service can choose the best database type for its needs and makes the system more resilient to failures.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cloud Design Patterns: Circuit Breaker Pattern</title>
+      <link>https://blog.ugurelveren.com/post/circuit-breaker-pattern/</link>
+      <pubDate>Wed, 29 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/circuit-breaker-pattern/</guid>
+      <description>&lt;p&gt;The circuit breaker pattern stops a service from trying again to call another service when the previous attempts have failed multiple times. It&amp;rsquo;s similar to electrical circuit breakers that automatically cut off the current when there&amp;rsquo;s abnormal activity.&lt;/p&gt;&#xA;&lt;p&gt;In a distributed environment, calls to remote resources may fail due to reasons such as application exceptions, timeouts, authentication issues, or overloaded systems. Usually, resilient cloud applications automatically fix these issues over time, and the calling application manages these errors using a retry pattern.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cloud Design Patterns</title>
+      <link>https://blog.ugurelveren.com/post/cloud-design-patterns/</link>
+      <pubDate>Fri, 24 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/cloud-design-patterns/</guid>
+      <description>&lt;p&gt;The cloud is vast. Azure docs have around a hundred thousand pages, and AWS is just as big. Other cloud providers are out there too. Each gives you lots of apps, different rules, and dozens of integrations, so creating cloud-native ones has its challenges.&lt;/p&gt;&#xA;&lt;p&gt;They&amp;rsquo;re not identical, but big providers offer similar solutions. For example, Google Cloud Storage is like AWS S3 and Azure&amp;rsquo;s durable function is similar to AWS step functions. Details and rules can differ, but the main idea of the tech is similar, along with the challenges.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

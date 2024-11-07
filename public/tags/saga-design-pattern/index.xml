@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Saga Design Pattern on Ugur&#39;s Personal Documentation</title>
+    <link>https://blog.ugurelveren.com/tags/saga-design-pattern/</link>
+    <description>Recent content in Saga Design Pattern on Ugur&#39;s Personal Documentation</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.ugurelveren.com/tags/saga-design-pattern/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Saga Design Pattern: Choreography and Orchestration</title>
+      <link>https://blog.ugurelveren.com/post/saga-design-pattern/</link>
+      <pubDate>Tue, 18 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://blog.ugurelveren.com/post/saga-design-pattern/</guid>
+      <description>&lt;p&gt;In this article, I will discuss the Saga design pattern. First, we&amp;rsquo;ll address some technical challenges of creating ACID transactions. Then, we&amp;rsquo;ll explore the Saga design pattern and how to implement it.&lt;/p&gt;&#xA;&lt;h2 id=&#34;database-per-service-pattern&#34;&gt;Database Per Service Pattern&lt;/h2&gt;&#xA;&lt;p&gt;First, let&amp;rsquo;s talk about microservice architecture and the database per service pattern. Basically, each microservice in an application has its own dedicated database. This allows each microservice to manage its data independently, making it easier to develop, deploy, and scale each service without affecting the others. For instance, in an online store, the user service, order service, and inventory service each have their own databases. This isolation improves flexibility, as each service can choose the best database type for its needs and makes the system more resilient to failures.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
