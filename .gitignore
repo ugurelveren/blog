@@ -16,3 +16,32 @@ _site/
 # counterproductive to check this file into the repository.
 # Details at https://github.com/github/pages-gem/issues/768
 Gemfile.lock
+
+
+# Hugo files
+/public/
+/resources/
+/node_modules/
+hugo_stats.json
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Temporary files and directories
+*.bak
+*.swp
+*.tmp
+*~
+
+# VS Code settings
+.vscode/
+
+# Optional Hugo settings
+/config.toml
+/config.yaml
+/config.json
+
+# GitHub Actions
+.github/workflows/*.log
+.github/workflows/*.bak
