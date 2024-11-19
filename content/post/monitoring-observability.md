@@ -1,107 +1,188 @@
-## Identifying and Resolving Monitoring 'Smells' for Reliable Production Systems
+---
+title: "Spotting and Fixing Monitoring Smells: A Guide to Reliable Systems"
+date: "2024-11-18"
+author: "Ugur Elveren"
+categories: ["Technical","SRE", "DevOps"]
+tags: ["Monitoring", "Observability", "Monitoring Smells", "SRE", "DevOps"]
+description: "Learn how to identify and fix common monitoring smells that can hurt your system's reliability. Discover actionable strategies for smarter alerts, better visibility, and faster problem resolution to keep your production systems running smoothly."
+---
 
-Maintaining the health and reliability of production systems is a constant challenge for any organization. Are your production services running as expected? Are background processes working efficiently? During high-traffic periods, can your system handle the load without bottlenecks or failures? And what about external dependencies—are cloud services stable, or are there issues with third-party APIs? These are everyday challenges for DevOps and SRE teams alike.
 
-Just like code can develop "smells" that hint at deeper issues, monitoring systems can also exhibit "monitoring smells" when something isn't right. By closely observing the SRE team's workflows and outcomes, patterns of problematic monitoring setups often emerge. While I won't be diving into how to build the perfect monitoring system, I'll be sharing practical insights into identifying "smelly" monitoring practices and, more importantly, how to tackle them effectively.
+Keeping production systems healthy and reliable is a challenge. Are your services running well? During high-traffic periods, can your system handle the load without bottlenecks or failures? What about dependencies? Is everything working fine with third-party depencies or is there an outage on cloud service provider? These are everyday challenges for **DevOps** and **SRE** teams alike.
 
-### what is observability and monitoring
+Just like messy code gives clues about deeper issues (code smells), monitoring systems can have **"monitoring smells."** when something isn't right. These are signs that your monitoring setup isn't as good as it should be. While I won't be diving into how to build the perfect monitoring system. This article will explain what these smells are, how to notice them, and how to fix them.
 
-When it comes to production performance, two terms often come up: monitoring and observability. Though they're closely related, each plays a unique role in how we understand and maintain system health.
+### What is observability and monitoring?
+
+When it comes to system monitoring, two terms often come up: **`monitoring`** and **`observability`**. Though they're closely related, each plays a unique role in how we understand and maintain system health.
 
 #### Monitoring
-
-Monitoring involves tracking data points that indicate system health, such as CPU usage, response times, error rates, queue backlogs, and configured alerts. These metrics allow us to keep a close eye on the system, spotting irregularities and detecting issues in real time. For example, if response times spike unexpectedly or CPU usage reaches critical levels, monitoring alerts us, prompting immediate action. By focusing on these core metrics, we're able to maintain stability, minimize downtime, and respond quickly when issues arise. Monitoring acts as an early warning system, enabling proactive management to keep our solutions reliable.
+**`Monitoring`** tracks system health using key data like CPU usage, response times, or error rates. It's like an alarm on system. When something goes wrong, it alerts you. For example, if your system slows down or crashes, monitoring tools let you know so you can act quickly. CPU usage reaches critical levels, monitoring tools alerts us, prompting immediate action manually or automatically.  By focusing on metrics, we're able to maintain stability, minimize downtime, and respond quickly when issues arise. 
 
 #### Observability
-Observability takes monitoring a step further, providing deeper insights into system health through logs, traces, and metrics. When we begin questioning the state of a system—such as why a particular service is slow or why errors are spiking—observability tools offer the data needed to answer those questions. Logs capture detailed records of events, traces follow requests as they travel through the system, and metrics provide quantitative measurements. Together, these elements create a comprehensive picture of what's happening internally.
+**`Observability`** goes deeper. It helps you understand why something went wrong by using logs, traces, and metrics. Observability tools help engineers solve problems by providing detailed clues about what's happening inside the system.
 
-If any question about the system's health can't be answered directly, these observability tools guide the investigation, giving engineers clues and patterns that lead to root causes. Observability, in essence, equips engineers not just to detect problems but to diagnose and resolve them efficiently, turning data into actionable insights.
+If any question about the system's health can't be answered directly, these observability solutions guide the investigation, giving engineers clues and patterns that lead to root causes. Observability, in essence, equips engineers not just to detect problems but to diagnose and resolve them efficiently, turning data into actionable insights.
 
-### Why Monitoring Smells Metter
-When the development team starts working on a solution, there's usually a roadmap with planned timelines and deadlines. But in production, if a critical issue hits, there's only one real deadline: right now. An application down in production means immediate action to avoid costly downtime. For example, if you promise 99.99% uptime, you're allowed only 52 minutes of downtime per year or just about 4 minutes per month.
+## Understanding of smells
 
-This is where monitoring smells come into play. To act quickly, you need clear, actionable insights—no barriers or delays in your monitoring system. In those precious minutes, you need to dive into logs, identify the issue, and implement a solution without wasting time battling with your monitoring setup. If there's any obstacle—like noisy alerts, missing metrics, or unclear data—you'll end up spending valuable time overcoming those hurdles. In high-stakes situations, effective monitoring can make the difference between a quick fix and prolonged downtime, so your monitoring setup needs to be fast, accurate, and dependable.
+### Definition of monitoring smells
+Monitoring smells are signs that something isn't quite right with your monitoring setup. They can be subtle and easy to miss, but if ignored, they can grow into bigger problems over time. Just as code smells hint at underlying issues in code quality, monitoring smells point to weaknesses in how you track and respond to system health.
 
-## Understanding of smells.
+### Why Monitoring Smells Metter?
+When the development team begins working on a solution, they typically follow a roadmap with planned timelines and deadlines. However, in prod, the only deadline that truly matters during a critical issue is **right now**. A production outage demands immediate action to minimize costly downtime. For instance, if your SLA guarantees 99.99% uptime, this translates to just 52 minutes of allowable downtime per year or roughly 4 minutes per month
 
-### Definition of monitoring smells.
-Monitoring smells are indicators that something isn't quite right with your monitoring setup. They're often subtle and easy to overlook, but if left unaddressed, these small issues can escalate into significant problems over time. Just as code smells hint at underlying issues in code quality, monitoring smells signal potential flaws in the way you track and respond to system health. Recognizing and addressing these smells early can prevent future headaches, helping you maintain a more reliable and responsive monitoring environment.
+This is where monitoring smells come into play. To act quickly, you need clear, actionable insights. No barriers or delays in your monitoring system. In those precious minutes, you need to dive into logs, identify the issue, and implement a solution without wasting time battling with your monitoring setup. If there's any obstacle—like noisy alerts, missing metrics, or unclear data, you'll end up spending valuable time. In high-stakes situations, effective monitoring can make the difference between a quick fix and extended outage.
 
 ### Example of monitoring smells 
-There are several examples of monitoring smells, but let's dive into a few key ones.
+There are plenty of monitoring smells, but here are some of the most common and impactful ones to watch for.
 
 #### Alert Fatique
-One of the most common monitoring smells is alert fatigue—too many alerts, which can overwhelm teams and lead to missed or delayed responses. When a team is bombarded with constant notifications, it's easy to overlook a critical alert among the noise. Small teams, in particular, may struggle to keep up with alert volume, potentially missing alerts altogether or delaying responses.
+One of the most common monitoring smells is alert fatigue. When too many alerts overwhelm teams, causing missed or delayed responses. Constant notifications make it easy for critical alerts to get lost in the noise. For small teams, managing a high volume of alerts can be especially challenging, often resulting in missed alerts or slower reaction times.
 
-In larger teams with a front-line response, alert fatigue can even lead to informal practices like "waiting 5 minutes before acting" because certain alerts tend to follow a specific pattern. For example, if Alert A usually resolves when Alert B appears five minutes later, the team might delay responding to Alert A, assuming it'll clear on its own. But this habit can lead to severe consequences if something truly critical goes unnoticed. In some cases, alerts can sit unattended for 15 minutes or more simply because engineers are preoccupied with other alerts, illustrating how alert fatigue can impair response times and reliability.
+Also alert fatigue can create risky habits, like "waiting 5 minutes before acting" because some alerts seem to resolve themselves. For instance, if **` Alert A`** usually clears when **`Alert B`** appears, the team might delay responding to Alert A, assuming it`s not critical and start waiting for Alert B. This can be dangerous if a truly urgent issue goes unnoticed. In some cases, alerts may remain unaddressed for minutes because engineers are already busy with other notifications. This delay highlights how alert fatigue can slow response times and compromise system reliability.
+
+A notable example is the 2013 Target data breach. Target's security systems detected an intrusion and issued multiple alerts, but due to alert fatigue—where the security team was overwhelmed by a flood of notifications—the critical warnings were ignored.
+
+This oversight allowed hackers to steal credit card details of 40 million customers and personal information of 70 million more. The breach cost Target an estimated $200 million in damages, severely tarnished its reputation, and ultimately led to the resignation of both its CEO and CIO.
+
+This case underscores the dangers of alert fatigue and highlights the critical importance of effective alert management. Streamlining alerts, reducing noise, and prioritizing critical notifications are essential to avoid such costly failures.
 
 #### False positive and false negatives
+False positives and false negatives are common challenges in monitoring systems. False positives occur when alerts are triggered unnecessarily, such as minor fluctuations causing performance warnings despite the system functioning normally. These alerts create noise, overwhelm teams, and can lead to alert fatigue, where critical notifications are ignored. On the other hand, false negatives are more dangerous, as they occur when real issues go undetected. For instance, a failing dependency might not trigger an alert due to lenient thresholds, leading to undetected downtime or degraded performance.
 
-Any minor fluctiaction trigger an alert and you never know the alert is a real alert or some kind of false positive. You can hear some conversation like, I am investigating the alert or there is a alert but there is no exception on the system. Also some worst case there are some false negative alerts. There are some possible conversation like this. There was an alert but there is no exception so we ignore the alert and there is a *But* but one of the dependency was failing so we missed that one and we have 96 minutes downtime. so call the legal departmant that we have some problems. 
+To address these issues, monitoring systems need fine-tuned thresholds, smarter alert mechanisms, and regular validation. Tools like anomaly detection and alert correlation can reduce false positives by focusing on real issues, while continuous testing ensures critical problems aren't missed. Striking a balance between accurate alerts and reduced noise improves system reliability and boosts confidence in the monitoring process.
 
 #### Blind spots in monitoring
-Another monitoring smell is the presence of blind spots—areas of your system that aren't being monitored effectively. For instance, imagine a senior developer requests production access to restart an instance due to a corrupted cache. It's a quiet day with low traffic, so he restarts it to fix the issue. But here's the real question: how long had the cache been corrupted? How many users were affected? What was the SLA impact? Instead of an alert or observability tools flagging the issue, a developer had to dig into logs to uncover the problem. This indicates a significant monitoring gap. If your cache or application level lacks monitoring, you're missing critical insights, and the manual discovery means your monitoring setup isn't keeping pace with system health.
+Blind spots in monitoring are parts of your system that are not being watched. This means problems can happen without anyone noticing until it's too late. These gaps can cause big issues like downtime, poor performance, or security risks. For instance, consider a payment service that relies on a third-party API for processing transactions. If the API experiences intermittent failures and there are no alerts monitoring its **`response times`** or **`error rates`**, the issue might go unnoticed until customers start reporting failed transactions. By then, the damage is done, orders are lost, and user trust is impacted.
+
+Without monitoring this critical dependency, your team is left to investigate the problem manually, often with incomplete information. This results in slower resolution times and frustrated customers or gap on SLA. To avoid such blind spots, it's essential to monitor all dependencies, including external services, and set up alerts for unusual behavior like increased latency or failure rates. Comprehensive monitoring ensures potential issues are caught early, minimizing their impact.
+
+Consider this scenario: a new feature is introduced, relying on a dependency like RabbitMQ. Despite its importance, the monitoring dashboard lacks critical metrics such as the message count, and no alerts are set up to detect issues with this dependency. When you ask why, the response is typically, "We just launched the feature, and monitoring will be added soon."
+
+When you ask about basic metring like like memory usage on an instance, the response can be, "***We`ll add it in the next iteration.***" However, this promise rarely materializes.
+
+Unfortunately, "**soon**" often turns into "**never**." This reactive approach to monitoring creates dangerous blind spots, leaving your system exposed to untracked issues that can escalate into major problems. To avoid this, monitoring must be prioritized as an integral part of the development process, rather than an afterthought deferred indefinitely.
 
 #### High Mean time to Resolution (MTTR) due to lack of insight
-When an alert does come through, a high mean time to resolution (MTTR) can reveal a lack of actionable insights. In other words, the system senses a problem but can't identify what's wrong. Engineers then have to dig through logs and metrics without clear guidance, leading to time-consuming investigations. The common excuse is often, "Our system is complex; it takes time to investigate." The reality? Your monitoring is inadequate. A well-monitored system should provide enough detail to quickly identify root causes rather than forcing engineers to navigate through unstructured data. If MTTR is high, your monitoring needs to provide better visibility and context for faster diagnoses.
+When an alert is triggered, a high mean time to resolution (MTTR) often signals a lack of actionable insights. This occurs when the monitoring system detects a problem but doesn't provide enough context to identify the root cause. As a result, engineers are forced to sift through logs and metrics without clear guidance, wasting valuable time on investigations and delaying resolutions.
+
+A common excuse is, ***Our system is complex; it takes time to investigate.*** In reality, this often points to an inadequate monitoring setup. A well-designed system should deliver detailed, actionable insights to quickly identify and address issues, rather than leaving teams to rely on unstructured data. If your MTTR remains high, it`s a strong indication that your monitoring tools need to be improved for better visibility and faster diagnoses.
 
 #### Overly Complex or Redundant Rules
-This monitoring smell appears when rules are excessively complex or redundant, making alerting inconsistent or confusing. For example, your system might be designed to autoscale, but there's still an alert telling someone to scale manually. Or, worse yet, an alert comes with instructions to "wait an hour, and if it hasn't resolved, call the development team." This raises questions: why wait an hour? What's the impact on SLA if it isn't resolved sooner? Such rules indicate unclear priorities and make monitoring unreliable. If alerts need manual steps, delays, or special instructions, it's a sign your monitoring setup lacks clarity and automation, creating unnecessary gaps in response time.
+This monitoring smell arises when alerting rules are overly complex or redundant, leading to confusion and inconsistency. For example, your system may be set to autoscale, but you still receive an alert instructing someone to scale manually. Even worse, there might be alerts with vague instructions like, "***Wait an hour, and if it's not resolved, call the development team.***" Such scenarios raise critical questions: Why wait? What's the SLA impact if action is delayed?
 
-### Common Monitoring problems
-Since we talked about some smelly monitoring practices, we can start talking about common monitoring problems and start discussing about what are we going to do.
-
-#### Too Many Alerts and Insufficient Context
-This is one of the common and we already talked about it is a smelly practice. Too many alerts. You can hear from the development team that they can mentioned they have 600 alerts to monitor the production. So what. Why that number is important. When there is a dependency problem i just want to see depenendeyc alert, not 5 different alert which is fired by only a single dependency. Or when there is an alert, i need to know what caused that alert to make sure I can act on it. There is an alert called app is unhealty alert but we don't know the reason. I just want to repead myself again, alert should be a spesific for the problem and with an alert you need to provide some sufficent data to make sure the engineer understand what is the problem. 
+These unclear and inconsistent rules point to a lack of priority and reliability in your monitoring setup. When alerts depend on manual steps, ambiguous instructions, or delays, it indicates insufficient clarity and automation. This creates gaps in response time, undermining the efficiency and effectiveness of your incident management process.
 
 #### Undefined or Arbitrary Thresholds
-This is my favorite. Magic numbers. If failed request count is more than 250, raise a performance alert. Why 250. No one knows it. Or if the average request duration is more than 5 minutes, then raise an alert. Should i look for the percantile. no. Should I exclude bach processing requests. No take whole average. Or we need to scale up after cpu exceet 75%. Why 75. did you do any stress test. no i used this number on my last company. so 75 is good. 
+This is one of my favorites: magic numbers. For example, an alert is set to trigger if the failed request count exceeds 250. Why 250? No one knows. Or, if the average request duration is over 5 minutes, an alert fires. Should we look at percentiles? No. Should we exclude batch processing requests? Nope, just take the whole average.
 
-#### Missing Key Metrics and Blind Spots
-When you need to take a look at the memory usage of the instance, you will get an answer for we will add it on it next iteration. Also i can give the scenario. There is a new feature which is using the a new dependency like rabbitmq and your monitoring dashboard does not have age of the queue item and no alert for that. When you ask why 
-you don't have this, you will get an answer for we just developed a feature and we will do some monitoring improvements soon. They never do that. 
+Then there's the classic: "Scale up if CPU exceeds 75%." Why 75%? Was there a stress test? No, it's just the number someone used at their last company, so they assumed it's good here too.
+
+These arbitrary thresholds, without data or reasoning to back them up, create confusion and ineffective monitoring. Thresholds need to be based on real analysis, such as performance tests, business impact, and system behavior, rather than random guesses or inherited practices.
+
 
 #### One-Size-Fits-All Alerting Approach
-It is also really common and really confusing as well. So there are some general rules and indistry habbits for some stuff. But each system is unique. For example increasing disk when cpu average hits more than 80% having a basic warning is good but if the scaling time of the solutions is taking longer that number might be a problem. 
-Or increasing disk size 20% is usually safe however if you have 10tb of disk it means 2tb. and 2tb can be a lot. but there is no answer for all solutions.
+The one-size-fits-all approach to alerting is a frequent pitfall in monitoring. For example, a rule to trigger an alert when memory usage exceeds 75% might seem reasonable. However, if your system is designed to optimize performance by using as much memory as possible, this threshold would generate constant alerts, overwhelming teams with unnecessary notifications. This mismatch between general thresholds and the system's design reduces trust in the monitoring system.
 
-#### Noise vs. Signal: Misleading Variations Masking Real Issues
-This is also really common. Alert Fatigue and noise on monitoring can lead to devastation. I just want to give an exmaple In 2013, Target's security systems detected an intrusion and issued multiple alerts, but the warnings were ignored due to alert fatigue—security teams were overwhelmed by a constant stream of notifications. Desensitized by the volume, they missed the critical alerts. Hackers exploited this oversight, stealing credit card details of 40 million customers and personal info of 70 million more. The breach led to about $200 million in losses and damaged Target's reputation, resulting in the resignation of its CEO and CIO. This case highlights the dangers of alert fatigue and the need for effective alert management.
-### Strategies to Resolve Monitoring Smells
+Another example involves using average response times across all endpoints. While the overall average might look fine, it could obscure critical issues for specific tenants. For instance, a single-tenant system with a VIP customer might experience slow response times for their dashboard while other endpoints perform normally. A generic alert based on the system-wide average could miss this tenant-specific issue, impacting customer satisfaction and trust.
 
-#### Prioritizing Business-Critical Metrics
-Focus first on metrics that directly impact user experience or business goals. These are the ones that deserve priority in alerting.
-##### Identifying Metrics Linked to User Experience and Business Goals
-Define the metrics that matter most for your customers and business – these should be the focus.
-###### Refining Alerting Rules and Thresholds
-##### Setting Meaningful, Data-Driven Thresholds
-Use real data to set thresholds that make sense. Avoid guesswork, and adjust thresholds as your system grows or changes.
-###### Using Adaptive Thresholds or Anomaly Detection for Dynamic Metrics
-For metrics with natural fluctuation, try adaptive thresholds or anomaly detection to avoid alert noise.
-##### Implementing Intelligent Alert Management
-###### Automated Alert Grouping and Suppression
-Group related alerts automatically to reduce noise and focus on issues that need attention.
-###### Correlation of Alerts for Root Cause Detection
-Look at how alerts relate to find root causes instead of just fixing symptoms.
-##### Integrating Observability for Deep Insights
-###### Using Distributed Tracing, Centralized Logging, and Dashboards
-Adding observability tools like tracing and logging helps you get to the heart of issues faster.
-##### Regular Review and Feedback Loop
-###### Post-Incident Reviews for Continuous Improvement
-After an incident, review how well the alerts worked. Adjust as needed to make future alerts more effective.
-###### Adjusting Monitoring Rules Based on Evolving System Baselines
-As your system changes, so should your monitoring. Regularly update rules to keep them relevant.
+Instead of using generic thresholds, monitoring systems should be customized to fit the specific needs of your environment. By analyzing historical data and understanding the system's architecture, you can set tailored thresholds for different components. This approach not only reduces noise but also ensures that alerts are actionable, enabling teams to respond effectively and maintain system reliability.
 
+## Strategies to Resolve Monitoring Smells
+Building a robust monitoring solution requires thoughtful planning and alignment with product goals and system architecture. Start by asking key questions about the project and company objectives:
 
-### Practical Examples of Monitoring Smells and Fixes
-#### Case Study 1: Reducing Alert Fatigue in a Microservices Environment
-#### Case Study 2: Addressing Missing Metrics in Critical User Flows
-#### Case Study 3: Refining Thresholds to Reduce False Positives
+- **Understand Business Goals**: Discuss with the product team to identify the critical outcomes the monitoring solution needs to support.
+- **Define SLAs and SLOs**: If there's a legal team, confirm whether Service Level Agreements (SLAs) exist or work with stakeholders to define internal Service Level Objectives (SLOs). Also don't forget that. Without SLO, SLA is not really usefull since there is not enought room for improvement. 
+- **Make it visible**: Make these goals visible to everyone. For example, If an SLA or SLO exists and there's a budget, consider creating visual reminders like posters or dashboards to keep the team aligned with these targets. Send reminder emails and make sure when there is an update for any of the goal, make it visible for everyone. 
 
-### Conclusion
-#### Key Takeaways for Building Effective Monitoring
-Good monitoring isn’t just about more alerts; it’s about actionable insights that help you catch and fix issues fast.
-#### Balancing Monitoring and Observability for Reliable Production Systems
-By combining monitoring and observability practices, you get a clearer picture of what’s going on, improving system reliability and reducing stress on your teams.
-#### Encouraging Proactive and Adaptable Monitoring Practices
-A regular review of monitoring practices keeps things fresh and relevant, helping your system stay aligned with evolving business goals.
+Clear goals and shared understanding provide the foundation for a well-designed monitoring solution that meets both technical and business needs.
+
+### Prioritizing Business-Critical Metrics
+Assuming you have well-defined SLAs and SLOs, the next step is to identify which parts of your application are the most critical. Use this information to determine and prioritize business-critical metrics.
+For example:
+
+- If your system involves image processing, metrics like memory usage and CPU utilization are crucial.
+- For an e-commerce website, response time and transaction success rates are key indicators of performance.
+Start defining required metrics from important to nonimportant. Focus on these metrics to ensure your monitoring setup aligns with the application's unique requirements and supports your business objectives effectively.
+
+### Identifying Metrics Linked to User Experience and Business Goals
+Long response times can be a deal breaker for customers, whether it's slow page loads, image processing delays, or even failed pings in a system with specific client contracts. To address this:
+
+- **Prioritize Key Alerts:** Focus on metrics that directly impact customer experience, like response time or processing delays.
+- **Make Metrics Visible:** Share these alerts beyond your team. Use screens or dashboards to display key metrics publicly within the company, so everyone understands their importance.
+- **Build Shared Dashboards:** Create internal dashboards tailored to critical metrics and share them across teams. This ensures transparency and aligns everyone around uptime and performance.
+
+While sales numbers are vital, uptime and performance are what make those sales possible. A visible focus on monitoring ensures everyone in the company recognizes its impact on overall success.
+
+### Refining Alerting Rules and Thresholds
+
+Once you have identified your metrics and SLOs, start defining alerts based on mission-critical metrics. However, determining whether a 3-second response time is good or bad requires more than assumptions. Here's how to proceed
+
+- **Gather Data Across Teams:** Collaborate with different teams to understand what performance benchmarks are reasonable for your system.
+- **Leverage Performance Test Results:** Use data from performance testing to set realistic thresholds for alerts. If tests show consistent response times under 2 seconds, a 3-second threshold might indicate a problem.
+- **Build Testing Infrastructure if Needed:** If valid performance tests don't exist, prioritize creating the necessary infrastructure and processes. Without reliable testing data, alert thresholds are just guesses.
+
+Data-driven thresholds ensure your alerts are actionable and relevant, improving your monitoring system's accuracy and effectiveness.
+
+### Setting Meaningful, Data-Driven Thresholds
+Make sure you know when to trigger an alert during performance tests. Don't rely on your gut feeling or instincts—use real data from the product team. If you're setting performance thresholds or firing alerts based on monitoring data, these thresholds need to be data-driven, not guesses.
+
+If you don't have proper thresholds defined, raise the flag and inform your company or management. Getting those thresholds is just as important as setting up the alerts themselves. Good data leads to better decisions, and better decisions keep the product running smoothly! 
+
+### Using Adaptive Thresholds or Anomaly Detection for Dynamic Metrics
+Different operations have different performance expectations. For example, payment processing will naturally take longer than an index page load. If you average performance across the entire website, you're mixing apples and bananas, making the data meaningless. 
+If 50 out of 100 requests fail, the failure rate is 50%—a critical issue. But if 50 out of 10,000 requests fail, the failure rate is only 0.05%, which may not require immediate attention. Avoid hardcoded thresholds. Instead, make thresholds dynamic, adapting to the specific context and workload of different operations.
+
+Additionally, leverage anomaly detection tools, such as those available on Azure/AWS. These tools automatically detect unusual patterns, helping to identify potential issues without relying on static rules. Integrating anomaly detection into your monitoring setup can significantly enhance its accuracy and responsiveness. Most importantly, support those anomaly detection alerts with system spesific alerts.
+
+### Automated Alert Grouping and Suppression
+Automatically group related alerts to reduce noise and focus on the real issues that need attention. For example, if a dependency fails and triggers 8 separate alerts, that's a sign of poor alert management. Instead of overwhelming the team with multiple notifications, group them into a single topic and tied to the failing dependency.
+
+This approach helps:
+
+- Reduce alert fatigue by cutting down unnecessary notifications.
+- Improve clarity by pinpointing which module or system is failing.
+- Streamline troubleshooting by providing a consolidated view of the problem.
+
+By grouping alerts, you make it easier for your team to identify root causes and act efficiently. 
+
+### Correlation of Alerts for Root Cause Detection
+
+Focus on alert correlation to identify root causes rather than just addressing symptoms. For instance, if a dependency fails, proper correlation should help you trace the failure to the specific system or service responsible. This reduces guesswork and speeds up resolution. Root cause identification through correlation ensures your team addresses problems at their source, improving system reliability and reducing repeated incidents.
+
+### Using Distributed Tracing, Centralized Logging, and Dashboards
+
+Integrating observability tools like tracing and logging allows you to pinpoint issues more quickly and accurately. Tracing helps track requests across different services, showing where delays or failures occur in complex workflows. Logging provides detailed records of system events, offering context and insights for troubleshooting. Together, these tools give you a clear picture of what's happening in your system, enabling faster root cause analysis and resolution.
+
+### Regular Review and Feedback Loop
+After an outage, conduct a thorough investigation. If it involves multiple teams, ensure everyone is included in the process:
+
+- **Collaborate Across Teams:** Involve the product and development teams to understand updates or changes that might have contributed to the issue.
+- **Review and Update Metrics:** Regularly evaluate and adjust metrics, thresholds, and alerting rules based on feedback and findings from the outage.
+- **Improve Visibility:** Ensure all metrics and alerts are accessible to the entire company. Transparency helps teams stay aligned and aware of what's happening in production.
+- **Gather Feedback:** Continuously seek input from teams to refine the monitoring and alerting process, making it more effective and easier to use.
+A collaborative, transparent approach ensures that lessons from outages lead to stronger, more reliable systems.
+
+### Post-Incident Reviews for Continuous Improvement
+After an incident, evaluate how well the alerts performed. Analyze whether the alerts provided timely and actionable information. Identify any gaps or unnecessary noise. Modify thresholds, rules, or notification settings to make future alerts more precise and effective. 
+
+- **Provide an Incident Report:** Document the issue, its impact, root cause, and the steps taken to resolve it. Include recommendations for improving monitoring. Implement mechanisms to detect recurring errors or exceptions. Take proactive, aggressive steps to resolve them and prevent future occurrences. This process ensures continuous improvement in your monitoring system, making it more robust and reliable over time.
+
+### Adjusting Monitoring Rules Based on Evolving System Baselines
+As your system evolves, your monitoring setup must adapt too. Regularly review and update alerting rules to ensure they remain relevant. For example: 
+- Adjust for Changing Metrics: Page load times, for instance, may vary over time. Update thresholds to reflect the system's current performance.
+- Address New Dependencies: Hidden or newly added dependencies can introduce vulnerabilities. Monitor these proactively to catch issues early.
+- Collaborate with Development Teams: Work closely with developers to identify changes in the system and adjust monitoring accordingly.
+- Use Application Mapping: Compare updated application maps with previous versions to uncover dependencies and potential blind spots.
+Always remain vigilant, as even small changes in the system can impact production monitoring.
+
+## Conclusion
+### Key Takeaways for Building Effective Monitoring
+Monitoring is your safety net for keeping systems reliable and running smoothly. But like any tool, it can get messy if you don't keep it in check. Things like too many alerts, missing data, or poorly set thresholds (we call these monitoring smells) can make it harder to spot and fix problems fast.
+
+To stay ahead, ditch the guesswork and go data-driven. Focus on the metrics that really matter for your users and business. Use tools like anomaly detection, adaptive thresholds, and alert grouping to cut through the noise and make your alerts smarter. And don't forget to work with your team to review and improve your setup regularly. It's all about learning and adapting.
+
+Remember, effective monitoring is not just about detecting problems but enabling quick, informed responses to minimize downtime and ensure a seamless user experience. Through continuous improvement, regular reviews, and clear communication, your monitoring system can evolve into a cornerstone of your organization's reliability strategy.
+
+In the end, monitoring isn't just about tools. It's about creating a culture of observability, accountability, and adaptability. With these principles in place, your team will be equipped to handle challenges with confidence, keeping your production systems robust and your users happy.

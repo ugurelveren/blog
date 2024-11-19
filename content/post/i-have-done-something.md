@@ -45,3 +45,6 @@ Do I need SEO tags? Yes, because I need readers, and without readers, a blog is 
 
 And here we are! I'm writing this blog post in a Markdown file on a simple, static, Markdown-based HTML website. I have more ideas for it. The homepage for my domain is built with a terminal-based jQuery library, and I plan to integrate it with my blog. Maybe a search for blog in terminal. There are a lot of cool feature for my **Dynamically Rendered Static Website**. I hope to write another post once I develop that.
 
+## What happened next? 
+After I posted this, I spent more time on my newly built personal blog. I also created another project for my analog photos, which I really enjoyed working on. Initially, I planned to build the static page generation in Golang, but my instinct told me to pause since there's already a powerful tool for this purpose: Hugo. With Hugo, I didn't need to reinvent the wheel, so I decided to stop developing the blog project further (although I'll still be using Hugo to handle the photo project as well).
+
