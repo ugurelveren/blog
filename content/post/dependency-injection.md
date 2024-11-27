@@ -1,6 +1,6 @@
 ---
 title: "Dependency Injection"
-date: "2024-06-05"
+date: "2024-06-04"
 author: "Ugur Elveren"
 categories: ["Technical"]
 tags: ["dependency injection", ".net"]

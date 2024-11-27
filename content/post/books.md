@@ -2,6 +2,7 @@
 title: "Books"
 ---
 
+- Into the Wild
 - On Tyranny : Twenty Lessons From The Twentieth Century
 - Cannery Row
 - On Becoming Baby Wise: Giving Your Infant the Gift of Nighttime Sleep
