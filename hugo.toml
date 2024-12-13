@@ -41,10 +41,15 @@ author = "Ugur Elveren"
     url = "/categories/technical"
     weight = 30
   [[menus.main]]
-    name = 'Photos'
+    name = "Photos"
     pre = '<i class="fa fa-heart"></i>'
     url = 'https://photos.ugurelveren.com'
     weight = 40
     [menus.main.params]
       rel = 'external'
       class = 'right'
+  [[menus.main]]
+    name = "Books"
+    url = "/books"
+    weight = 21
+    parent = "Personal"
