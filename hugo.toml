@@ -49,7 +49,7 @@ author = "Ugur Elveren"
       rel = 'external'
       class = 'right'
   [[menus.main]]
-    name = "Books"
+    name = "My Bookshelf"
     url = "/books"
-    weight = 21
+    weight = 50
     parent = "Personal"
