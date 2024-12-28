@@ -1,5 +1,4 @@
 ---
-date:  "2024-12-28T09:28:34-08:00"
 title: "Bucket Lists"
 description: "A collection of goals, dreams, and aspirations across different categories, from travel to personal growth, all in one place. Explore and get inspired!"
 author: "Ugur Elveren"

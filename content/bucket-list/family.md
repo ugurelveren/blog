@@ -1,5 +1,4 @@
 ---
-date: "2024-12-28T10:11:07-08:00"
 title: "Family Bucket List"
 description: "Life is short, and every day I miss another opportunity to do something meaningful with my family and loved ones. I want to create memories and special moments with them."
 author: "Ugur Elveren"
