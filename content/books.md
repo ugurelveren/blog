@@ -8,7 +8,7 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting"]
 
 | Book Title                                             | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
-| Night Watch                                           | `Jayne Anne Phillips`      | Fiction                | 2024-12-06  | Ongoing    |
+| Of Time and Turtles                                   | `Sy Montgomery`             | Non-fiction             | 2024-12-13  | 2024-12-27 |
 | On Tyranny: Twenty Lessons from the Twentieth Century | `Timothy Snyder`           | Political Science       | 2024-12-03  | 2024-12-06 |
 | Into the Wild                                         | `Jon Krakauer`             | Adventure/Non-fiction  | 2024-11-20  | 2024-12-04 |
 | Cannery Row                                           | `John Steinbeck`           | Fiction                | 2024-11-01  | 2024-11-14 |
