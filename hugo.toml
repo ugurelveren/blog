@@ -44,11 +44,15 @@ author = "Ugur Elveren"
     name = "Photos"
     pre = '<i class="fa fa-heart"></i>'
     url = 'https://photos.ugurelveren.com'
-    weight = 40
+    weight = 60
     [menus.main.params]
       rel = 'external'
       class = 'right'
   [[menus.main]]
     name = "My Bookshelf"
     url = "/books"
+    weight = 40
+ [[menus.main]]
+    name = "Bucket List"
+    url = "/categories/bucket-list"
     weight = 50
