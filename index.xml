@@ -38,6 +38,13 @@ prefix[i] = nums[0] + nums[1]+ nums[2] + .. + nums[i]
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
+ &lt;td>The Alchemist&lt;/td>
+ &lt;td>&lt;code>Paulo Coelho&lt;/code>&lt;/td>
+ &lt;td>Fiction/Philosophy&lt;/td>
+ &lt;td>2024-12-28&lt;/td>
+ &lt;td>2025-01-01&lt;/td>
+ &lt;/tr>
+ &lt;tr>
  &lt;td>Of Time and Turtles&lt;/td>
  &lt;td>&lt;code>Sy Montgomery&lt;/code>&lt;/td>
  &lt;td>Non-fiction&lt;/td>
