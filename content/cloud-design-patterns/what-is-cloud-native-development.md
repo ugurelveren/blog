@@ -42,12 +42,12 @@ Lets focus on the latest answer of Cloud Native foundation and understhat what t
 #### Loosely Coupled Systems
 Loosely coupled systems refer to a design approach where the components of the systems interact with each other in a way that minimizes dependencies. There are various way to communicate modules with eachother however most popular two ways are message queues and api. But it can be file based comunicaton, gRPC, service mesh or something else. 
 
-This sentence describes the key attributes of a well-designed cloud-native system (or modern software architecture). Let’s break it down:
+This sentence describes the key attributes of a well-designed cloud-native system (or modern software architecture). Let's break it down:
 
 Loosely Coupled Systems:
 
 The components of the system are independent and interact with each other through well-defined interfaces (like APIs).
-Changes or failures in one component don’t directly affect the others, allowing for easier updates and better fault tolerance.
+Changes or failures in one component don't directly affect the others, allowing for easier updates and better fault tolerance.
 Interoperate:
 
 These systems can work together seamlessly, often leveraging standardized communication protocols (like HTTP or gRPC) or messaging systems (like Kafka or RabbitMQ).
