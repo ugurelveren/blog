@@ -6,9 +6,10 @@ categories: ["Books", "Reading", "Personal"]
 tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting"]
 ---
 
-| Book Title                                             | Author                    | Genre                   | Start Date  | End Date   |
+| Book Title                                            | Author                    | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
-| Why We Sleep                                          | `Matthew Walker`           | Non-fiction/Science     | 2025-01-02  |  |
+| A Man Called Ove                                      | `Fredrik Backman`          | Fiction                 | 2025-01-20  |  |
+| Why We Sleep                                          | `Matthew Walker`           | Non-fiction/Science     | 2025-01-02  | 2025-01-18 |
 | The Alchemist                                         | `Paulo Coelho`             | Fiction/Philosophy      | 2024-12-28  | 2025-01-01 |
 | Of Time and Turtles                                   | `Sy Montgomery`            | Non-fiction             | 2024-12-13  | 2024-12-27 |
 | On Tyranny: Twenty Lessons from the Twentieth Century | `Timothy Snyder`           | Political Science       | 2024-12-03  | 2024-12-06 |
