@@ -10,11 +10,18 @@
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
+ &lt;td>A Man Called Ove&lt;/td>
+ &lt;td>&lt;code>Fredrik Backman&lt;/code>&lt;/td>
+ &lt;td>Fiction&lt;/td>
+ &lt;td>2025-01-20&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
  &lt;td>Why We Sleep&lt;/td>
  &lt;td>&lt;code>Matthew Walker&lt;/code>&lt;/td>
  &lt;td>Non-fiction/Science&lt;/td>
  &lt;td>2025-01-02&lt;/td>
- &lt;td>&lt;/td>
+ &lt;td>2025-01-18&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>The Alchemist&lt;/td>
