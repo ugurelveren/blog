@@ -6,9 +6,10 @@ categories: ["Books", "Reading", "Personal"]
 tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting"]
 ---
 
-| Book Title                                            | Author                    | Genre                   | Start Date  | End Date   |
+| Book Title                                            | Author                    | Genre                   | Start Date  | End Date    |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
-| A Man Called Ove                                      | `Fredrik Backman`          | Fiction                 | 2025-01-20  |  |
+| Why Buddhism is true : the science and philosophy of meditation and enlightenment | `Robert Wright` | Non-fiction| 2025-01-27  | |
+| A Man Called Ove                                      | `Fredrik Backman`          | Fiction                 | 2025-01-20  | 2025-01-27 |
 | Why We Sleep                                          | `Matthew Walker`           | Non-fiction/Science     | 2025-01-02  | 2025-01-18 |
 | The Alchemist                                         | `Paulo Coelho`             | Fiction/Philosophy      | 2024-12-28  | 2025-01-01 |
 | Of Time and Turtles                                   | `Sy Montgomery`            | Non-fiction             | 2024-12-13  | 2024-12-27 |
