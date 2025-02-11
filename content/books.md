@@ -6,9 +6,9 @@ categories: ["Books", "Reading", "Personal"]
 tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting"]
 ---
 
-| Book Title                                            | Author                    | Genre                   | Start Date  | End Date    |
+| Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
-| Why Buddhism is true : the science and philosophy of meditation and enlightenment | `Robert Wright` | Non-fiction| 2025-01-27  | |
+| Good Night, Sleep Tight	                            | `Robert Wright`            | Parenting/Sleep         | 2025-02-10  | In-Progress|
 | A Man Called Ove                                      | `Fredrik Backman`          | Fiction                 | 2025-01-20  | 2025-01-27 |
 | Why We Sleep                                          | `Matthew Walker`           | Non-fiction/Science     | 2025-01-02  | 2025-01-18 |
 | The Alchemist                                         | `Paulo Coelho`             | Fiction/Philosophy      | 2024-12-28  | 2025-01-01 |
@@ -16,7 +16,7 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting"]
 | On Tyranny: Twenty Lessons from the Twentieth Century | `Timothy Snyder`           | Political Science       | 2024-12-03  | 2024-12-06 |
 | Into the Wild                                         | `Jon Krakauer`             | Adventure/Non-fiction   | 2024-11-20  | 2024-12-04 |
 | Cannery Row                                           | `John Steinbeck`           | Fiction                 | 2024-11-01  | 2024-11-14 |
-| On Becoming Baby Wise: Giving Your Infant the Gift of Nighttime Sleep | `Gary Ezzo and Robert Bucknam` | Parenting             | 2024-10-15  | 2024-10-31 |
+| On Becoming Baby Wise: Giving Your Infant the Gift of Nighttime Sleep | `Gary Ezzo and Robert Bucknam` | Parenting         | 2024-10-15 | 2024-10-31 |
 | Why the North Star Stands Still and Other Indian Legends | `William R. Palmer`     | Folklore                | 2024-10-01  | 2024-10-14 |
 | The Sun Also Rises                                    | `Ernest Hemingway`         | Fiction                 | 2024-09-15  | 2024-09-30 |
 | The Power of Now: A Guide to Spiritual Enlightenment  | `Eckhart Tolle`            | Self-help/Spirituality  | 2024-09-01  | 2024-09-14 |
