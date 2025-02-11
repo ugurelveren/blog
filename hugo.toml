@@ -1,7 +1,7 @@
 baseURL = "https://blog.ugurelveren.com"
 languageCode = "en-us"
 title = "Ugur's Personal Documentation"
-theme = "mainroad"
+theme = "expresslane"
 author = "Ugur Elveren"
 
 
