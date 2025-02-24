@@ -38,6 +38,13 @@ prefix[i] = nums[0] + nums[1]+ nums[2] + .. + nums[i]
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
+ &lt;td>In Defense of Food: An Eater&amp;rsquo;s Manifesto&lt;/td>
+ &lt;td>&lt;code>Michael Pollan&lt;/code>&lt;/td>
+ &lt;td>Non-fiction/Health&lt;/td>
+ &lt;td>2025-02-20&lt;/td>
+ &lt;td>In-Progress&lt;/td>
+ &lt;/tr>
+ &lt;tr>
  &lt;td>Good Night, Sleep Tight&lt;/td>
  &lt;td>&lt;code>Robert Wright&lt;/code>&lt;/td>
  &lt;td>Parenting/Sleep&lt;/td>
@@ -96,7 +103,7 @@ prefix[i] = nums[0] + nums[1]+ nums[2] + .. + nums[i]
  &lt;tr>
  &lt;td>On Becoming Baby Wise: Giving Your Infant the Gift of Nighttime Sleep&lt;/td>
  &lt;td>&lt;code>Gary Ezzo and Robert Bucknam&lt;/code>&lt;/td>
- &lt;td>Parenting&lt;/td>
+ &lt;td>Parenting/Sleep&lt;/td>
  &lt;td>2024-10-15&lt;/td>
  &lt;td>2024-10-31&lt;/td>
  &lt;/tr>
@@ -301,6 +308,12 @@ prefix[i] = nums[0] + nums[1]+ nums[2] + .. + nums[i]
  &lt;td>York, UK&lt;/td>
  &lt;td>&lt;a href="https://www.openstreetmap.org/#map=14/53.9590/-1.0815">OpenStreetMap&lt;/a>&lt;/td>
  &lt;td>✅&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>18&lt;/td>
+ &lt;td>Antarctica&lt;/td>
+ &lt;td>&lt;a href="https://www.openstreetmap.org/#map=4/-61.14/-64.60">OpenStreetMap&lt;/a>&lt;/td>
+ &lt;td>❌&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table></description></item></channel></rss>

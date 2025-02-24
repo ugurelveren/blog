@@ -62,5 +62,11 @@
  &lt;td>&lt;a href="https://www.openstreetmap.org/#map=14/53.9590/-1.0815">OpenStreetMap&lt;/a>&lt;/td>
  &lt;td>✅&lt;/td>
  &lt;/tr>
+ &lt;tr>
+ &lt;td>18&lt;/td>
+ &lt;td>Antarctica&lt;/td>
+ &lt;td>&lt;a href="https://www.openstreetmap.org/#map=4/-61.14/-64.60">OpenStreetMap&lt;/a>&lt;/td>
+ &lt;td>❌&lt;/td>
+ &lt;/tr>
  &lt;/tbody>
 &lt;/table></description></item></channel></rss>
