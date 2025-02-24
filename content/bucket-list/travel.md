@@ -7,8 +7,8 @@ tags: ["Bucket List", "Personal"]
 ---
 
 
-| **#** | **Destination**                       | **Notes**                                                                 | **Status**  |
-|-------|---------------------------------------|---------------------------------------------------------------------------|-------------|
+| **#** | **Destination**                       | **Notes**                                                               | **Status**  |
+|-------|---------------------------------------|-------------------------------------------------------------------------|-------------|
 | 1     | Northern Lights, Norway              | [OpenStreetMap](https://www.openstreetmap.org/#map=7/69.6492/18.9560)    | ❌          |
 | 2     | Grand Canyon, USA                    | [OpenStreetMap](https://www.openstreetmap.org/#map=10/36.1069/-112.1129) | ✅          |
 | 3     | Cappadocia, Turkey                   | [OpenStreetMap](https://www.openstreetmap.org/#map=11/38.6431/34.8283)   | ✅          |
@@ -18,5 +18,6 @@ tags: ["Bucket List", "Personal"]
 | 15    | Cannery Row, Monterey, USA           | [OpenStreetMap](https://www.openstreetmap.org/#map=16/36.6138/-121.8980) | ❌          |
 | 16    | Nice, France                         | [OpenStreetMap](https://www.openstreetmap.org/#map=13/43.7102/7.2620)    | ✅          |
 | 17    | York, UK                             | [OpenStreetMap](https://www.openstreetmap.org/#map=14/53.9590/-1.0815)   | ✅          |
+| 18    | Antarctica                           | [OpenStreetMap](https://www.openstreetmap.org/#map=4/-61.14/-64.60)      | ❌          |
 
 
