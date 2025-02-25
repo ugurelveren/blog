@@ -5,6 +5,10 @@ author: "Ugur Elveren"
 categories: ["Technical","SRE", "DevOps"]
 tags: ["Monitoring", "Observability", "Monitoring Smells", "SRE", "DevOps"]
 description: "Learn how to identify and fix common monitoring smells that can hurt your system's reliability. Discover actionable strategies for smarter alerts, better visibility, and faster problem resolution to keep your production systems running smoothly."
+mastocomments:
+  host: hachyderm.io
+  username: ugur
+  id: 113522002355892638
 ---
 
 
