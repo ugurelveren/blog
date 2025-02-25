@@ -19,9 +19,14 @@ author = "Ugur Elveren"
 
 
 [[Params.widgets.social.custom]]
-  title = "My Home Page"
+  title = "Home Page"
   url = "https://ugurelveren.com"
   rel = "me"
+
+[Params.widgets.social]
+  github = "ugurelveren"
+  mastodon = "https://hachyderm.io/@ugur"
+
 
 [Params]
   post_meta = ["author", "date", "categories", "translations"]
