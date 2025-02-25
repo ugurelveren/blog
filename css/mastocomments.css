@@ -1,0 +1,146 @@
+/* Comments Container */
+#comments-wrapper {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 10px;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  }
+  
+  /* Each Comment Box */
+  .comment {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  
+  .comment:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Avatar Styling */
+  .avatar-link {
+    flex-shrink: 0;
+  }
+  
+  .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #ddd;
+  }
+  
+  /* Comment Content Container */
+  .comment-content {
+    flex: 1;
+  }
+  
+  /* Header: Author Name & Instance URL on Separate Lines */
+  .comment-content header.author {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .comment-content header.author .display {
+    display: block;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .comment-content header.author .instance {
+    display: block;
+    font-size: 0.875rem;
+    color: #777;
+    margin-top: 5px;
+  }
+  
+  /* Optional: Add a label before the instance URL */
+  .comment-content header.author .instance::before {
+    content: "Website: ";
+    font-weight: normal;
+    margin-right: 3px;
+  }
+  
+  /* Time Information */
+  .comment-content time {
+    display: block;
+    font-size: 0.8rem;
+    color: #999;
+    margin-bottom: 10px;
+  }
+  
+  /* Comment Text */
+  .comment-content main p {
+    margin: 0 0 10px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #444;
+  }
+  
+  /* Footer (Favorites, etc.) */
+  .comment-content footer {
+    font-size: 0.8rem;
+    color: #999;
+  }
+  
+  /* Indented Reply Box */
+  .comment.comment-reply {
+    margin-left: 40px;
+    border-left: 3px solid #ddd;
+    padding-left: 15px;
+  }
+  
+  /* Responsive Adjustments for Mobile Devices */
+  @media screen and (max-width: 767px) {
+    /* Container Adjustments */
+    #comments-wrapper {
+      max-width: 100%;
+      margin: 20px auto;
+      padding: 10px;
+    }
+  
+    /* Stack the comment box vertically */
+    .comment {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    /* Smaller avatar for mobile */
+    .avatar {
+      width: 40px;
+      height: 40px;
+    }
+  
+    /* Center avatar if desired (optional) */
+    .avatar-link {
+      align-self: center;
+    }
+  
+    /* Adjust header text sizes */
+    .comment-content header.author .display {
+      font-size: 1rem;
+    }
+    .comment-content header.author .instance {
+      font-size: 0.8rem;
+    }
+    .comment-content time {
+      font-size: 0.75rem;
+    }
+    .comment-content main p {
+      font-size: 0.95rem;
+    }
+  
+    /* Reduce reply indent on mobile */
+    .comment.comment-reply {
+      margin-left: 20px;
+      padding-left: 10px;
+      border-left-width: 2px;
+    }
+  }
+  
