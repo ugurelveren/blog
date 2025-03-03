@@ -8,7 +8,8 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
-| In Defense of Food: An Eater's Manifesto	            | `Michael Pollan`           | Non-fiction/Health      | 2025-02-20  | In-Progress|
+| On the Hippie Trail: Istanbul to Kathmandu and the Making of a Travel Writer | `Rick Steves` | Non-fiction/Travel | 2025-03-03  | In-Progress |
+| In Defense of Food: An Eater's Manifesto	            | `Michael Pollan`           | Non-fiction/Health      | 2025-02-20  | 2025-02-28 |
 | Good Night, Sleep Tight	                            | `Robert Wright`            | Parenting/Sleep         | 2025-02-10  | In-Progress|
 | A Man Called Ove                                      | `Fredrik Backman`          | Fiction                 | 2025-01-20  | 2025-01-27 |
 | Why We Sleep                                          | `Matthew Walker`           | Non-fiction/Science     | 2025-01-02  | 2025-01-18 |
