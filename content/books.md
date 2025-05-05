@@ -8,9 +8,11 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
-| Kuyucakli Yusuf - ( Yusuf from Kuyucak )| `Sabahattin Ali` | Fiction | 2025-04-19| 2025-04-27 |
-| Kurk Mantolu Madonna - (Madonna in a Fur Coat )| `Sabahattin Ali` | Fiction | 2025-03-29| 2025-04-10 |
-| On the Hippie Trail: Istanbul to Kathmandu and the Making of a Travel Writer | `Rick Steves` | Non-fiction/Travel | 2025-03-03| 2025-03-15  |
+| Holding a Broken Heart - (Kirik bir kalbi tutmak)     | `Suzi Amado`               | Psychology              | 2025-05-04  | In Progress|
+| Motherland Hotel - (Anayurt Oteli)                    | `Yusuf Atilgan`            | Fiction                 | 2025-04-27  | 2025-05-04 |
+| Yusuf from Kuyucak - (Kuyucakli Yusuf)                | `Sabahattin Ali`           | Fiction                 | 2025-04-19  | 2025-04-27 |
+| Madonna in a Fur Coat - (Kurk Mantolu Madonna)        | `Sabahattin Ali`           | Fiction                 | 2025-03-29  | 2025-04-10 |
+| On the Hippie Trail: Istanbul to Kathmandu and the Making of a Travel Writer | `Rick Steves` | Non-fiction/Travel | 2025-03-03| 2025-03-15|
 | In Defense of Food: An Eater's Manifesto	            | `Michael Pollan`           | Non-fiction/Health      | 2025-02-20  | 2025-02-28 |
 | Good Night, Sleep Tight	                            | `Robert Wright`            | Parenting/Sleep         | 2025-02-10  | 2025-03-10|
 | A Man Called Ove                                      | `Fredrik Backman`          | Fiction                 | 2025-01-20  | 2025-01-27 |
