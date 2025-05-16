@@ -38,11 +38,18 @@ prefix[i] = nums[0] + nums[1]+ nums[2] + .. + nums[i]
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
+ &lt;td>The memoirs of Vartanus the tailor from Zara - (Zara&amp;rsquo;li Terzi Vartanu&amp;rsquo;un Anilari)&lt;/td>
+ &lt;td>&lt;code>Avedis Olgun&lt;/code>&lt;/td>
+ &lt;td>Personal Memoir&lt;/td>
+ &lt;td>2025-05-15&lt;/td>
+ &lt;td>In Progress&lt;/td>
+ &lt;/tr>
+ &lt;tr>
  &lt;td>Holding a Broken Heart - (Kirik bir kalbi tutmak)&lt;/td>
  &lt;td>&lt;code>Suzi Amado&lt;/code>&lt;/td>
  &lt;td>Psychology&lt;/td>
  &lt;td>2025-05-04&lt;/td>
- &lt;td>In Progress&lt;/td>
+ &lt;td>2025-05-12&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Motherland Hotel - (Anayurt Oteli)&lt;/td>
