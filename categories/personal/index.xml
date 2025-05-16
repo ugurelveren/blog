@@ -248,6 +248,12 @@
  &lt;td>Course&lt;/td>
  &lt;td>❌&lt;/td>
  &lt;/tr>
+ &lt;tr>
+ &lt;td>Site Reliability Engineering: How Google Runs Production&lt;/td>
+ &lt;td>&lt;a href="https://sre.google/sre-book/table-of-contents/">Google&lt;/a>&lt;/td>
+ &lt;td>Course&lt;/td>
+ &lt;td>✅&lt;/td>
+ &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;hr>
