@@ -9,12 +9,13 @@ tags: ["Bucket List"]
 
 
 ## Learning Hub
-| **Topic**                           | **Link**                                                                                   | **Type**       | **Status** |
+| **Topic**  | **Link**      | **Type**       | **Status** |
 |-------------------------------------|-------------------------------------------------------------------------------------------|----------------|------------|
-| Go: Big Picture                     | [Pluralsight](https://app.pluralsight.com/library/courses/big-picture-go)                 | Course         | ✅          |
-| Go Fundamentals                     | [Pluralsight](https://app.pluralsight.com/library/courses/fundamentals-go)                | Course         | ❌           |
+| Go: Big Picture | [Pluralsight](https://app.pluralsight.com/library/courses/big-picture-go)       | Course         | ✅          |
+| Go Fundamentals | [Pluralsight](https://app.pluralsight.com/library/courses/fundamentals-go)      | Course         | ❌           |
 | Designing Data-Intensive Applications | [O'Reilly](https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/) | Book           | ❌           |
-| Creating Web Services with Go       | [Pluralsight](https://app.pluralsight.com/library/courses/creating-web-services-go)       | Course         | ❌           |
+| Creating Web Services with Go   | [Pluralsight](https://app.pluralsight.com/library/courses/creating-web-services-go)   | Course          | ❌           |
+| Site Reliability Engineering: How Google Runs Production  | [Google](https://sre.google/sre-book/table-of-contents/)       | Course         | ✅          |
 
 ---
 
