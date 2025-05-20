@@ -97,7 +97,7 @@ A banking application deployed on Azure follows modern security practices by usi
 - Azure API Management acts as a secure, throttled gateway for exposing internal APIs
 - Azure Disk Encryption ensures that all stored data is encrypted at rest
 
-Each microservice is deployed as an isolated unit using Azure Container Apps and is granted **Managed Identities**. This enables secure communication with other services and access to resources—without the need to manage credentials or Kubernetes infrastructure. The result is a tightly secured, cloud-native environment that meets enterprise-grade compliance requirements by design.
+Each microservice is deployed as an isolated unit using Azure Container Apps and is granted **Managed Identities**. This enables secure communication with other services and access to resources, without the need to manage credentials or Kubernetes infrastructure. The result is a tightly secured, cloud-native environment that meets enterprise-grade compliance requirements by design.
 
 ---
 
@@ -114,7 +114,7 @@ A video streaming platform built on AWS achieves resilience through a combinatio
    - Amazon Route 53 enables global DNS-based failover, distributing user traffic across multiple regions
    - Amazon Aurora Multi-AZ ensures high availability for databases with automatic failover to standby replicas
 
-If an entire AWS region becomes unavailable, **traffic is seamlessly rerouted to a healthy region**, ensuring continuous playback for users—with little to no disruption.
+If an entire AWS region becomes unavailable, **traffic is seamlessly rerouted to a healthy region**, ensuring continuous playback for users with little to no disruption.
 
 ---
 
@@ -146,7 +146,7 @@ A fast-growing retail startup on Google Cloud embraces sustainability by designi
    - Data is stored in Cloud Firestore, a serverless NoSQL database that scales automatically
    - Google Cloud Recommender and budget alerts help the team identify idle resources and control spending proactively
 
-This architecture allows the team to grow without overprovisioning, lowering both **infrastructure costs** and their carbon footprint—an important advantage for modern, conscious tech companies.
+This architecture allows the team to grow without overprovisioning, lowering both **infrastructure costs** and their carbon footprint.
 
 
 ---
@@ -163,7 +163,7 @@ A logistics company operating on AWS ensures deep observability across its platf
    - AWS CloudTrail tracks API calls and infrastructure changes for security and compliance auditing
    - CloudWatch Synthetics runs automated canary tests to simulate and monitor real user journeys
 
-With this setup, the team can **investigate issues end-to-end—from API requests to backend processing**. Reducing downtime and improving response times across their microservice architecture.
+With this setup, the team can **investigate issues end-to-end from API requests to backend processing**. Reducing downtime and improving response times across their microservice architecture.
 
 
 ### Why the Definition Evolved
