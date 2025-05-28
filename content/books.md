@@ -8,7 +8,8 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
-| The memoirs of Vartanus the tailor from Zara - (Zara'li Terzi Vartanu'un Anilari) | `Avedis Olgun`|  Personal Memoir| 2025-05-15 | In Progress |
+| Essential Sufism                                      | `James Fadiman & Robert Frager`|  Spirituality / Religion| 2025-05-24 | In Progress |
+| The memoirs of Vartanus the tailor from Zara - (Zara'li Terzi Vartanu'un Anilari) | `Avedis Olgun`|  Personal Memoir| 2025-05-15 | 2025-05-23 |
 | Holding a Broken Heart - (Kirik bir kalbi tutmak)     | `Suzi Amado`               | Psychology              | 2025-05-04  | 2025-05-12 |
 | Motherland Hotel - (Anayurt Oteli)                    | `Yusuf Atilgan`            | Fiction                 | 2025-04-27  | 2025-05-04 |
 | Yusuf from Kuyucak - (Kuyucakli Yusuf)                | `Sabahattin Ali`           | Fiction                 | 2025-04-19  | 2025-04-27 |
