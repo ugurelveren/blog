@@ -8,7 +8,7 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
-| The Tech Coup: How to Save Democracy from Silicon Valley| `Marietje Schaake`       |  Political non-fiction  | 2025-06-03  | 2025-06-09 |
+| The Tech Coup: How to Save Democracy from Silicon Valley| `Marietje Schaake`       |  Political non-fiction  | 2025-06-09  | In-Progress|
 | The Essential Rumi                                    | `Rumi & Coleman Barks`     |  Spiritual poetry       | 2025-06-03  | 2025-06-09 |
 | Essential Sufism                                      | `James Fadiman & Robert Frager`|  Spirituality / Religion| 2025-05-24 | 2025-06-02 |
 | The memoirs of Vartanus the tailor from Zara - (Zara'li Terzi Vartanu'un Anilari) | `Avedis Olgun`|  Personal Memoir| 2025-05-15 | 2025-05-23 |
