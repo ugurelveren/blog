@@ -8,7 +8,9 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
-| Mindset: The New Psychology of Success (audio)        | `Carol S. Dweck`           |  Psychology Non-Fiction | 2025-07-21  |In-Progress |
+| The Secret Life of Cows  (audio)                      | `Rosamund Young`           |  Nature  Non-Fiction    | 2025-08-07  |In-Progress |
+| Why We Eat (Too Much): The New Science of Appetite    | `Dr Andrew Jenkinson `     |  Health & Wellness / Non-Fiction | 2025-08-02  |In-Progress |
+| Mindset: The New Psychology of Success (audio)        | `Carol S. Dweck`           |  Psychology Non-Fiction | 2025-07-21  |2025-08-07 |
 | Dare to Lead: : Brave Work. Tough Conversations. Whole Hearts - (audio)| `Brené Brown` | Business non-fiction   | 2025-06-25  | 2025-07-21 |
 | Give and Take: A Revolutionary Approach to Success    | `Adam M. Grant`            |  Psychology non-fiction | 2025-06-20  | 2025-07-21 |
 | The Tech Coup: How to Save Democracy from Silicon Valley| `Marietje Schaake`       |  Political non-fiction  | 2025-06-09  | 2025-06-20 |
