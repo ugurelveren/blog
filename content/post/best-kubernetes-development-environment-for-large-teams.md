@@ -115,6 +115,9 @@ kind create cluster --name dev --config kind-config.yaml
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
 ```
 
+### Comparison Chart
+```
+
 ------------------------------------------------------------------------
 
 ### Alternatives to KIND
@@ -150,6 +153,27 @@ Most modern development laptops can handle KIND without breaking a sweat. You do
 
 KIND is designed mainly for **small development and testing
 environments**.
+
+### Comparison Chart
+
+  --------------------------------------------------------------------------------
+  Tool       Setup     Runs in      CI         Multi    Matches       Best for
+             speed     Docker       friendly   node     upstream      
+  ---------- --------- ------------ ---------- -------- ------------- ------------
+  KIND       Fast      Yes          Yes        Yes      Yes           CI testing,
+                                                                      local dev
+
+  Minikube   Medium    Yes          Yes        Yes      Yes           General
+                                                                      purpose,
+                                                                      learning
+
+  k3d        Fast      Yes          Yes        Yes      Close         Resource
+                                                                      constrained
+                                                                      environments
+
+  MicroK8s   Medium    No           Yes        Yes      Yes           Ubuntu,
+                                                                      edge/IoT
+  --------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
@@ -206,6 +230,26 @@ Whether you have 5 developers or 50, DevSpace's profile system lets you create d
 **Debugging that actually works**
 Traditional Kubernetes debugging involves a lot of kubectl logs and guesswork. DevSpace lets you attach real debuggers to your containers, set breakpoints, and step through code just like local development. This saves hours of frustration and makes complex distributed systems much easier to troubleshoot.
 
+### Comparison Chart
+
+  --------------------------------------------------------------------------------
+  Tool        File Sync    Hot         Debugging    Learning    Team      Best for
+                           Reload                   Curve       Profiles
+  ----------- ------------ ----------- ------------ ----------- --------- -----------
+  DevSpace    Yes          Yes         Full         Medium      Yes       Team
+                                      debugger                            standardization
+
+  Skaffold    Yes          Yes         Basic        Medium      Limited   Google Cloud
+                                                                         integration
+
+  Tilt        Yes          Yes         Good         High        No        Complex
+                                                                         development
+                                                                         workflows
+
+  Garden      Yes          Limited     Basic        High        Yes       Enterprise
+                                                                         microservices
+  --------------------------------------------------------------------------------
+
 ------------------------------------------------------------------------
 
 ## What is DevContainers?
@@ -261,11 +305,28 @@ When you see companies like Microsoft, Google, and countless startups standardiz
 **Future-proof investment**
 As remote and hybrid work become the norm, having a standardized, portable development environment isn't just nice to have - it's essential. DevContainers let your team work consistently whether they're in the office, at home, or collaborating with contractors and external teams. It's an investment that pays dividends as your team scales and evolves.
 
-------------------------------------------------------------------------
+### Comparison Chart
 
-## Managing with Helm Charts
+  --------------------------------------------------------------------------------
+  Solution       Setup      Cross-      Resource    IDE          Isolation   Best for
+                 Time       Platform    Usage       Support
+  -------------- ---------- ----------- ----------- ------------ ----------- -----------
+  DevContainers  Minutes    Excellent   Low         VS Code,     Complete    IDE-integrated
+                                                   JetBrains,              development
+                                                   Web IDEs                
 
-Helm standardizes Kubernetes manifests and pairs with DevSpace...
+  Docker         Minutes    Excellent   Medium      Any          Good        Service
+  Compose                                                                   orchestration
+
+  Vagrant        Hours      Good        High        Any          Complete    Full VM
+                                                                           isolation
+
+  Nix            Hours      Excellent   Low         Any          Good        Reproducible
+                                                                           builds
+
+  Cloud IDEs     Seconds    Perfect     Zero        Browser      Complete    Remote
+                                                   only                    development
+  --------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
@@ -348,27 +409,6 @@ graph TD
     G
   end
 ```
-
-------------------------------------------------------------------------
-
-## Comparison Chart
-
-  --------------------------------------------------------------------------------
-  Tool       Setup     Runs in      CI         Multi    Matches       Best for
-             speed     Docker       friendly   node     upstream      
-  ---------- --------- ------------ ---------- -------- ------------- ------------
-  KIND       Fast      Yes          Yes        Yes      Yes           Large teams,
-                                                                      CI tests
-
-  Minikube   Medium    Partial      Limited    Yes      Yes           Single
-                                                                      laptop
-                                                                      setups
-
-  k3d        Fast      Yes          Yes        Yes      Close         Edge, small
-                                                                      machines
-
-  MicroK8s   Medium    No           Partial    Yes      Yes           Ubuntu/IoT
-  --------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
