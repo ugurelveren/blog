@@ -1,0 +1,50 @@
+{
+  "name": "Hugo Blog Development",
+  "image": "mcr.microsoft.com/devcontainers/go:1-1.21-bullseye",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18"
+    },
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+
+  "postCreateCommand": ".devcontainer/setup.sh",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bungcip.better-toml",
+        "davidanson.vscode-markdownlint",
+        "yzhang.markdown-all-in-one",
+        "ms-vscode.vscode-json",
+        "redhat.vscode-yaml",
+        "budparr.language-hugo-vscode",
+        "eliostruyf.vscode-hugo-themer"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "files.associations": {
+          "*.toml": "toml",
+          "*.md": "markdown"
+        },
+        "markdown.preview.breaks": true,
+        "markdown.preview.linkify": true
+      }
+    }
+  },
+
+  "forwardPorts": [1313],
+  "portsAttributes": {
+    "1313": {
+      "label": "Hugo Dev Server",
+      "onAutoForward": "notify"
+    }
+  },
+
+  "mounts": [
+    "source=${localWorkspaceFolder}/.git,target=/workspaces/blog/.git,type=bind,consistency=cached"
+  ],
+
+  "remoteUser": "vscode"
+}
