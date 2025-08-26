@@ -1,15 +1,24 @@
 {
   "name": "Hugo Blog Development",
-  "image": "mcr.microsoft.com/devcontainers/go:1-1.21-bullseye",
+  "image": "mcr.microsoft.com/devcontainers/base:alpine-3.19",
   
   "features": {
     "ghcr.io/devcontainers/features/node:1": {
       "version": "18"
     },
-    "ghcr.io/devcontainers/features/git:1": {}
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": false,
+      "installOhMyZsh": false,
+      "upgradePackages": true,
+      "username": "vscode",
+      "uid": "1000",
+      "gid": "1000"
+    }
   },
 
-  "postCreateCommand": ".devcontainer/setup.sh",
+  "postCreateCommand": "bash /workspaces/blog/.devcontainer/setup.sh",
+  "postStartCommand": "echo '🎉 Hugo blog DevContainer ready! Use ./dev.sh or blog-draft to start developing.'",
 
   "customizations": {
     "vscode": {

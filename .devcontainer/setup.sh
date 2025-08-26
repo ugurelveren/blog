@@ -1,17 +1,14 @@
+
 #!/bin/bash
 
 # Hugo Blog DevContainer Setup Script
 echo "🚀 Setting up Hugo blog development environment..."
 
-# Install Hugo extended version
-HUGO_VERSION="0.119.0"
-echo "📦 Installing Hugo v${HUGO_VERSION}..."
+# Install Hugo using Alpine package manager
+echo "📦 Installing Hugo..."
 
-# Download and install Hugo
-cd /tmp
-wget -q "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
-tar -xzf "hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
-sudo mv hugo /usr/local/bin/
+# Update package index and install Hugo extended version from Alpine packages
+apk update && apk add --no-cache hugo
 
 # Verify Hugo installation
 echo "✅ Hugo version:"
@@ -20,19 +17,54 @@ hugo version
 # Install additional tools for blog development
 echo "📦 Installing additional development tools..."
 
-# Install npm packages globally for potential theme development
-npm install -g markdownlint-cli
+# Install npm packages globally for potential theme development (if npm is available)
+if command -v npm &> /dev/null; then
+    npm install -g markdownlint-cli
+fi
 
 # Set up git submodules (themes)
 echo "🎨 Initializing git submodules..."
 cd /workspaces/blog
 git submodule update --init --recursive
 
-# Create useful aliases
+# Create useful aliases in the current user's shell config
 echo "⚙️  Setting up development aliases..."
-echo 'alias blog-serve="hugo server --bind 0.0.0.0 --port 1313 --disableFastRender"' >> ~/.bashrc
-echo 'alias blog-build="hugo --cleanDestinationDir"' >> ~/.bashrc
-echo 'alias blog-draft="hugo server --bind 0.0.0.0 --port 1313 --buildDrafts --disableFastRender"' >> ~/.bashrc
+
+# Handle different environments (DevContainer vs Codespace)
+if [ "$USER" = "vscode" ] && [ "$HOME" = "/home/codespace" ]; then
+    # Codespace environment - user is vscode but HOME is /home/codespace
+    SHELL_RC="/home/vscode/.bashrc"
+    # Also create aliases in the actual home directory
+    SHELL_RC_ALT="$HOME/.bashrc"
+elif [ "$USER" = "vscode" ]; then
+    # Standard DevContainer environment
+    SHELL_RC="/home/vscode/.bashrc"
+else
+    # Fallback to current user's home
+    SHELL_RC="$HOME/.bashrc"
+fi
+
+# Create the bashrc file if it doesn't exist
+if [ ! -f "$SHELL_RC" ]; then
+    mkdir -p "$(dirname "$SHELL_RC")"
+    touch "$SHELL_RC"
+fi
+
+# Add aliases to the bashrc
+echo 'alias blog-serve="hugo server --bind 0.0.0.0 --port 1313 --disableFastRender"' >> "$SHELL_RC"
+echo 'alias blog-build="hugo --cleanDestinationDir"' >> "$SHELL_RC"
+echo 'alias blog-draft="hugo server --bind 0.0.0.0 --port 1313 --buildDrafts --disableFastRender"' >> "$SHELL_RC"
+
+# Also add to alternative location if it exists
+if [ -n "$SHELL_RC_ALT" ] && [ "$SHELL_RC_ALT" != "$SHELL_RC" ]; then
+    if [ ! -f "$SHELL_RC_ALT" ]; then
+        mkdir -p "$(dirname "$SHELL_RC_ALT")"
+        touch "$SHELL_RC_ALT"
+    fi
+    echo 'alias blog-serve="hugo server --bind 0.0.0.0 --port 1313 --disableFastRender"' >> "$SHELL_RC_ALT"
+    echo 'alias blog-build="hugo --cleanDestinationDir"' >> "$SHELL_RC_ALT"
+    echo 'alias blog-draft="hugo server --bind 0.0.0.0 --port 1313 --buildDrafts --disableFastRender"' >> "$SHELL_RC_ALT"
+fi
 
 # Create a simple development script
 cat > /workspaces/blog/dev.sh << 'EOF'
