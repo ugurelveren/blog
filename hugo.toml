@@ -4,6 +4,11 @@ title = "Ugur's Personal Documentation"
 theme = "expresslane"
 author = "Ugur Elveren"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 
 [Params.sidebar]
   home = "right"

@@ -1,15 +1,12 @@
 {
   "name": "Hugo Blog Development",
-  "image": "mcr.microsoft.com/devcontainers/base:alpine-3.19",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:18-bullseye",
   
   "features": {
-    "ghcr.io/devcontainers/features/node:1": {
-      "version": "18"
-    },
     "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/common-utils:2": {
-      "installZsh": false,
-      "installOhMyZsh": false,
+      "installZsh": true,
+      "installOhMyZsh": true,
       "upgradePackages": true,
       "username": "vscode",
       "uid": "1000",
@@ -23,13 +20,16 @@
   "customizations": {
     "vscode": {
       "extensions": [
+        "github.copilot",
+        "github.copilot-chat",
         "bungcip.better-toml",
         "davidanson.vscode-markdownlint",
         "yzhang.markdown-all-in-one",
         "ms-vscode.vscode-json",
         "redhat.vscode-yaml",
         "budparr.language-hugo-vscode",
-        "eliostruyf.vscode-hugo-themer"
+        "eliostruyf.vscode-front-matter",
+        "fivethree.vscode-hugo-snippets"
       ],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "bash",
@@ -50,10 +50,6 @@
       "onAutoForward": "notify"
     }
   },
-
-  "mounts": [
-    "source=${localWorkspaceFolder}/.git,target=/workspaces/blog/.git,type=bind,consistency=cached"
-  ],
 
   "remoteUser": "vscode"
 }
