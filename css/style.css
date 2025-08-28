@@ -1316,3 +1316,22 @@ textarea {
 		font-size: .6875rem;
 	}
 }
+
+/* Mermaid diagram styles */
+.mermaid {
+	text-align: center;
+	margin: 1em 0;
+	padding: 1em;
+	border: 1px solid #e5e5e5;
+	border-radius: 4px;
+	background-color: #fafafa;
+	overflow-x: auto;
+}
+
+@media screen and (max-width: 767px) {
+	.mermaid {
+		margin: 0.5em 0;
+		padding: 0.5em;
+		font-size: 0.8em;
+	}
+}
