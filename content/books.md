@@ -8,8 +8,11 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
-| Educated (audio)                                     | `Tara Westover`            | Memoir/Non-Fiction      | 2025-08-13  | In-Progress |
-| The Anxious Generation                               | `Jonathan Haidt`           | Psychology/Non-Fiction  | 2025-08-11  | In-Progress |
+| After Dark (audio)                                   | `Haruki Murakami`          | Fiction                 | 2025-09-06  | In-Progress |
+| Let Fathers Grow Up (Yetisin Babalar)               | `Selcuk Sirin`             | Parenting/Self-help     | 2025-09-02  | In-Progress |
+| What I Talk About When I Talk About Running (audio) | `Haruki Murakami`          | Memoir/Non-Fiction      | 2025-09-03  | 2025-09-04 |
+| Educated (audio)                                     | `Tara Westover`            | Memoir/Non-Fiction      | 2025-08-13  | 2025-09-03 |
+| The Anxious Generation                               | `Jonathan Haidt`           | Psychology/Non-Fiction  | 2025-08-11  | 2025-09-01 |
 | The Secret Life of Cows  (audio)                      | `Rosamund Young`           |  Nature  Non-Fiction    | 2025-08-07  |2025-08-13 |
 | Why We Eat (Too Much): The New Science of Appetite    | `Dr Andrew Jenkinson `     |  Health & Wellness / Non-Fiction | 2025-08-02  |2025-08-11 |
 | Mindset: The New Psychology of Success (audio)        | `Carol S. Dweck`           |  Psychology Non-Fiction | 2025-07-21  |2025-08-07 |
