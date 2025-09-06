@@ -8,6 +8,8 @@ tags: ["kubernetes", "DevContainers", "KIND", "DevSpace"]
 description: "Discover how to set up a standardized Kubernetes development environment for large engineering teams using KIND, DevSpace, and DevContainers. Learn to eliminate 'works on my machine' problems, reduce onboarding time, and create consistent local development workflows that scale."
 ---
 
+![Local development environment setup showing KIND, DevSpace, and DevContainers working together for standardized Kubernetes development workflows.](/images/LocalDev.jpg)
+
 At my company, we've been having discussions about finding the best local development environment for our engineering teams. We noticed that inconsistent development setups were slowing down our productivity. So I decided to dig deeper and research the best solutions.
 
 In this article, I'll share what I discovered during my investigation.
