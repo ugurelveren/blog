@@ -8,8 +8,11 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
-| After Dark (audio)                                   | `Haruki Murakami`          | Fiction                 | 2025-09-06  | In-Progress |
-| Let Fathers Grow Up (Yetisin Babalar)               | `Selcuk Sirin`             | Parenting/Self-help     | 2025-09-02  | In-Progress |
+| Wild (audio)                                          | `Cheryl Strayed`           | Memoir/Non-Fiction      | 2025-09-18  | In-Progress |
+| How God Works: The Science Behind the Benefits of Religion | `David DeSteno`      | Psychology/Religion     | 2025-09-17  | In-Progress |
+| 10 Experiments That Will Change Your Perspective (Bakisinizi Degistirecek 10 Deney) | `Selcuk Sirin` | Psychology/Self-help | 2025-09-13 | 2025-09-16 |
+| After Dark (audio)                                   | `Haruki Murakami`          | Fiction                 | 2025-09-06  | 2025-09-16 |
+| Let Fathers Grow Up (Yetisin Babalar)               | `Selcuk Sirin`             | Parenting/Self-help     | 2025-09-02  | 2025-09-12 |
 | What I Talk About When I Talk About Running (audio) | `Haruki Murakami`          | Memoir/Non-Fiction      | 2025-09-03  | 2025-09-04 |
 | Educated (audio)                                     | `Tara Westover`            | Memoir/Non-Fiction      | 2025-08-13  | 2025-09-03 |
 | The Anxious Generation                               | `Jonathan Haidt`           | Psychology/Non-Fiction  | 2025-08-11  | 2025-09-01 |
