@@ -42,18 +42,39 @@ prefix[i] = nums[0] + nums[1]+ nums[2] + .. + nums[i]
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
+ &lt;td>Wild (audio)&lt;/td>
+ &lt;td>&lt;code>Cheryl Strayed&lt;/code>&lt;/td>
+ &lt;td>Memoir/Non-Fiction&lt;/td>
+ &lt;td>2025-09-18&lt;/td>
+ &lt;td>In-Progress&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>How God Works: The Science Behind the Benefits of Religion&lt;/td>
+ &lt;td>&lt;code>David DeSteno&lt;/code>&lt;/td>
+ &lt;td>Psychology/Religion&lt;/td>
+ &lt;td>2025-09-17&lt;/td>
+ &lt;td>In-Progress&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>10 Experiments That Will Change Your Perspective (Bakisinizi Degistirecek 10 Deney)&lt;/td>
+ &lt;td>&lt;code>Selcuk Sirin&lt;/code>&lt;/td>
+ &lt;td>Psychology/Self-help&lt;/td>
+ &lt;td>2025-09-13&lt;/td>
+ &lt;td>2025-09-16&lt;/td>
+ &lt;/tr>
+ &lt;tr>
  &lt;td>After Dark (audio)&lt;/td>
  &lt;td>&lt;code>Haruki Murakami&lt;/code>&lt;/td>
  &lt;td>Fiction&lt;/td>
  &lt;td>2025-09-06&lt;/td>
- &lt;td>In-Progress&lt;/td>
+ &lt;td>2025-09-16&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Let Fathers Grow Up (Yetisin Babalar)&lt;/td>
  &lt;td>&lt;code>Selcuk Sirin&lt;/code>&lt;/td>
  &lt;td>Parenting/Self-help&lt;/td>
  &lt;td>2025-09-02&lt;/td>
- &lt;td>In-Progress&lt;/td>
+ &lt;td>2025-09-12&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>What I Talk About When I Talk About Running (audio)&lt;/td>
