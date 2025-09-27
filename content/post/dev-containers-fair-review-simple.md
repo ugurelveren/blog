@@ -7,7 +7,6 @@ categories: ["Technical","Dev Containers"]
 description: "A plain-language look at Dev Containers: what they are, when to use them, and when to skip them."
 author: "Ugur Elveren"
 reading_time: 8
-draft: true
 ---
 
 ![Dev Containers provide consistent development environments across different operating systems and team setups.](/images/dev-containers.jpg)
