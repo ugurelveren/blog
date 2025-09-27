@@ -8,8 +8,9 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
+| Disenchantment: Creative Writing (Büyübozumu: Yaratıcı Yazarlık) | `Murat Gürsoy`    | Writing/Creativity      | 2025-09-19  | In-Progress |
 | Wild (audio)                                          | `Cheryl Strayed`           | Memoir/Non-Fiction      | 2025-09-18  | In-Progress |
-| How God Works: The Science Behind the Benefits of Religion | `David DeSteno`      | Psychology/Religion     | 2025-09-17  | In-Progress |
+| How God Works: The Science Behind the Benefits of Religion | `David DeSteno`      | Psychology/Religion     | 2025-09-17  | 2025-09-19 |
 | 10 Experiments That Will Change Your Perspective (Bakisinizi Degistirecek 10 Deney) | `Selcuk Sirin` | Psychology/Self-help | 2025-09-13 | 2025-09-16 |
 | After Dark (audio)                                   | `Haruki Murakami`          | Fiction                 | 2025-09-06  | 2025-09-16 |
 | Let Fathers Grow Up (Yetisin Babalar)               | `Selcuk Sirin`             | Parenting/Self-help     | 2025-09-02  | 2025-09-12 |
