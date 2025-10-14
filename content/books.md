@@ -8,8 +8,10 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
-| Disenchantment: Creative Writing (Büyübozumu: Yaratıcı Yazarlık) | `Murat Gürsoy`    | Writing/Creativity      | 2025-09-19  | In-Progress |
-| Wild (audio)                                          | `Cheryl Strayed`           | Memoir/Non-Fiction      | 2025-09-18  | In-Progress |
+| Samovar (Semaver)                                     | `Sait Faik Abasıyanık`     | Fiction/Short Stories   | 2025-10-13  | In-Progress |
+| A Walk in the Woods (audio)                          | `Bill Bryson`              | Memoir/Travel           | 2025-10-09  | In-Progress |
+| Disenchantment: Creative Writing (Büyübozumu: Yaratıcı Yazarlık) | `Murat Gürsoy`    | Writing/Creativity      | 2025-09-19  | 2025-10-12 |
+| Wild (audio)                                          | `Cheryl Strayed`           | Memoir/Non-Fiction      | 2025-09-18  | 2025-10-09 |
 | How God Works: The Science Behind the Benefits of Religion | `David DeSteno`      | Psychology/Religion     | 2025-09-17  | 2025-09-19 |
 | 10 Experiments That Will Change Your Perspective (Bakisinizi Degistirecek 10 Deney) | `Selcuk Sirin` | Psychology/Self-help | 2025-09-13 | 2025-09-16 |
 | After Dark (audio)                                   | `Haruki Murakami`          | Fiction                 | 2025-09-06  | 2025-09-16 |
