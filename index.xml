@@ -44,18 +44,32 @@ prefix[i] = nums[0] + nums[1]+ nums[2] + .. + nums[i]
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
+ &lt;td>Samovar (Semaver)&lt;/td>
+ &lt;td>&lt;code>Sait Faik Abasıyanık&lt;/code>&lt;/td>
+ &lt;td>Fiction/Short Stories&lt;/td>
+ &lt;td>2025-10-13&lt;/td>
+ &lt;td>In-Progress&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>A Walk in the Woods (audio)&lt;/td>
+ &lt;td>&lt;code>Bill Bryson&lt;/code>&lt;/td>
+ &lt;td>Memoir/Travel&lt;/td>
+ &lt;td>2025-10-09&lt;/td>
+ &lt;td>In-Progress&lt;/td>
+ &lt;/tr>
+ &lt;tr>
  &lt;td>Disenchantment: Creative Writing (Büyübozumu: Yaratıcı Yazarlık)&lt;/td>
  &lt;td>&lt;code>Murat Gürsoy&lt;/code>&lt;/td>
  &lt;td>Writing/Creativity&lt;/td>
  &lt;td>2025-09-19&lt;/td>
- &lt;td>In-Progress&lt;/td>
+ &lt;td>2025-10-12&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Wild (audio)&lt;/td>
  &lt;td>&lt;code>Cheryl Strayed&lt;/code>&lt;/td>
  &lt;td>Memoir/Non-Fiction&lt;/td>
  &lt;td>2025-09-18&lt;/td>
- &lt;td>In-Progress&lt;/td>
+ &lt;td>2025-10-09&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>How God Works: The Science Behind the Benefits of Religion&lt;/td>
