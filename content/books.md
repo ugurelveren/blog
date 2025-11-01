@@ -8,8 +8,11 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
-| Samovar (Semaver)                                     | `Sait Faik Abasıyanık`     | Fiction/Short Stories   | 2025-10-13  | In-Progress |
-| A Walk in the Woods (audio)                          | `Bill Bryson`              | Memoir/Travel           | 2025-10-09  | In-Progress |
+| Source Code                                           | `Bill Gates`               | Technology/Non-Fiction  | 2025-10-31  | In-Progress |
+| The Ocean at the End of the Lane (audio)             | `Neil Gaiman`              | Fiction                 | 2025-10-27  | In-Progress |
+| Hakkari'de Bir Mevsim                                 | `Ferit Edgü`               | Fiction                 | 2025-10-20  | 2025-10-29 |
+| Samovar (Semaver)                                     | `Sait Faik Abasıyanık`     | Fiction/Short Stories   | 2025-10-13  | 2025-10-19 |
+| A Walk in the Woods (audio)                          | `Bill Bryson`              | Memoir/Travel           | 2025-10-09  | 2025-10-27 |
 | Disenchantment: Creative Writing (Büyübozumu: Yaratıcı Yazarlık) | `Murat Gürsoy`    | Writing/Creativity      | 2025-09-19  | 2025-10-12 |
 | Wild (audio)                                          | `Cheryl Strayed`           | Memoir/Non-Fiction      | 2025-09-18  | 2025-10-09 |
 | How God Works: The Science Behind the Benefits of Religion | `David DeSteno`      | Psychology/Religion     | 2025-09-17  | 2025-09-19 |
