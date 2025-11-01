@@ -44,18 +44,39 @@ prefix[i] = nums[0] + nums[1]+ nums[2] + .. + nums[i]
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
+ &lt;td>Source Code&lt;/td>
+ &lt;td>&lt;code>Bill Gates&lt;/code>&lt;/td>
+ &lt;td>Technology/Non-Fiction&lt;/td>
+ &lt;td>2025-10-31&lt;/td>
+ &lt;td>In-Progress&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>The Ocean at the End of the Lane (audio)&lt;/td>
+ &lt;td>&lt;code>Neil Gaiman&lt;/code>&lt;/td>
+ &lt;td>Fiction&lt;/td>
+ &lt;td>2025-10-27&lt;/td>
+ &lt;td>In-Progress&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Hakkari&amp;rsquo;de Bir Mevsim&lt;/td>
+ &lt;td>&lt;code>Ferit Edgü&lt;/code>&lt;/td>
+ &lt;td>Fiction&lt;/td>
+ &lt;td>2025-10-20&lt;/td>
+ &lt;td>2025-10-29&lt;/td>
+ &lt;/tr>
+ &lt;tr>
  &lt;td>Samovar (Semaver)&lt;/td>
  &lt;td>&lt;code>Sait Faik Abasıyanık&lt;/code>&lt;/td>
  &lt;td>Fiction/Short Stories&lt;/td>
  &lt;td>2025-10-13&lt;/td>
- &lt;td>In-Progress&lt;/td>
+ &lt;td>2025-10-19&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>A Walk in the Woods (audio)&lt;/td>
  &lt;td>&lt;code>Bill Bryson&lt;/code>&lt;/td>
  &lt;td>Memoir/Travel&lt;/td>
  &lt;td>2025-10-09&lt;/td>
- &lt;td>In-Progress&lt;/td>
+ &lt;td>2025-10-27&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Disenchantment: Creative Writing (Büyübozumu: Yaratıcı Yazarlık)&lt;/td>
