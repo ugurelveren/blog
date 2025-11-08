@@ -8,6 +8,7 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
+| Becoming (audio)                                      | `Michelle Obama`           | Memoir/Non-Fiction       | 2025-11-06  | In-Progress |
 | Source Code                                           | `Bill Gates`               | Technology/Non-Fiction  | 2025-10-31  | In-Progress |
 | The Ocean at the End of the Lane (audio)             | `Neil Gaiman`              | Fiction                 | 2025-10-27  | In-Progress |
 | Hakkari'de Bir Mevsim                                 | `Ferit Edgü`               | Fiction                 | 2025-10-20  | 2025-10-29 |
