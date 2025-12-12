@@ -1,14 +1,15 @@
 baseURL = "https://blog.ugurelveren.com"
+defaultContentLanguage = "en"
 languageCode = "en-us"
 title = "Ugur's Personal Documentation"
 theme = "expresslane"
 author = "Ugur Elveren"
 
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+[markup.goldmark.renderer]
+  unsafe = true
 
+[Params]
+  post_meta = ["author", "date", "categories", "translations"]
 
 [Params.sidebar]
   home = "right"
@@ -17,52 +18,92 @@ author = "Ugur Elveren"
   widgets = ["search", "recent", "categories", "taglist", "social"]
 
 [Params.widgets.search]
-  url = "https://duckduckgo.com/"  
+  url = "https://duckduckgo.com/"
   [Params.widgets.search.input]
     name = "sites"
     pre = ""
 
+[Params.widgets.social]
+  github = "ugurelveren"
+  mastodon = "https://hachyderm.io/@ugur"
 
 [[Params.widgets.social.custom]]
   title = "Home Page"
   url = "https://ugurelveren.com"
   rel = "me"
 
-[Params.widgets.social]
-  github = "ugurelveren"
-  mastodon = "https://hachyderm.io/@ugur"
+[Languages]
+  [Languages.en]
+    languageName = "English"
+    weight = 1
+    contentDir = "content"
+    title = "Ugur's Personal Documentation"
+    languageCode = "en-us"
+  [Languages.tr]
+    languageName = "Türkçe"
+    weight = 2
+    contentDir = "content/tr"
+    title = "Ugur'un Kişisel Dokümantasyonu"
+    languageCode = "tr-tr"
 
-
-[Params]
-  post_meta = ["author", "date", "categories", "translations"]
-
-
-[menus]
-  [[menus.main]]
+# English Menus
+[Languages.en.menu]
+  [[Languages.en.menu.main]]
     name = "Home"
     url = "/"
     weight = 10
-  [[menus.main]]
+  [[Languages.en.menu.main]]
     name = "Personal"
     url = "/categories/personal"
     weight = 20
-  [[menus.main]]
+  [[Languages.en.menu.main]]
     name = "Technical"
     url = "/categories/technical"
     weight = 30
-  [[menus.main]]
+  [[Languages.en.menu.main]]
     name = "Photos"
     pre = '<i class="fa fa-heart"></i>'
-    url = 'https://photos.ugurelveren.com'
+    url = "https://photos.ugurelveren.com"
     weight = 60
-    [menus.main.params]
-      rel = 'external'
-      class = 'right'
-  [[menus.main]]
+    [Languages.en.menu.main.params]
+      rel = "external"
+      class = "right"
+  [[Languages.en.menu.main]]
     name = "My Bookshelf"
     url = "/books"
     weight = 40
- [[menus.main]]
+  [[Languages.en.menu.main]]
     name = "Bucket List"
     url = "/categories/bucket-list"
+    weight = 50
+
+# Turkish Menus
+[Languages.tr.menu]
+  [[Languages.tr.menu.main]]
+    name = "Ana Sayfa"
+    url = "/tr/"
+    weight = 10
+  [[Languages.tr.menu.main]]
+    name = "Kişisel"
+    url = "/tr/categories/personal"
+    weight = 20
+  [[Languages.tr.menu.main]]
+    name = "Teknik"
+    url = "/tr/categories/technical"
+    weight = 30
+  [[Languages.tr.menu.main]]
+    name = "Fotoğraflar"
+    pre = '<i class="fa fa-heart"></i>'
+    url = "https://photos.ugurelveren.com"
+    weight = 60
+    [Languages.tr.menu.main.params]
+      rel = "external"
+      class = "right"
+  [[Languages.tr.menu.main]]
+    name = "Kitaplık"
+    url = "/tr/books"
+    weight = 40
+  [[Languages.tr.menu.main]]
+    name = "Hedefler Listesi"
+    url = "/tr/categories/bucket-list"
     weight = 50
