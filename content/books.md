@@ -8,8 +8,9 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
+| Parasız Yatılı                                       | `Füruzan`                  | Fiction                 | 2025-12-10  | In-Progress |
 | The Life-Changing Magic of Tidying Up (audio)        | `Marie Kondo`              | Self-help/Organization  | 2025-11-29  | In-Progress |
-| Free-Range Kids                                       | `Lenore Skenazy`           | Parenting/Non-Fiction   | 2025-11-15  | In-Progress |
+| Free-Range Kids                                       | `Lenore Skenazy`           | Parenting/Non-Fiction   | 2025-11-15  | 2025-12-09 |
 | Becoming (audio)                                      | `Michelle Obama`           | Memoir/Non-Fiction       | 2025-11-06  | 2025-11-29 |
 | Source Code                                           | `Bill Gates`               | Technology/Non-Fiction  | 2025-10-31  | 2025-11-15 |
 | The Ocean at the End of the Lane (audio)             | `Neil Gaiman`              | Fiction                 | 2025-10-27  | 2025-11-06 |
