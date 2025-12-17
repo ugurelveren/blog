@@ -42,7 +42,7 @@ author = "Ugur Elveren"
   [Languages.tr]
     languageName = "Türkçe"
     weight = 2
-    contentDir = "content/tr"
+    contentDir = "content-tr"
     title = "Ugur'un Kişisel Dokümantasyonu"
     languageCode = "tr-tr"
 

@@ -6,15 +6,13 @@ translationKey: library-infrastructure-of-equality
 # Adjust the date if needed
 date: "2025-12-16"
 author: "Ugur Elveren"
-categories: ["Technical","Cloud Design Patterns"]
-tags: ["library", "equality", "public space"]
+categories: ["Personal","Social Equality"]
+tags: ["library", "equality", "public space", "social equality", "community", "city life"]
 description: "A comparative look at how libraries impact social equality and quality of life in a city, with experiences from the US and Turkey."
 draft: true
 ---
 
-# Library: More Than Books, The Infrastructure of Equality in a City
-
-We only realize the absence of certain things in our lives when we encounter them for the first time. A void we thought was normal for years suddenly makes us say, “I’ve been deprived of this all along.” Is it possible to feel the absence of something you’ve never had? Sometimes, the lack of something only makes sense when you truly see its presence.
+We only realize the absence of certain things in our lives when we encounter them for the first time. A void we thought was normal for years suddenly makes us say, "I’ve been deprived of this all along." Is it possible to feel the absence of something you’ve never had? Sometimes, the lack of something only makes sense when you truly see its presence.
 
 It’s hard to give a clear answer to this. Because sometimes, the absence of something only becomes visible when you enter an environment where that thing is considered “normal.” For me, this realization came, quite unexpectedly, through the library.
 
