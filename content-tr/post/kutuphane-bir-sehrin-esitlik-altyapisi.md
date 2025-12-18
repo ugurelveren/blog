@@ -8,7 +8,6 @@ author: "Ugur Elveren"
 categories: ["Kişisel","Toplumsal Eşitlik"]
 tags: ["kütüphane", "eşitlik", "kamusal alan", "toplumsal eşitlik", "topluluk", "şehir yaşamı"]
 description: "Kütüphanelerin bir şehirde toplumsal eşitlik ve yaşam kalitesi üzerindeki etkisini, ABD ve Türkiye deneyimleriyle karşılaştırmalı olarak ele alan bir yazı."
-draft: true
 ---
 
 ![Modern bir kütüphane iç mekanı, kitap rafları ve oturma alanı](/images/library-modern-unsplash.jpg)

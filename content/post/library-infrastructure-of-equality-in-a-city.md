@@ -8,7 +8,6 @@ author: "Ugur Elveren"
 categories: ["Personal","Social Equality"]
 tags: ["library", "equality", "public space", "social equality", "community", "city life"]
 description: "A comparative look at how libraries impact social equality and quality of life in a city, with experiences from the US and Turkey."
-draft: true
 ---
 
 ![A modern library interior with bookshelves and seating](/images/library-modern-unsplash.jpg)
