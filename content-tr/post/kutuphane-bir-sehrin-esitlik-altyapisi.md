@@ -11,6 +11,8 @@ description: "Kütüphanelerin bir şehirde toplumsal eşitlik ve yaşam kalites
 draft: true
 ---
 
+![Modern bir kütüphane iç mekanı, kitap rafları ve oturma alanı](/images/library-modern-unsplash.jpg)
+
 Hayatımızda bazı şeylerin eksikliğini, ancak onlarla ilk kez karşılaştığımızda fark ederiz. Yıllarca normal sandığımız bir boşluk, bir gün karşımıza çıktığında "Ben bugüne kadar bundan mahrum kalmışım" dedirtir. Hiç sahip olmadığın bir şeyin eksikliğini hissetmek mümkün mü? Bazen, bir şeyin yokluğu ancak onun varlığını gerçekten gördüğünde anlam kazanır.
 
 Buna net bir cevap vermek zor. Çünkü bazen bir şeyin yokluğu, ancak o şeyin normal olduğu bir ortamın içine girdiğinde görünür olur. Benim için bu farkındalığın adı, beklemediğim şekilde, kütüphaneydi.

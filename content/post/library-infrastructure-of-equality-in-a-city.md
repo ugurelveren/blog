@@ -11,6 +11,8 @@ description: "A comparative look at how libraries impact social equality and qua
 draft: true
 ---
 
+![A modern library interior with bookshelves and seating](/images/library-modern-unsplash.jpg)
+
 We only realize the absence of some things in our lives when we encounter them for the first time. A void we thought was normal for years suddenly makes us say "I have been deprived of this all along". Is it possible to feel the absence of something you have never had? Sometimes, the lack of something only makes sense when you truly see its presence.
 
 It is hard to give a clear answer to this. Because sometimes, the absence of something only becomes visible when you enter an environment where that thing is normal. For me, this awareness came, quite unexpectedly, through the library.
