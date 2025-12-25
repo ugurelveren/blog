@@ -8,7 +8,8 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
-| The Gentle Art of Swedish Death Cleaning             | `Margareta Magnusson`      | Self-help/Non-Fiction   | 2025-12-18  | In-Progress |
+| Yaşar Ne Yaşar Ne Yaşamaz                            | `Aziz Nesin`               | Fiction/Satire          | 2025-12-22  | 2025-12-25 |
+| The Gentle Art of Swedish Death Cleaning             | `Margareta Magnusson`      | Self-help/Non-Fiction   | 2025-12-18  | 2025-12-21 |
 | Parasız Yatılı                                       | `Füruzan`                  | Fiction                 | 2025-12-10  | 2025-12-17 |
 | The Life-Changing Magic of Tidying Up (audio)        | `Marie Kondo`              | Self-help/Organization  | 2025-11-29  | In-Progress |
 | Free-Range Kids                                       | `Lenore Skenazy`           | Parenting/Non-Fiction   | 2025-11-15  | 2025-12-09 |
