@@ -8,10 +8,12 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
+| The Wisdom of Crowds                                  | `James Surowiecki`         | Non-Fiction             | 2025-12-30  | In-Progress |
+| The Metamorphosis                                     | `Franz Kafka`              | Fiction/Classic         | 2025-12-23  | In-Progress |
 | Yaşar Ne Yaşar Ne Yaşamaz                            | `Aziz Nesin`               | Fiction/Satire          | 2025-12-22  | 2025-12-25 |
+| The Life-Changing Magic of Tidying Up (audio)        | `Marie Kondo`              | Self-help/Organization  | 2025-11-29  | 2025-12-24 |
 | The Gentle Art of Swedish Death Cleaning             | `Margareta Magnusson`      | Self-help/Non-Fiction   | 2025-12-18  | 2025-12-21 |
 | Parasız Yatılı                                       | `Füruzan`                  | Fiction                 | 2025-12-10  | 2025-12-17 |
-| The Life-Changing Magic of Tidying Up (audio)        | `Marie Kondo`              | Self-help/Organization  | 2025-11-29  | In-Progress |
 | Free-Range Kids                                       | `Lenore Skenazy`           | Parenting/Non-Fiction   | 2025-11-15  | 2025-12-09 |
 | Becoming (audio)                                      | `Michelle Obama`           | Memoir/Non-Fiction       | 2025-11-06  | 2025-11-29 |
 | Source Code                                           | `Bill Gates`               | Technology/Non-Fiction  | 2025-10-31  | 2025-11-15 |
@@ -28,22 +30,22 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 | What I Talk About When I Talk About Running (audio) | `Haruki Murakami`          | Memoir/Non-Fiction      | 2025-09-03  | 2025-09-04 |
 | Educated (audio)                                     | `Tara Westover`            | Memoir/Non-Fiction      | 2025-08-13  | 2025-09-03 |
 | The Anxious Generation                               | `Jonathan Haidt`           | Psychology/Non-Fiction  | 2025-08-11  | 2025-09-01 |
-| The Secret Life of Cows  (audio)                      | `Rosamund Young`           |  Nature  Non-Fiction    | 2025-08-07  |2025-08-13 |
-| Why We Eat (Too Much): The New Science of Appetite    | `Dr Andrew Jenkinson `     |  Health & Wellness / Non-Fiction | 2025-08-02  |2025-08-11 |
-| Mindset: The New Psychology of Success (audio)        | `Carol S. Dweck`           |  Psychology Non-Fiction | 2025-07-21  |2025-08-07 |
+| The Secret Life of Cows (audio)                       | `Rosamund Young`           | Nature  Non-Fiction     | 2025-08-07  | 2025-08-13 |
+| Why We Eat (Too Much): The New Science of Appetite    | `Dr Andrew Jenkinson`      | Health & Wellness / Non-Fiction | 2025-08-02  | 2025-08-11 |
+| Mindset: The New Psychology of Success (audio)        | `Carol S. Dweck`           | Psychology Non-Fiction  | 2025-07-21  | 2025-08-07 |
 | Dare to Lead: : Brave Work. Tough Conversations. Whole Hearts - (audio)| `Brené Brown` | Business non-fiction   | 2025-06-25  | 2025-07-21 |
 | Give and Take: A Revolutionary Approach to Success    | `Adam M. Grant`            |  Psychology non-fiction | 2025-06-20  | 2025-07-21 |
 | The Tech Coup: How to Save Democracy from Silicon Valley| `Marietje Schaake`       |  Political non-fiction  | 2025-06-09  | 2025-06-20 |
 | The Essential Rumi                                    | `Rumi & Coleman Barks`     |  Spiritual poetry       | 2025-06-03  | 2025-06-09 |
-| Essential Sufism                                      | `James Fadiman & Robert Frager`|  Spirituality / Religion| 2025-05-24 | 2025-06-02 |
-| The memoirs of Vartanus the tailor from Zara - (Zara'li Terzi Vartanu'un Anilari) | `Avedis Olgun`|  Personal Memoir| 2025-05-15 | 2025-05-23 |
+| Essential Sufism                                      | `James Fadiman & Robert Frager` | Spirituality / Religion | 2025-05-24  | 2025-06-02 |
+| The memoirs of Vartanus the tailor from Zara - (Zara'li Terzi Vartanu'un Anilari) | `Avedis Olgun` | Personal Memoir          | 2025-05-15  | 2025-05-23 |
 | Holding a Broken Heart - (Kirik bir kalbi tutmak)     | `Suzi Amado`               | Psychology              | 2025-05-04  | 2025-05-12 |
 | Motherland Hotel - (Anayurt Oteli)                    | `Yusuf Atilgan`            | Fiction                 | 2025-04-27  | 2025-05-04 |
 | Yusuf from Kuyucak - (Kuyucakli Yusuf)                | `Sabahattin Ali`           | Fiction                 | 2025-04-19  | 2025-04-27 |
 | Madonna in a Fur Coat - (Kurk Mantolu Madonna)        | `Sabahattin Ali`           | Fiction                 | 2025-03-29  | 2025-04-10 |
-| On the Hippie Trail: Istanbul to Kathmandu and the Making of a Travel Writer | `Rick Steves` | Non-fiction/Travel | 2025-03-03| 2025-03-15|
+| On the Hippie Trail: Istanbul to Kathmandu and the Making of a Travel Writer | `Rick Steves` | Non-fiction/Travel | 2025-03-03  | 2025-03-15 |
 | In Defense of Food: An Eater's Manifesto	            | `Michael Pollan`           | Non-fiction/Health      | 2025-02-20  | 2025-02-28 |
-| Good Night, Sleep Tight	                            | `Robert Wright`            | Parenting/Sleep         | 2025-02-10  | 2025-03-10|
+| Good Night, Sleep Tight	                            | `Robert Wright`            | Parenting/Sleep         | 2025-02-10  | 2025-03-10 |
 | A Man Called Ove                                      | `Fredrik Backman`          | Fiction                 | 2025-01-20  | 2025-01-27 |
 | Why We Sleep                                          | `Matthew Walker`           | Non-fiction/Science     | 2025-01-02  | 2025-01-18 |
 | The Alchemist                                         | `Paulo Coelho`             | Fiction/Philosophy      | 2024-12-28  | 2025-01-01 |
