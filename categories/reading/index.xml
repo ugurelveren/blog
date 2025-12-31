@@ -10,11 +10,32 @@
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
+ &lt;td>The Wisdom of Crowds&lt;/td>
+ &lt;td>&lt;code>James Surowiecki&lt;/code>&lt;/td>
+ &lt;td>Non-Fiction&lt;/td>
+ &lt;td>2025-12-30&lt;/td>
+ &lt;td>In-Progress&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>The Metamorphosis&lt;/td>
+ &lt;td>&lt;code>Franz Kafka&lt;/code>&lt;/td>
+ &lt;td>Fiction/Classic&lt;/td>
+ &lt;td>2025-12-23&lt;/td>
+ &lt;td>In-Progress&lt;/td>
+ &lt;/tr>
+ &lt;tr>
  &lt;td>Yaşar Ne Yaşar Ne Yaşamaz&lt;/td>
  &lt;td>&lt;code>Aziz Nesin&lt;/code>&lt;/td>
  &lt;td>Fiction/Satire&lt;/td>
  &lt;td>2025-12-22&lt;/td>
  &lt;td>2025-12-25&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>The Life-Changing Magic of Tidying Up (audio)&lt;/td>
+ &lt;td>&lt;code>Marie Kondo&lt;/code>&lt;/td>
+ &lt;td>Self-help/Organization&lt;/td>
+ &lt;td>2025-11-29&lt;/td>
+ &lt;td>2025-12-24&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>The Gentle Art of Swedish Death Cleaning&lt;/td>
@@ -29,13 +50,6 @@
  &lt;td>Fiction&lt;/td>
  &lt;td>2025-12-10&lt;/td>
  &lt;td>2025-12-17&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>The Life-Changing Magic of Tidying Up (audio)&lt;/td>
- &lt;td>&lt;code>Marie Kondo&lt;/code>&lt;/td>
- &lt;td>Self-help/Organization&lt;/td>
- &lt;td>2025-11-29&lt;/td>
- &lt;td>In-Progress&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Free-Range Kids&lt;/td>
@@ -158,7 +172,7 @@
  &lt;/tr>
  &lt;tr>
  &lt;td>Why We Eat (Too Much): The New Science of Appetite&lt;/td>
- &lt;td>&lt;code>Dr Andrew Jenkinson &lt;/code>&lt;/td>
+ &lt;td>&lt;code>Dr Andrew Jenkinson&lt;/code>&lt;/td>
  &lt;td>Health &amp;amp; Wellness / Non-Fiction&lt;/td>
  &lt;td>2025-08-02&lt;/td>
  &lt;td>2025-08-11&lt;/td>
