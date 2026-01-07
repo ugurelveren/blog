@@ -45,6 +45,13 @@ prefix[i] = nums[0] + nums[1]+ nums[2] + .. + nums[i]
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
+ &lt;td>Fareler ve İnsanlar (audio)&lt;/td>
+ &lt;td>&lt;code>John Steinbeck&lt;/code>&lt;/td>
+ &lt;td>Fiction&lt;/td>
+ &lt;td>2025-12-31&lt;/td>
+ &lt;td>2026-01-06&lt;/td>
+ &lt;/tr>
+ &lt;tr>
  &lt;td>The Wisdom of Crowds&lt;/td>
  &lt;td>&lt;code>James Surowiecki&lt;/code>&lt;/td>
  &lt;td>Non-Fiction&lt;/td>
