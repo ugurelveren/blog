@@ -8,6 +8,7 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
+| Fareler ve İnsanlar (audio)                           | `John Steinbeck`           | Fiction                 | 2025-12-31  | 2026-01-06 |
 | The Wisdom of Crowds                                  | `James Surowiecki`         | Non-Fiction             | 2025-12-30  | In-Progress |
 | The Metamorphosis                                     | `Franz Kafka`              | Fiction/Classic         | 2025-12-23  | In-Progress |
 | Yaşar Ne Yaşar Ne Yaşamaz                            | `Aziz Nesin`               | Fiction/Satire          | 2025-12-22  | 2025-12-25 |
