@@ -8,6 +8,8 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
+| Socrates' Defence (audio)                             | `Plato`                    | Non-Fiction             | 2026-01-14  | In-Progress |
+| The Country of White Lilies (audio)                   | `Grigory Petrov`          | Non-Fiction             | 2026-01-13  | 2026-01-14 |
 | Fareler ve İnsanlar (audio)                           | `John Steinbeck`           | Fiction                 | 2025-12-31  | 2026-01-06 |
 | The Wisdom of Crowds                                  | `James Surowiecki`         | Non-Fiction             | 2025-12-30  | In-Progress |
 | The Metamorphosis                                     | `Franz Kafka`              | Fiction/Classic         | 2025-12-23  | In-Progress |
