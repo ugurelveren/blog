@@ -47,11 +47,32 @@ prefix[i] = nums[0] + nums[1]+ nums[2] + .. + nums[i]
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
+ &lt;td>Serenade&lt;/td>
+ &lt;td>&lt;code>Zülfü Livaneli&lt;/code>&lt;/td>
+ &lt;td>Fiction&lt;/td>
+ &lt;td>2026-01-20&lt;/td>
+ &lt;td>In-Progress&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Don Quixote (audio)&lt;/td>
+ &lt;td>&lt;code>Miguel de Cervantes&lt;/code>&lt;/td>
+ &lt;td>Fiction/Classics&lt;/td>
+ &lt;td>2026-01-16&lt;/td>
+ &lt;td>In-Progress&lt;/td>
+ &lt;/tr>
+ &lt;tr>
  &lt;td>Socrates&amp;rsquo; Defence (audio)&lt;/td>
  &lt;td>&lt;code>Plato&lt;/code>&lt;/td>
  &lt;td>Non-Fiction&lt;/td>
  &lt;td>2026-01-14&lt;/td>
  &lt;td>2026-01-15&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Don&amp;rsquo;t Believe Everything You Think: Why Your Thinking Is the Beginning &amp;amp; End of Suffering&lt;/td>
+ &lt;td>&lt;code>Joseph Nguyen&lt;/code>&lt;/td>
+ &lt;td>Non-Fiction&lt;/td>
+ &lt;td>2026-01-19&lt;/td>
+ &lt;td>2026-01-30&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>The Country of White Lilies (audio)&lt;/td>
@@ -61,7 +82,7 @@ prefix[i] = nums[0] + nums[1]+ nums[2] + .. + nums[i]
  &lt;td>2026-01-14&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td>Fareler ve İnsanlar (audio)&lt;/td>
+ &lt;td>Of Mice and Men (audio)&lt;/td>
  &lt;td>&lt;code>John Steinbeck&lt;/code>&lt;/td>
  &lt;td>Fiction&lt;/td>
  &lt;td>2025-12-31&lt;/td>
@@ -480,6 +501,8 @@ prefix[i] = nums[0] + nums[1]+ nums[2] + .. + nums[i]
  &lt;th>&lt;strong>Topic&lt;/strong>&lt;/th>
  &lt;th>&lt;strong>Link&lt;/strong>&lt;/th>
  &lt;th>&lt;strong>Type&lt;/strong>&lt;/th>
+ &lt;th style="text-align: right">&lt;strong>Added Date&lt;/strong>&lt;/th>
+ &lt;th style="text-align: right">&lt;strong>Completed Date&lt;/strong>&lt;/th>
  &lt;th>&lt;strong>Status&lt;/strong>&lt;/th>
  &lt;/tr>
  &lt;/thead>
@@ -488,49 +511,84 @@ prefix[i] = nums[0] + nums[1]+ nums[2] + .. + nums[i]
  &lt;td>Go: Big Picture&lt;/td>
  &lt;td>&lt;a href="https://app.pluralsight.com/library/courses/big-picture-go">Pluralsight&lt;/a>&lt;/td>
  &lt;td>Course&lt;/td>
+ &lt;td style="text-align: right">2025-02-01&lt;/td>
+ &lt;td style="text-align: right">2026-02-01&lt;/td>
  &lt;td>✅&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td>Go Fundamentals&lt;/td>
- &lt;td>&lt;a href="https://app.pluralsight.com/library/courses/fundamentals-go">Pluralsight&lt;/a>&lt;/td>
+ &lt;td>Kubernetes and Cloud Native Associate (KCNA)&lt;/td>
+ &lt;td>&lt;a href="https://app.pluralsight.com/ilx/kubernetes-and-cloud-native-associate-(kcna)/course-overview">Pluralsight&lt;/a>&lt;/td>
  &lt;td>Course&lt;/td>
+ &lt;td style="text-align: right">2026-02-01&lt;/td>
+ &lt;td style="text-align: right">&lt;/td>
  &lt;td>❌&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Designing Data-Intensive Applications&lt;/td>
  &lt;td>&lt;a href="https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/">O&amp;rsquo;Reilly&lt;/a>&lt;/td>
  &lt;td>Book&lt;/td>
- &lt;td>❌&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Creating Web Services with Go&lt;/td>
- &lt;td>&lt;a href="https://app.pluralsight.com/library/courses/creating-web-services-go">Pluralsight&lt;/a>&lt;/td>
- &lt;td>Course&lt;/td>
+ &lt;td style="text-align: right">2026-02-01&lt;/td>
+ &lt;td style="text-align: right">&lt;/td>
  &lt;td>❌&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Site Reliability Engineering: How Google Runs Production&lt;/td>
  &lt;td>&lt;a href="https://sre.google/sre-book/table-of-contents/">Google&lt;/a>&lt;/td>
- &lt;td>Course&lt;/td>
+ &lt;td>Book&lt;/td>
+ &lt;td style="text-align: right">2025-02-01&lt;/td>
+ &lt;td style="text-align: right">2026-02-01&lt;/td>
  &lt;td>✅&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;hr>
-&lt;h2 id="long-term-personal-growth-goals">Long-Term Personal Growth Goals&lt;/h2>
+&lt;h2 id="long-term-personal-goals">Long-Term Personal Goals&lt;/h2>
 &lt;table>
  &lt;thead>
  &lt;tr>
  &lt;th>&lt;strong>Goal&lt;/strong>&lt;/th>
  &lt;th>&lt;strong>Description&lt;/strong>&lt;/th>
+ &lt;th style="text-align: right">&lt;strong>Added Date&lt;/strong>&lt;/th>
+ &lt;th style="text-align: right">&lt;strong>Completed Date&lt;/strong>&lt;/th>
  &lt;th>&lt;strong>Status&lt;/strong>&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
  &lt;td>Publish a Book&lt;/td>
- &lt;td>Write and self-publish a book on personal growth&lt;/td>
+ &lt;td>Write and publish a book&lt;/td>
+ &lt;td style="text-align: right">2026-02-01&lt;/td>
+ &lt;td style="text-align: right">&lt;/td>
  &lt;td>❌&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="short-term-goals">Short-Term Goals&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>&lt;strong>Goal&lt;/strong>&lt;/th>
+ &lt;th>&lt;strong>Description&lt;/strong>&lt;/th>
+ &lt;th style="text-align: right">&lt;strong>Added Date&lt;/strong>&lt;/th>
+ &lt;th style="text-align: right">&lt;strong>Completed Date&lt;/strong>&lt;/th>
+ &lt;th style="text-align: right">&lt;strong>Status&lt;/strong>&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>KCNA certification&lt;/td>
+ &lt;td>Prepare for and obtain the KCNA certification&lt;/td>
+ &lt;td style="text-align: right">2026-02-01&lt;/td>
+ &lt;td style="text-align: right">&lt;/td>
+ &lt;td style="text-align: right">❌&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Professional sailing&lt;/td>
+ &lt;td>Train and obtain professional sailing qualification&lt;/td>
+ &lt;td style="text-align: right">2026-02-01&lt;/td>
+ &lt;td style="text-align: right">&lt;/td>
+ &lt;td style="text-align: right">❌&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table></description></item><item><title>Travel</title><link>https://blog.ugurelveren.com/bucket-list/travel/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.ugurelveren.com/bucket-list/travel/</guid><description>&lt;table>
