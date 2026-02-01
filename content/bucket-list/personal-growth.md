@@ -9,18 +9,25 @@ tags: ["Bucket List"]
 
 
 ## Learning Hub
-| **Topic**  | **Link**      | **Type**       | **Status** |
-|-------------------------------------|-------------------------------------------------------------------------------------------|----------------|------------|
-| Go: Big Picture | [Pluralsight](https://app.pluralsight.com/library/courses/big-picture-go)       | Course         | ✅          |
-| Go Fundamentals | [Pluralsight](https://app.pluralsight.com/library/courses/fundamentals-go)      | Course         | ❌           |
-| Designing Data-Intensive Applications | [O'Reilly](https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/) | Book           | ❌           |
-| Creating Web Services with Go   | [Pluralsight](https://app.pluralsight.com/library/courses/creating-web-services-go)   | Course          | ❌           |
-| Site Reliability Engineering: How Google Runs Production  | [Google](https://sre.google/sre-book/table-of-contents/)       | Course         | ✅          |
+| **Topic**  | **Link**      | **Type**       | **Added Date** | **Completed Date** | **Status** |
+|-------------------------------------|-------------------------------------------------------------------------------------------|----------------|---------------:|-------------------:|------------|
+| Go: Big Picture | [Pluralsight](https://app.pluralsight.com/library/courses/big-picture-go)       | Course         | 2025-02-01     | 2026-02-01         | ✅          |
+| Kubernetes and Cloud Native Associate (KCNA) | [Pluralsight](https://app.pluralsight.com/ilx/kubernetes-and-cloud-native-associate-(kcna)/course-overview) | Course | 2026-02-01 |                    | ❌ |
+| Designing Data-Intensive Applications | [O'Reilly](https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/) | Book           | 2026-02-01     |                    | ❌           |
+| Site Reliability Engineering: How Google Runs Production  | [Google](https://sre.google/sre-book/table-of-contents/)       | Book         | 2025-02-01     |       2026-02-01           | ✅          |
 
 ---
 
-## Long-Term Personal Growth Goals
-| **Goal**                              | **Description**                                    | **Status** |
-|---------------------------------------|----------------------------------------------------|------------|
-| Publish a Book                        | Write and self-publish a book on personal growth   | ❌          |
+## Long-Term Personal Goals
+| **Goal**                              | **Description**                                    | **Added Date**  | **Completed Date** | **Status** |
+|---------------------------------------|----------------------------------------------------|----------------:|-------------------:|------------|
+| Publish a Book                        | Write and publish a book                      | 2026-02-01      |                    | ❌         |
+ 
+---
+
+## Short-Term Goals
+| **Goal**               | **Description**                                  | **Added Date**  | **Completed Date** | **Status** |
+|------------------------|--------------------------------------------------|---------------:|-------------------:|-----------:|
+| KCNA certification     | Prepare for and obtain the KCNA certification    | 2026-02-01     |                    | ❌         |
+| Professional sailing   | Train and obtain professional sailing qualification| 2026-02-01     |                    | ❌         |
 
