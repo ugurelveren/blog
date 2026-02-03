@@ -22,6 +22,7 @@ tags: ["Bucket List"]
 | **Goal**                              | **Description**                                    | **Added Date**  | **Completed Date** | **Status** |
 |---------------------------------------|----------------------------------------------------|----------------:|-------------------:|------------|
 | Publish a Book                        | Write and publish a book                      | 2026-02-01      |                    | ❌         |
+| Learning spanish                      | Achieve fluency in Spanish language           | 2026-02-03      |                    | ❌         |
  
 ---
 
