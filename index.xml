@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ugur's Personal Documentation</title><link>https://blog.ugurelveren.com/</link><description>Recent content on Ugur's Personal Documentation</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 08 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.ugurelveren.com/index.xml" rel="self" type="application/rss+xml"/><item><title>The Wisdom of Crowds for Software Teams</title><link>https://blog.ugurelveren.com/post/wisdom-of-crowds-for-software-teams/</link><pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate><guid>https://blog.ugurelveren.com/post/wisdom-of-crowds-for-software-teams/</guid><description>&lt;p>&lt;img alt="wisdom-of-crowds" src="https://blog.ugurelveren.com/images/wisdom-of-crowds.jpg">&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ugur's Personal Documentation</title><link>https://blog.ugurelveren.com/</link><description>Recent content on Ugur's Personal Documentation</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 15 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.ugurelveren.com/index.xml" rel="self" type="application/rss+xml"/><item><title>KCNA exam notes</title><link>https://blog.ugurelveren.com/post/kcna-exam-notes/</link><pubDate>Sun, 15 Feb 2026 00:00:00 +0000</pubDate><guid>https://blog.ugurelveren.com/post/kcna-exam-notes/</guid><description>This post explains the KCNA exam and covers key Kubernetes resources such as Pod, Deployment, StatefulSet, DaemonSet, Job, and CronJob.</description></item><item><title>The Wisdom of Crowds for Software Teams</title><link>https://blog.ugurelveren.com/post/wisdom-of-crowds-for-software-teams/</link><pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate><guid>https://blog.ugurelveren.com/post/wisdom-of-crowds-for-software-teams/</guid><description>&lt;p>&lt;img alt="wisdom-of-crowds" src="https://blog.ugurelveren.com/images/wisdom-of-crowds.jpg">&lt;/p>
 &lt;!-- Short summary (one paragraph) -->
 &lt;p>This Christmas break was very fruitful for me. I had a really good holiday which i am able to refresh and I was able to read some books which i had been in my mind last few months. The Wisdom of Crowds by James Surowiecki is one of them. The book is built around one powerful idea. When an ordinary group is set up in the right way, its combined judgment can be better than the judgment of a single expert or even a small team of experts. At first, this feels surprising, because many of us assume the best decisions usually come from the experts on that topic. But Surowiecki shows that, under the right conditions, a mixed group of people can be surprisingly accurate.&lt;/p></description></item><item><title>Library: More Than Books, The Infrastructure of Equality in a City</title><link>https://blog.ugurelveren.com/post/library-infrastructure-of-equality-in-a-city/</link><pubDate>Tue, 16 Dec 2025 00:00:00 +0000</pubDate><guid>https://blog.ugurelveren.com/post/library-infrastructure-of-equality-in-a-city/</guid><description>&lt;p>&lt;img alt="A modern library interior with bookshelves and seating" src="https://blog.ugurelveren.com/images/library-modern-unsplash.jpg">&lt;/p>
 &lt;p>We only realize the absence of some things in our lives when we encounter them for the first time. A void we thought was normal for years suddenly makes us say &amp;ldquo;I have been deprived of this all along&amp;rdquo;. Is it possible to feel the absence of something you have never had? Sometimes, the lack of something only makes sense when you truly see its presence.&lt;/p></description></item><item><title>Dev Containers: A Simple, Honest Review</title><link>https://blog.ugurelveren.com/post/dev-containers-fair-review-simple/</link><pubDate>Fri, 12 Sep 2025 00:00:00 +0000</pubDate><guid>https://blog.ugurelveren.com/post/dev-containers-fair-review-simple/</guid><description>&lt;p>&lt;img alt="Dev Containers provide consistent development environments across different operating systems and team setups." src="https://blog.ugurelveren.com/images/dev-containers.jpg">&lt;/p>
@@ -520,8 +520,8 @@ prefix[i] = nums[0] + nums[1]+ nums[2] + .. + nums[i]
  &lt;td>&lt;a href="https://app.pluralsight.com/ilx/kubernetes-and-cloud-native-associate-(kcna)/course-overview">Pluralsight&lt;/a>&lt;/td>
  &lt;td>Course&lt;/td>
  &lt;td style="text-align: right">2026-02-01&lt;/td>
- &lt;td style="text-align: right">&lt;/td>
- &lt;td>❌&lt;/td>
+ &lt;td style="text-align: right">2026-02-15&lt;/td>
+ &lt;td>✅&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Designing Data-Intensive Applications&lt;/td>
@@ -587,8 +587,8 @@ prefix[i] = nums[0] + nums[1]+ nums[2] + .. + nums[i]
  &lt;td>KCNA certification&lt;/td>
  &lt;td>Prepare for and obtain the KCNA certification&lt;/td>
  &lt;td style="text-align: right">2026-02-01&lt;/td>
- &lt;td style="text-align: right">&lt;/td>
- &lt;td style="text-align: right">❌&lt;/td>
+ &lt;td style="text-align: right">2026-02-15&lt;/td>
+ &lt;td style="text-align: right">✅&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>Professional sailing&lt;/td>
