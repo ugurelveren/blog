@@ -3,8 +3,7 @@ title: "KCNA exam notes"
 date: "2026-02-15"
 slug: "kcna-exam-notes"
 description: "Simple KCNA exam notes that explain the exam scope and core Kubernetes resources."
-summary: "This post explains the KCNA exam and covers key Kubernetes resources such as Pod, Deployment, StatefulSet, DaemonSet, Job, and CronJob."
-categories: ["technical"]
+categories: ["technical,"kubernetes"]
 tags: ["kcna","kubernetes","cloud-native"]
 author: "Ugur Elveren"
 toc: true
@@ -27,9 +26,7 @@ I have heard people say the exam is not useful and that they do not want to pay 
 
 ## KCNA Curriculum
 
-As I said, I will write a series of articles for this exam and follow the official curriculum. First, let's look at the exam curriculum.
-
-* [Curriculum](https://github.com/cncf/curriculum/blob/master/KCNA_Curriculum.pdf)
+As I said, I will write a series of articles for this exam and follow the official curriculum. First, let's look at the exam [curriculum](https://github.com/cncf/curriculum/blob/master/KCNA_Curriculum.pdf).
 
 * Kubernetes Fundamentals 44%
   * Kubernetes Core Concepts
