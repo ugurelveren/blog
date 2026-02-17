@@ -107,3 +107,8 @@ author = "Ugur Elveren"
     name = "Hedefler Listesi"
     url = "/tr/categories/bucket-list"
     weight = 50
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"

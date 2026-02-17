@@ -3,7 +3,7 @@ title: "KCNA exam notes"
 date: "2026-02-15"
 slug: "kcna-exam-notes"
 description: "Simple KCNA exam notes that explain the exam scope and core Kubernetes resources."
-categories: ["technical,"kubernetes"]
+categories: ["technical","kubernetes"]
 tags: ["kcna","kubernetes","cloud-native"]
 author: "Ugur Elveren"
 toc: true
