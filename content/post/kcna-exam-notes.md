@@ -1,6 +1,6 @@
 ---
-title: "KCNA exam notes"
-date: "2026-02-15"
+title: "KCNA Exam Notes"
+date: "2026-02-14"
 slug: "kcna-exam-notes"
 description: "Simple KCNA exam notes that explain the exam scope and core Kubernetes resources."
 categories: ["technical","kubernetes"]

@@ -8,8 +8,10 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
-| Serenade                                              | `Zülfü Livaneli`           | Fiction                 | 2026-01-20  | In-Progress |
-| Don Quixote (audio)                                   | `Miguel de Cervantes`      | Fiction/Classics        | 2026-01-16  | In-Progress|
+| The Art of Happiness                                   | `Dalai Lama & Howard C. Cutler` | Self-help/Philosophy   | 2026-02-19  | In-Progress |
+| Serenade                                              | `Zülfü Livaneli`           | Fiction                 | 2026-01-20  | 2026-02-18 |
+| Colorless Tsukuru Tazaki and His Years of Pilgrimage (audio) | `Haruki Murakami`          | Fiction                 | 2026-02-18  | In-Progress |
+| Don Quixote (audio)                                   | `Miguel de Cervantes`      | Fiction/Classics        | 2026-01-16  | 2026-02-17 |
 | Socrates' Defence (audio)                             | `Plato`                    | Non-Fiction             | 2026-01-14  | 2026-01-15 |
 | Don't Believe Everything You Think: Why Your Thinking Is the Beginning & End of Suffering | `Joseph Nguyen` | Non-Fiction | 2026-01-19  | 2026-01-30 |
 | The Country of White Lilies (audio)                   | `Grigory Petrov`           | Non-Fiction             | 2026-01-13  | 2026-01-14 |
