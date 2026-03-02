@@ -4,7 +4,6 @@ date: "2026-02-19"
 series: "KCNA"
 slug: "kubernetes-api"
 description: "Quick reference for the Kubernetes API: resources, groups, verbs, and how to interact programmatically."
-summary: "Notes and examples for using the Kubernetes REST API and client libraries."
 categories: ["technical","kubernetes"]
 tags: ["kubernetes","api","apiserver","client-go","kubectl"]
 author: "Ugur Elveren"
@@ -14,6 +13,10 @@ layout: "post"
 ---
 
 The Kubernetes API is the central hub that powers everything in a Kubernetes cluster (see the official docs: [Kubernetes API concepts](https://kubernetes.io/docs/concepts/overview/kubernetes-api/)). It is a collection of HTTP endpoints that allow users, applications, and internal components to communicate with the cluster and manage its resources. Every interaction you have with Kubernetes, whether you realize it or not, goes through this API. It acts as the gateway between you and the cluster, processing requests and translating them into actions that create, modify, or delete resources. Without the API, there would be no way to tell Kubernetes what you want it to do or to check the current state of your applications.
+
+![Kubernetes API screenshot](/images/api.jpg)
+
+*Photo and screenshot from [Unsplash](https://unsplash.com/photos/dwigDz0t6TY).*
 
 When you run a kubectl command to deploy an application or check the status of your pods, you are making an API call behind the scenes. The kubectl tool is essentially a client that formats your commands into HTTP requests and sends them to the API server. Similarly, when you apply a YAML configuration file, kubectl reads that file and makes the appropriate API calls to create or update resources. Even the internal components of Kubernetes, like the scheduler and controller manager, use the same API to watch for changes and perform their tasks. This unified approach makes the Kubernetes API the absolute foundation of everything that happens in your cluster, ensuring that all components speak the same language and work together seamlessly.
 
