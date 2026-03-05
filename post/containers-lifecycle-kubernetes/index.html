@@ -1,0 +1,338 @@
+<!doctype html><html class=no-js lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Understanding Containers & Their Lifecycle in Kubernetes - Ugur's Personal Documentation</title>
+<script>(function(e,t){e[t]=e[t].replace("no-js","js")})(document.documentElement,"className")</script><meta name=description content="Deep dive into containers, environment configuration, and lifecycle within Kubernetes."><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=dns-prefetch href=//fonts.googleapis.com><link rel=dns-prefetch href=//fonts.gstatic.com><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700"><link rel=canonical href=/post/containers-lifecycle-kubernetes/><link rel=stylesheet href=/css/style.css><link rel=stylesheet href=/css/mastocomments.css><link rel="shortcut icon" href=/favicon.ico></head><body class=body><div class="container container--outer"><header class=header><div class="container header__container"><div class=logo><a class=logo__link href=/ title="Ugur's Personal Documentation" rel=home><div class="logo__item logo__text"><div class=logo__title>Ugur's Personal Documentation</div></div></a></div><nav class=menu><button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
+<span class=menu__btn-title tabindex=-1>Menu</span></button><ul class=menu__list><li class=menu__item><a class=menu__link href=/><span class=menu__text>Home</span></a></li><li class=menu__item><a class=menu__link href=/categories/personal><span class=menu__text>Personal</span></a></li><li class=menu__item><a class=menu__link href=/categories/technical><span class=menu__text>Technical</span></a></li><li class=menu__item><a class=menu__link href=/books><span class=menu__text>My Bookshelf</span></a></li><li class=menu__item><a class=menu__link href=/categories/bucket-list><span class=menu__text>Bucket List</span></a></li><li class=menu__item><a class=menu__link href=https://photos.ugurelveren.com><i class="fa fa-heart"></i>
+<span class=menu__text>Photos</span></a></li></ul></nav></div></header><div class="wrapper flex"><div class=primary><main class=main role=main><article class=post><header class=post__header><h1 class=post__title>Understanding Containers & Their Lifecycle in Kubernetes</h1><div class="post__meta meta"><div class="meta__item-datetime meta__item"><svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0a14 14 0 110 28 1 1 0 010-28m0 3a3 3 0 100 22 3 3 0 000-22m1 4h-2v8.4l6.8 4.4L22 18l-6-3.8z"/></svg><time class=meta__text datetime=2026-03-05T00:00:00Z>March 05, 2026</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/technical/ rel=category>Technical</a>, <a class=meta__link href=/categories/kubernetes/ rel=category>Kubernetes</a></span></div></div></header><div class="post__toc toc"><div class=toc__title>Page content</div><div class=toc__menu><nav id=TableOfContents><ul><li><a href=#fundamentals-of-a-container>Fundamentals of a Container</a><ul><li><a href=#containers-vs-virtual-machines>Containers vs. Virtual Machines</a></li></ul></li><li><a href=#configuration-and-environment>Configuration and Environment</a></li><li><a href=#lifecycle-of-a-container-in-kubernetes>Lifecycle of a Container in Kubernetes</a><ul><li><a href=#hooks-and-init-containers>Hooks and init containers</a></li><li><a href=#probes>Probes</a></li></ul></li><li><a href=#container-runtime>Container Runtime</a></li><li><a href=#practical-example>Practical Example</a><ul><li><a href=#environment-variable-configuration>Environment variable configuration</a></li><li><a href=#basic-runtime-commands-crictl-ctr>Basic runtime commands (crictl, ctr)</a></li></ul></li><li><a href=#conclusion>Conclusion</a></li></ul></nav></div></div><div class="content post__content clearfix"><p>As I&rsquo;ve noted in earlier posts, containers predate Kubernetes. Docker brought them into the mainstream by making image build and runtime management almost trivial. For a development team the first obvious win was reproducibility – build an image once and run it on a developer laptop, a CI runner, or a production node without changing a line of code. The “works on my machine” problem simply went away. But once you start running dozens or hundreds of containers, the question becomes: how do you schedule them, monitor them, network them and recover from failures? That is the problem Kubernetes solves.</p><p>In this article I want to dissect containers from an engineer&rsquo;s perspective. We&rsquo;ll look at the primitive building blocks, how configuration is injected, the states a container traverses inside a Pod, and finally the runtime that actually executes the process. Wherever possible I&rsquo;ll include concrete commands or snippets I&rsquo;ve used in real clusters.</p><h2 id=fundamentals-of-a-container>Fundamentals of a Container</h2><p>Under the hood a container is just a process with extra isolation: <strong>namespaces</strong> (pid, net, mnt, ipc, uts, user) and <strong>cgroups</strong> enforce boundaries while the host kernel does the heavy lifting. For a deeper look at namespaces see this primer: <a href=https://thenewstack.io/what-are-linux-namespaces-and-how-are-they-used/>https://thenewstack.io/what-are-linux-namespaces-and-how-are-they-used/</a>.</p><p>Because containers re-use the host kernel they are very light and start in milliseconds, letting you pack dozens or hundreds onto a single node. Their filesystem is built from an immutable, layered image pulled from a registry; when the runtime instantiates the image you get the running container instance.</p><h3 id=containers-vs-virtual-machines>Containers vs. Virtual Machines</h3><p>A virtual machine includes a full guest OS with its own kernel and device drivers. A container reuses the host kernel and only isolates user space. That&rsquo;s why VMs are measured in gigabytes and take minutes to boot, while containers are megabytes with sub‑second startup.</p><p>For day‑to‑day operations the practical advice is: use VMs when you need full kernel feature sets or strict security boundaries; use containers when you care about density and portability.</p><h2 id=configuration-and-environment>Configuration and Environment</h2><p>Hardcoding environment‑specific values in images breaks the “build once” strategy. The container image should be the same across dev, staging, and prod; what changes is the configuration.</p><p>Kubernetes exposes several mechanisms to wire configuration into a container:</p><ul><li><code>env</code> variables in Pod specs</li><li><code>envFrom</code> with <code>ConfigMap</code> or <code>Secret</code></li><li>mounting <code>ConfigMap</code>/<code>Secret</code> as a volume</li><li>command‑line arguments</li></ul><p>Example Pod snippet:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Pod</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>webapp</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>containers</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>app</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>image</span>: <span style=color:#ae81ff>myrepo/web:1.0</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>env</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>DATABASE_URL</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>valueFrom</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>secretKeyRef</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>name</span>: <span style=color:#ae81ff>db-secret</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>key</span>: <span style=color:#ae81ff>url</span>
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>LOG_LEVEL</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>value</span>: <span style=color:#e6db74>&#34;info&#34;</span>
+</span></span></code></pre></div><p>Kubernetes injects these values at container start by generating an environment block or by creating files under <code>/var/run/secrets/...</code> and binding them inside the container. I usually favoured <code>env</code> for simple key‑value pairs and volume mounts when the application expects a config file.</p><p><strong>ConfigMaps</strong> are for non‑sensitive data and support later updates (the kubelet will reload the volume periodically). <strong>Secrets</strong> are base64‑encoded; they are not encrypted unless you enable the <code>EncryptionConfiguration</code>. In production I usually integrate with HashiCorp Vault or AWS KMS for proper secrets management.</p><h2 id=lifecycle-of-a-container-in-kubernetes>Lifecycle of a Container in Kubernetes</h2><p>A container’s state is reflected in the Pod status:</p><ul><li><code>Waiting</code> – not yet started, often pulling an image or waiting for an init container.</li><li><code>Running</code> – main process has started.</li><li><code>Terminated</code> – process has exited (either successfully or with an error).</li></ul><p>You can observe these with <code>kubectl describe pod</code> or:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>kubectl get pod webapp -o jsonpath<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;{.status.containerStatuses[0].state}&#39;</span>
+</span></span></code></pre></div><p>Containers restart according to the Pod’s <code>restartPolicy</code>:</p><ul><li><code>Always</code> (default) – restart on any exit.</li><li><code>OnFailure</code> – restart only if exit code ≠ 0.</li><li><code>Never</code> – don’t restart.</li></ul><p>I typically set <code>OnFailure</code> for batch jobs and <code>Always</code> for services.</p><h3 id=hooks-and-init-containers>Hooks and init containers</h3><p>You can hook into the lifecycle with <code>postStart</code> and <code>preStop</code> actions. I use them to trigger cache priming or to send shutdown notifications:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>lifecycle</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>postStart</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>exec</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>command</span>: [<span style=color:#e6db74>&#34;/bin/sh&#34;</span>,<span style=color:#e6db74>&#34;-c&#34;</span>,<span style=color:#e6db74>&#34;/usr/local/bin/prime-cache&#34;</span>]
+</span></span><span style=display:flex><span>  <span style=color:#f92672>preStop</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>exec</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>command</span>: [<span style=color:#e6db74>&#34;/bin/sh&#34;</span>,<span style=color:#e6db74>&#34;-c&#34;</span>,<span style=color:#e6db74>&#34;sleep 5&#34;</span>]
+</span></span></code></pre></div><p>Init containers are useful for one‑off initialization tasks. They run sequentially and must succeed before the main containers start:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>initContainers</span>:
+</span></span><span style=display:flex><span>- <span style=color:#f92672>name</span>: <span style=color:#ae81ff>migrate</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>image</span>: <span style=color:#ae81ff>myrepo/migrator:1.0</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>command</span>: [<span style=color:#e6db74>&#34;/bin/sh&#34;</span>,<span style=color:#e6db74>&#34;-c&#34;</span>,<span style=color:#e6db74>&#34;./migrate.sh &amp;&amp; exit 0&#34;</span>]
+</span></span></code></pre></div><p>If any init container fails the Pod is restarted until the sequence completes successfully.</p><h3 id=probes>Probes</h3><p>Health probes ensure the kubelet can make intelligent decisions:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>livenessProbe</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>httpGet</span>: {<span style=color:#f92672>path</span>: <span style=color:#e6db74>&#34;/health&#34;</span><span style=color:#f92672>, port</span>: <span style=color:#ae81ff>8080</span>}
+</span></span><span style=display:flex><span>  <span style=color:#f92672>initialDelaySeconds</span>: <span style=color:#ae81ff>15</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>readinessProbe</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>httpGet</span>: {<span style=color:#f92672>path</span>: <span style=color:#e6db74>&#34;/ready&#34;</span><span style=color:#f92672>, port</span>: <span style=color:#ae81ff>8080</span>}
+</span></span><span style=display:flex><span>  <span style=color:#f92672>periodSeconds</span>: <span style=color:#ae81ff>5</span>
+</span></span></code></pre></div><p>A failed readiness probe removes the Pod from Services; a failed liveness probe causes a restart.</p><h2 id=container-runtime>Container Runtime</h2><p>The container runtime is the component on each node that actually creates and runs container processes. Kubernetes talks to it via the Container Runtime Interface (CRI).</p><p>Popular runtimes:</p><ul><li><strong>containerd</strong> – default in most distributions; lightweight and focuses solely on running containers.</li><li><strong>CRI‑O</strong> – another minimal runtime, particularly common in Red Hat/OpenShift environments.</li><li><strong>Docker</strong> – deprecated as a CRI endpoint; Kubernetes used to launch containers through the Docker Engine, which itself used containerd.</li></ul><p>The kubelet uses the CRI gRPC API; you can inspect or debug the runtime directly with <code>crictl</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>crictl ps
+</span></span><span style=display:flex><span>crictl pull nginx:latest
+</span></span><span style=display:flex><span>crictl inspect <span style=color:#66d9ef>$(</span>crictl ps -q | head -1<span style=color:#66d9ef>)</span>
+</span></span></code></pre></div><p>Behind the scenes the kubelet translates Pod specs into <code>CreateContainer</code> and <code>StartContainer</code> gRPC calls. When a probe fails or a Pod is deleted it sends the corresponding <code>StopContainer</code>/<code>RemoveContainer</code> calls.</p><h2 id=practical-example>Practical Example</h2><p>Putting many of the concepts together, here&rsquo;s a pod spec I use in production for a cache‑priming service:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Pod</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>cache-warm</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>restartPolicy</span>: <span style=color:#ae81ff>OnFailure</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>initContainers</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>init-db</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>image</span>: <span style=color:#ae81ff>busybox</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>command</span>: [<span style=color:#e6db74>&#34;sh&#34;</span>,<span style=color:#e6db74>&#34;-c&#34;</span>,<span style=color:#e6db74>&#34;until nc -z db 5432; do sleep 1; done&#34;</span>]
+</span></span><span style=display:flex><span>  <span style=color:#f92672>containers</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>app</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>image</span>: <span style=color:#ae81ff>myrepo/cache-warm:2.3</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>env</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>TARGET</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>value</span>: <span style=color:#e6db74>&#34;https://api.example.com&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>lifecycle</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>postStart</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>exec</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>command</span>: [<span style=color:#e6db74>&#34;sh&#34;</span>,<span style=color:#e6db74>&#34;-c&#34;</span>,<span style=color:#e6db74>&#34;/usr/local/bin/warm --target=$TARGET &amp;&#34;</span>]
+</span></span><span style=display:flex><span>      <span style=color:#f92672>preStop</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>exec</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>command</span>: [<span style=color:#e6db74>&#34;sh&#34;</span>,<span style=color:#e6db74>&#34;-c&#34;</span>,<span style=color:#e6db74>&#34;killall warm; sleep 2&#34;</span>]
+</span></span><span style=display:flex><span>    <span style=color:#f92672>livenessProbe</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>httpGet</span>: {<span style=color:#f92672>path</span>: <span style=color:#e6db74>&#34;/health&#34;</span><span style=color:#f92672>, port</span>: <span style=color:#ae81ff>8080</span>}
+</span></span><span style=display:flex><span>      <span style=color:#f92672>initialDelaySeconds</span>: <span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>readinessProbe</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>httpGet</span>: {<span style=color:#f92672>path</span>: <span style=color:#e6db74>&#34;/ready&#34;</span><span style=color:#f92672>, port</span>: <span style=color:#ae81ff>8080</span>}
+</span></span><span style=display:flex><span>      <span style=color:#f92672>periodSeconds</span>: <span style=color:#ae81ff>5</span>
+</span></span></code></pre></div><p>This article has focused on concrete, operational details rather than analogies. The goal is to give you a mental model you can apply when you debug pods or design new images.</p><p>In this example, the postStart hook logs when the container starts and simulates a warmup period. The preStop hook logs the shutdown time, sends a graceful shutdown signal to nginx, and waits 10 seconds to finish processing requests. The probes ensure the container is healthy and ready to receive traffic.</p><h3 id=environment-variable-configuration>Environment variable configuration</h3><p>Here are different ways to configure environment variables in your containers, from simple to more advanced.</p><p><strong>Option 1: Direct environment variables</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Pod</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>app-with-env</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>containers</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>myapp</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>image</span>: <span style=color:#ae81ff>myapp:latest</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>env</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>DATABASE_HOST</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>value</span>: <span style=color:#e6db74>&#34;postgres.default.svc.cluster.local&#34;</span>
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>DATABASE_PORT</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>value</span>: <span style=color:#e6db74>&#34;5432&#34;</span>
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>APP_ENV</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>value</span>: <span style=color:#e6db74>&#34;production&#34;</span>
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>LOG_LEVEL</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>value</span>: <span style=color:#e6db74>&#34;info&#34;</span>
+</span></span></code></pre></div><p><strong>Option 2: Using ConfigMap</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#75715e># First create a ConfigMap</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ConfigMap</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>app-config</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>data</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>database.host</span>: <span style=color:#e6db74>&#34;postgres.default.svc.cluster.local&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>database.port</span>: <span style=color:#e6db74>&#34;5432&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>app.environment</span>: <span style=color:#e6db74>&#34;production&#34;</span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#75715e># Then reference it in your Pod</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Pod</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>app-with-configmap</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>containers</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>myapp</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>image</span>: <span style=color:#ae81ff>myapp:latest</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>env</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>DATABASE_HOST</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>valueFrom</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>configMapKeyRef</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>name</span>: <span style=color:#ae81ff>app-config</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>key</span>: <span style=color:#ae81ff>database.host</span>
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>DATABASE_PORT</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>valueFrom</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>configMapKeyRef</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>name</span>: <span style=color:#ae81ff>app-config</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>key</span>: <span style=color:#ae81ff>database.port</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Or load all keys from ConfigMap as environment variables</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>envFrom</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>configMapRef</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>name</span>: <span style=color:#ae81ff>app-config</span>
+</span></span></code></pre></div><p><strong>Option 3: Using Secrets</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#75715e># First create a Secret</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Secret</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>app-secrets</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>type</span>: <span style=color:#ae81ff>Opaque</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>data</span>:
+</span></span><span style=display:flex><span>  <span style=color:#75715e># Values must be base64 encoded</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>db-password</span>: <span style=color:#ae81ff>cGFzc3dvcmQxMjM= </span> <span style=color:#75715e># &#34;password123&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>api-key</span>: <span style=color:#ae81ff>bXlzZWNyZXRrZXk=     </span> <span style=color:#75715e># &#34;mysecretkey&#34;</span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#75715e># Then reference it in your Pod</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Pod</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>app-with-secrets</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>containers</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>myapp</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>image</span>: <span style=color:#ae81ff>myapp:latest</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>env</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>DATABASE_PASSWORD</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>valueFrom</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>secretKeyRef</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>name</span>: <span style=color:#ae81ff>app-secrets</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>key</span>: <span style=color:#ae81ff>db-password</span>
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>API_KEY</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>valueFrom</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>secretKeyRef</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>name</span>: <span style=color:#ae81ff>app-secrets</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>key</span>: <span style=color:#ae81ff>api-key</span>
+</span></span></code></pre></div><p><strong>Mixing all approaches:</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Pod</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>app-complete-config</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>containers</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>myapp</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>image</span>: <span style=color:#ae81ff>myapp:latest</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>env</span>:
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Direct value</span>
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>APP_NAME</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>value</span>: <span style=color:#e6db74>&#34;my-application&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># From ConfigMap</span>
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>DATABASE_HOST</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>valueFrom</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>configMapKeyRef</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>name</span>: <span style=color:#ae81ff>app-config</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>key</span>: <span style=color:#ae81ff>database.host</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># From Secret</span>
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>DATABASE_PASSWORD</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>valueFrom</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>secretKeyRef</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>name</span>: <span style=color:#ae81ff>app-secrets</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>key</span>: <span style=color:#ae81ff>db-password</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Load all ConfigMap keys</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>envFrom</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>configMapRef</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>name</span>: <span style=color:#ae81ff>app-config</span>
+</span></span></code></pre></div><h3 id=basic-runtime-commands-crictl-ctr>Basic runtime commands (crictl, ctr)</h3><p>Once your containers are running, you&rsquo;ll need tools to inspect and debug them. Here are the most useful runtime commands:</p><p><strong>crictl (CRI tool - works with containerd and CRI-O)</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># List all running containers</span>
+</span></span><span style=display:flex><span>crictl ps
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># List all containers including stopped ones</span>
+</span></span><span style=display:flex><span>crictl ps -a
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># List all images on the node</span>
+</span></span><span style=display:flex><span>crictl images
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Pull an image</span>
+</span></span><span style=display:flex><span>crictl pull nginx:latest
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Get detailed information about a container</span>
+</span></span><span style=display:flex><span>crictl inspect &lt;container-id&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># View container logs</span>
+</span></span><span style=display:flex><span>crictl logs &lt;container-id&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># View the last 50 lines of logs</span>
+</span></span><span style=display:flex><span>crictl logs --tail<span style=color:#f92672>=</span><span style=color:#ae81ff>50</span> &lt;container-id&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Follow logs in real-time</span>
+</span></span><span style=display:flex><span>crictl logs -f &lt;container-id&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Execute a command inside a running container</span>
+</span></span><span style=display:flex><span>crictl exec -it &lt;container-id&gt; /bin/sh
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># List all pods</span>
+</span></span><span style=display:flex><span>crictl pods
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Get pod details</span>
+</span></span><span style=display:flex><span>crictl inspectp &lt;pod-id&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Check runtime version and info</span>
+</span></span><span style=display:flex><span>crictl version
+</span></span><span style=display:flex><span>crictl info
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Remove stopped containers</span>
+</span></span><span style=display:flex><span>crictl rm &lt;container-id&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Remove an image</span>
+</span></span><span style=display:flex><span>crictl rmi &lt;image-id&gt;
+</span></span></code></pre></div><p><strong>ctr (containerd CLI - lower level)</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># List running containers in the k8s.io namespace</span>
+</span></span><span style=display:flex><span>ctr -n k8s.io containers list
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># List images</span>
+</span></span><span style=display:flex><span>ctr -n k8s.io images list
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Pull an image</span>
+</span></span><span style=display:flex><span>ctr -n k8s.io images pull docker.io/library/nginx:latest
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Check containerd version</span>
+</span></span><span style=display:flex><span>ctr version
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># View container tasks (running processes)</span>
+</span></span><span style=display:flex><span>ctr -n k8s.io tasks list
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Export an image to a tar file</span>
+</span></span><span style=display:flex><span>ctr -n k8s.io images export nginx.tar docker.io/library/nginx:latest
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Import an image from a tar file</span>
+</span></span><span style=display:flex><span>ctr -n k8s.io images import nginx.tar
+</span></span></code></pre></div><p><strong>Important notes:</strong></p><ul><li>crictl is the recommended tool for Kubernetes debugging because it understands CRI and works with any CRI-compliant runtime</li><li>Most containerd operations in Kubernetes use the k8s.io namespace, so always include -n k8s.io with ctr commands</li><li>These tools are for debugging and inspection - don&rsquo;t use them to manually create containers. Let Kubernetes manage the lifecycle!</li><li>You need to run these commands on the actual Kubernetes node where containers are running, usually with sudo or root access</li></ul><p><strong>Quick debugging workflow:</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Find your pod</span>
+</span></span><span style=display:flex><span>crictl pods | grep my-app
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Find containers in that pod</span>
+</span></span><span style=display:flex><span>crictl ps | grep my-app
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Check container logs</span>
+</span></span><span style=display:flex><span>crictl logs &lt;container-id&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Get detailed container info</span>
+</span></span><span style=display:flex><span>crictl inspect &lt;container-id&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Execute commands inside the container</span>
+</span></span><span style=display:flex><span>crictl exec -it &lt;container-id&gt; /bin/sh
+</span></span></code></pre></div><h2 id=conclusion>Conclusion</h2><p>Containers are the heart of Kubernetes, and understanding how they work makes everything else easier. We covered a lot in this article - from what containers are and how they differ from VMs, to how they get their configuration, go through their lifecycle, and actually run on your nodes. Each piece plays an important role in making your applications reliable and scalable.</p><p>The key takeaways: containers are lightweight and portable, they use environments to stay flexible, they go through predictable states that you can control with hooks and probes, and they rely on container runtimes to do the actual work. Kubernetes orchestrates all of this beautifully, handling the complexity so you can focus on building great applications.</p><p>Now that you understand containers deeply, you&rsquo;re ready to work more effectively with Kubernetes. You&rsquo;ll troubleshoot problems faster, write better Pod specifications, and make smarter decisions about how to run your applications. Keep experimenting with the practical examples, and you&rsquo;ll master containers in no time!</p></div><footer class=post__footer><div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M4 0h8s2 0 4 2l15 15s2 2 0 4L21 31s-2 2-4 0L2 16s-2-2-2-4V3s0-3 4-3m3 10a3 3 0 000-6 3 3 0 000 6"/></svg><ul class=tags__list><li class=tags__item><a class="tags__link btn" href=/tags/kubernetes/ rel=tag>kubernetes</a></li><li class=tags__item><a class="tags__link btn" href=/tags/containers/ rel=tag>containers</a></li><li class=tags__item><a class="tags__link btn" href=/tags/lifecycle/ rel=tag>lifecycle</a></li><li class=tags__item><a class="tags__link btn" href=/tags/environment/ rel=tag>environment</a></li></ul></div></footer></article></main></div><aside class=sidebar><div class="widget-search widget"><form class=widget-search__form role=search method=get action=https://duckduckgo.com/><input class=widget-search__field type=search placeholder=Search… name=q aria-label=Search…>
+<input class=widget-search__submit type=submit value=Search>
+<input type=hidden name=sites value=https://blog.ugurelveren.com/></form></div><div class="widget-recent widget"><h4 class=widget__title>Recent Posts</h4><div class=widget__content><ul class=widget__list><li class=widget__item><a class=widget__link href=/post/containers-lifecycle-kubernetes/>Understanding Containers & Their Lifecycle in Kubernetes</a></li><li class=widget__item><a class=widget__link href=/post/kubernetes-api/>Kubernetes API</a></li><li class=widget__item><a class=widget__link href=/post/kubernetes-components/>Kubernetes Components</a></li><li class=widget__item><a class=widget__link href=/post/kubernetes-resources/>Kubernetes Resources</a></li><li class=widget__item><a class=widget__link href=/post/kcna-exam-notes/>KCNA Exam Notes</a></li><li class=widget__item><a class=widget__link href=/post/wisdom-of-crowds-for-software-teams/>The Wisdom of Crowds for Software Teams</a></li><li class=widget__item><a class=widget__link href=/post/library-infrastructure-of-equality-in-a-city/>Library: More Than Books, The Infrastructure of Equality in a City</a></li><li class=widget__item><a class=widget__link href=/post/dev-containers-fair-review-simple/>Dev Containers: A Simple, Honest Review</a></li><li class=widget__item><a class=widget__link href=/post/best-kubernetes-development-environment-for-large-teams/>Best Kubernetes Development Environment for Large Teams: KIND, DevSpace, and DevContainers</a></li><li class=widget__item><a class=widget__link href=/post/what-is-cloud-native-design/>What is Cloud Native, really?</a></li></ul></div></div><div class="widget-categories widget"><h4 class=widget__title>Categories</h4><div class=widget__content><ul class=widget__list><li class=widget__item><a class=widget__link href=/categories/algorithm/>Algorithm</a></li><li class=widget__item><a class=widget__link href=/categories/books/>Books</a></li><li class=widget__item><a class=widget__link href=/categories/bucket-list/>Bucket List</a></li><li class=widget__item><a class=widget__link href=/categories/cloud/>Cloud</a></li><li class=widget__item><a class=widget__link href=/categories/cloud-design-patterns/>Cloud Design Patterns</a></li><li class=widget__item><a class=widget__link href=/categories/cloud-native/>Cloud Native</a></li><li class=widget__item><a class=widget__link href=/categories/dev-containers/>Dev Containers</a></li><li class=widget__item><a class=widget__link href=/categories/devops/>DevOps</a></li><li class=widget__item><a class=widget__link href=/categories/family/>Family</a></li><li class=widget__item><a class=widget__link href=/categories/kubernetes/>Kubernetes</a></li><li class=widget__item><a class=widget__link href=/categories/linux/>Linux</a></li><li class=widget__item><a class=widget__link href=/categories/management/>Management</a></li><li class=widget__item><a class=widget__link href=/categories/personal/>Personal</a></li><li class=widget__item><a class=widget__link href=/categories/reading/>Reading</a></li><li class=widget__item><a class=widget__link href=/categories/social-equality/>Social Equality</a></li><li class=widget__item><a class=widget__link href=/categories/sre/>SRE</a></li><li class=widget__item><a class=widget__link href=/categories/technical/>Technical</a></li><li class=widget__item><a class=widget__link href=/categories/travel/>Travel</a></li></ul></div></div><div class="widget-taglist widget"><h4 class=widget__title>Tags</h4><div class=widget__content><a class="widget-taglist__link widget__link btn" href=/tags/.net/ title=.Net>.Net</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/algorithm/ title=Algorithm>Algorithm</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/api/ title=Api>Api</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/apiserver/ title=Apiserver>Apiserver</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/arrays/ title=Arrays>Arrays</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/azure-functions/ title="Azure Functions">Azure Functions</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/background-services/ title="Background Services">Background Services</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/blog/ title=Blog>Blog</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/bucket-list/ title="Bucket List">Bucket List</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/circuit-breaker-pattern/ title="Circuit Breaker Pattern">Circuit Breaker Pattern</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/city-life/ title="City Life">City Life</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/classics/ title=Classics>Classics</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/client-go/ title=Client-Go>Client-Go</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/cloud/ title=Cloud>Cloud</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/cloud-architecture/ title="Cloud Architecture">Cloud Architecture</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/cloud-design-patterns/ title="Cloud Design Patterns">Cloud Design Patterns</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/cloud-native-computing-foundation/ title="Cloud Native Computing Foundation">Cloud Native Computing Foundation</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/cloud-native-design/ title="Cloud Native Design">Cloud Native Design</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/cloud-native/ title=Cloud-Native>Cloud-Native</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/community/ title=Community>Community</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/components/ title=Components>Components</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/containers/ title=Containers>Containers</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/control-plane/ title=Control-Plane>Control-Plane</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/decision-making/ title=Decision-Making>Decision-Making</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/dependency-injection/ title="Dependency Injection">Dependency Injection</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/dev-containers/ title="Dev Containers">Dev Containers</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/devcontainers/ title=DevContainers>DevContainers</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/devops/ title=DevOps>DevOps</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/devspace/ title=DevSpace>DevSpace</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/environment/ title=Environment>Environment</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/equality/ title=Equality>Equality</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/fan-control/ title="Fan Control">Fan Control</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/fiction/ title=Fiction>Fiction</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/food/ title=Food>Food</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/food-regulations/ title="Food Regulations">Food Regulations</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/github/ title=GitHub>GitHub</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/hashnode/ title=Hashnode>Hashnode</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/kcna/ title=Kcna>Kcna</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/kind/ title=KIND>KIND</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/kube-proxy/ title=Kube-Proxy>Kube-Proxy</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/kubectl/ title=Kubectl>Kubectl</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/kubelet/ title=Kubelet>Kubelet</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/kubernetes/ title=Kubernetes>Kubernetes</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/library/ title=Library>Library</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/lifecycle/ title=Lifecycle>Lifecycle</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/linux/ title=Linux>Linux</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/management/ title=Management>Management</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/markdown/ title=Markdown>Markdown</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/monitoring/ title=Monitoring>Monitoring</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/monitoring-smells/ title="Monitoring Smells">Monitoring Smells</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/mosquitoes/ title=Mosquitoes>Mosquitoes</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/non-fiction/ title=Non-Fiction>Non-Fiction</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/observability/ title=Observability>Observability</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/parenting/ title=Parenting>Parenting</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/personal/ title=Personal>Personal</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/personal-journey/ title="Personal Journey">Personal Journey</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/prefix-sum/ title="Prefix Sum">Prefix Sum</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/productivity/ title=Productivity>Productivity</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/public-space/ title="Public Space">Public Space</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/python/ title=Python>Python</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/raspberry-pi/ title="Raspberry Pi">Raspberry Pi</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/resources/ title=Resources>Resources</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/saga-design-pattern/ title="Saga Design Pattern">Saga Design Pattern</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/self-help/ title=Self-Help>Self-Help</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/serverless/ title=Serverless>Serverless</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/sleep/ title=Sleep>Sleep</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/sliding-window/ title="Sliding Window">Sliding Window</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/social-equality/ title="Social Equality">Social Equality</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/software/ title=Software>Software</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/sre/ title=SRE>SRE</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/static-website/ title="Static Website">Static Website</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/systemd/ title=Systemd>Systemd</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/teamwork/ title=Teamwork>Teamwork</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/tooling/ title=Tooling>Tooling</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/two-pointer/ title="Two Pointer">Two Pointer</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/wisdom-of-crowds/ title=Wisdom-of-Crowds>Wisdom-of-Crowds</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/workloads/ title=Workloads>Workloads</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/writefreely/ title=Writefreely>Writefreely</a></div></div><div class="widget-social widget"><h4 class="widget-social__title widget__title">Social</h4><div class="widget-social__content widget__content"><div class="widget-social__item widget__item"><a class="widget-social__link widget__link btn" title=Mastodon rel="noopener noreferrer" href=https://hachyderm.io/@ugur target=_blank><svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 500 450"><path d="M433 179.1c0-97.2-63.7-125.7-63.7-125.7-62.5-28.7-228.6-28.4-290.5.0.0.0-63.7 28.5-63.7 125.7.0 115.7-6.6 259.4 105.6 289.1 40.5 10.7 75.3 13 103.3 11.4 50.8-2.8 79.3-18.1 79.3-18.1l-1.7-36.9s-36.3 11.4-77.1 10.1c-40.4-1.4-83-4.4-89.6-54a102.5 102.5.0 01-.9-13.9c85.6 20.9 158.7 9.1 178.8 6.7 56.1-6.7 105-41.3 111.2-72.9 9.8-49.8 9-121.5 9-121.5zm-75.1 125.2h-46.6V190.1c0-49.7-64-51.6-64 6.9v62.5H201V197c0-58.5-64-56.6-64-6.9v114.2H90.2c0-122.1-5.2-147.9 18.4-175 25.9-28.9 79.8-30.8 103.8 6.1l11.6 19.5 11.6-19.5c24.1-37.1 78.1-34.8 103.8-6.1 23.7 27.3 18.4 53 18.4 175z"/></svg>
+<span>Mastodon</span></a></div><div class="widget-social__item widget__item"><a class="widget-social__link widget__link btn" title=GitHub rel="noopener noreferrer" href=https://github.com/ugurelveren target=_blank><svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0C85.9.0.0 85.8.0 191.7c0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2.0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8.0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7.0.0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4.0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5.0 25.6-.2 46.3-.2 52.6.0 5.1 3.5 11.1 13.2 9.2C329 348.2 384 276.4 384 191.7 384 85.8 298 0 192 0z"/></svg>
+<span>GitHub</span></a></div><div class="widget-social__item widget__item"><a class="widget-social__link widget__link btn" title="Home Page" rel=me href=https://ugurelveren.com target=_blank><span>Home Page</span></a></div></div></div></aside></div><footer class=footer><div class="container footer__container flex"><div class=footer__copyright>&copy; 2026 Ugur's Personal Documentation.
+<span class=footer__copyright-credits>Generated with <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> and <a href=https://github.com/ugurelveren/expresslane rel="nofollow noopener" target=_blank>Expresslane</a> theme.</span></div></div></footer></div><script async defer src=/js/menu.js></script></body></html>
