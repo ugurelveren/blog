@@ -5,9 +5,6 @@ author: "Ugur Elveren"
 categories: ["Technical","Cloud Native","Kubernetes"]
 tags: ["Cloud Native Design", "Cloud Native Computing Foundation"]
 description: "Learn what cloud-native design really means beyond just Kubernetes. This guide breaks down software architecture vs. design, explains the evolution of cloud-native thinking, and explores key principles like resilience, observability, and scalability using real-world examples from AWS, Azure, and Google Cloud."
-thumbnail:
-  src: "/images/CloudNative.png"
-  visibility: ["list","post"]
 ---
 
 ![Illustration of cloud-native architecture showing secure, scalable, and connected cloud services like storage, networking, and compute. Ideal for modern software systems.](/images/CloudNative.png)

@@ -4,9 +4,6 @@ date: "2026-03-05"
 series: "KCNA"
 slug: "containers-lifecycle-kubernetes"
 description: "Deep dive into containers, environment configuration, and lifecycle within Kubernetes."
-thumbnail:
-  src: "/images/containers.jpg"
-  visibility: ["list","post"]
 categories: ["technical","kubernetes"]
 tags: ["kubernetes","containers","lifecycle","environment"]
 author: "Ugur Elveren"

@@ -5,9 +5,6 @@ date: "2025-09-12"
 tags: ["dev containers","tooling","containers","productivity"]
 categories: ["Technical","Dev Containers"]
 description: "A plain-language look at Dev Containers: what they are, when to use them, and when to skip them."
-thumbnail:
-  src: "/images/dev-containers.jpg"
-  visibility: ["list","post"]
 author: "Ugur Elveren"
 reading_time: 8
 ---
