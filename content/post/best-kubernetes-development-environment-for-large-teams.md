@@ -6,6 +6,9 @@ author: "Ugur Elveren"
 categories: ["Technical","Kubernetes"]
 tags: ["kubernetes", "DevContainers", "KIND", "DevSpace"]
 description: "Discover how to set up a standardized Kubernetes development environment for large engineering teams using KIND, DevSpace, and DevContainers. Learn to eliminate 'works on my machine' problems, reduce onboarding time, and create consistent local development workflows that scale."
+thumbnail:
+  src: "/images/LocalDev.jpg"
+  visibility: ["list","post"]
 ---
 
 ![Local development environment setup showing KIND, DevSpace, and DevContainers working together for standardized Kubernetes development workflows.](/images/LocalDev.jpg)

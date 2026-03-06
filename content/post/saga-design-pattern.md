@@ -5,6 +5,9 @@ author: "Ugur Elveren"
 categories: ["Technical","Cloud Design Patterns"]
 tags: ["saga design pattern", "cloud design patterns", "cloud"]
 description: "Learn about the Saga design pattern and how it helps manage long-running transactions in microservice architecture, including Choreography and Orchestration approaches."
+thumbnail:
+  src: "/img/saga-choreography.png"
+  visibility: ["list","post"]
 ---
 
 In this article, I will discuss the Saga design pattern. First, we'll address some technical challenges of creating ACID transactions. Then, we'll explore the Saga design pattern and how to implement it.

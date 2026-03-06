@@ -3,6 +3,9 @@ title: "The Wisdom of Crowds for Software Teams"
 date: "2026-01-08"
 draft: false
 description: "Applying James Surowiecki’s 'The Wisdom of Crowds' to decision-making in software teams."
+thumbnail:
+  src: "/images/wisdom-of-crowds.jpg"
+  visibility: ["list","post"]
 categories: ["Technical","Management"]
 tags: ["wisdom-of-crowds","decision-making","teamwork","management","software"]
 author: "ugurelveren"

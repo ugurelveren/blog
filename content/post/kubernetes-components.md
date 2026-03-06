@@ -3,6 +3,9 @@ title: "Kubernetes Components"
 date: "2026-02-17"
 slug: "kubernetes-components"
 description: "Quick reference for Kubernetes core components: control plane and node-level components and their responsibilities."
+thumbnail:
+  src: "/images/components-of-kubernetes.svg"
+  visibility: ["list","post"]
 series: "KCNA"
 categories: ["technical","kubernetes"]
 tags: ["kcna","kubernetes","components","control-plane","kubelet","kube-proxy"]

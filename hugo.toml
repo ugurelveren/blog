@@ -53,13 +53,25 @@ author = "Ugur Elveren"
     url = "/"
     weight = 10
   [[Languages.en.menu.main]]
-    name = "Personal"
+    name = "Everyday"
     url = "/categories/personal"
     weight = 20
+
+    [[Languages.en.menu.main]]
+      name = "Bucket List"
+      url = "/categories/bucket-list"
+      weight = 1
+      parent = "Everyday"
   [[Languages.en.menu.main]]
-    name = "Technical"
+    name = "Dev"
     url = "/categories/technical"
     weight = 30
+
+    [[Languages.en.menu.main]]
+      name = "Kubernetes"
+      url = "/categories/kubernetes"
+      weight = 1
+      parent = "Dev"
   [[Languages.en.menu.main]]
     name = "Photos"
     pre = '<i class="fa fa-heart"></i>'
@@ -69,13 +81,9 @@ author = "Ugur Elveren"
       rel = "external"
       class = "right"
   [[Languages.en.menu.main]]
-    name = "My Bookshelf"
+    name = "Books"
     url = "/books"
     weight = 40
-  [[Languages.en.menu.main]]
-    name = "Bucket List"
-    url = "/categories/bucket-list"
-    weight = 50
 
 # Turkish Menus
 [Languages.tr.menu]
@@ -84,13 +92,25 @@ author = "Ugur Elveren"
     url = "/tr/"
     weight = 10
   [[Languages.tr.menu.main]]
-    name = "Kişisel"
+    name = "Günlük"
     url = "/tr/categories/personal"
     weight = 20
+
+    [[Languages.tr.menu.main]]
+      name = "Hedefler Listesi"
+      url = "/tr/categories/bucket-list"
+      weight = 1
+      parent = "Günlük"
   [[Languages.tr.menu.main]]
-    name = "Teknik"
+    name = "Geliştirme"
     url = "/tr/categories/technical"
     weight = 30
+
+    [[Languages.tr.menu.main]]
+      name = "Kubernetes"
+      url = "/tr/categories/kubernetes"
+      weight = 1
+      parent = "Geliştirme"
   [[Languages.tr.menu.main]]
     name = "Fotoğraflar"
     pre = '<i class="fa fa-heart"></i>'
@@ -100,13 +120,9 @@ author = "Ugur Elveren"
       rel = "external"
       class = "right"
   [[Languages.tr.menu.main]]
-    name = "Kitaplık"
+    name = "Kitaplar"
     url = "/tr/books"
     weight = 40
-  [[Languages.tr.menu.main]]
-    name = "Hedefler Listesi"
-    url = "/tr/categories/bucket-list"
-    weight = 50
 
 [taxonomies]
   category = "categories"

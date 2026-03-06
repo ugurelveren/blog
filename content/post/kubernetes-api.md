@@ -4,6 +4,9 @@ date: "2026-02-19"
 series: "KCNA"
 slug: "kubernetes-api"
 description: "Quick reference for the Kubernetes API: resources, groups, verbs, and how to interact programmatically."
+thumbnail:
+  src: "/images/api.jpg"
+  visibility: ["list","post"]
 categories: ["technical","kubernetes"]
 tags: ["kubernetes","api","apiserver","client-go","kubectl"]
 author: "Ugur Elveren"
