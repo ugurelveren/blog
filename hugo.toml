@@ -72,6 +72,24 @@ author = "Ugur Elveren"
       url = "/categories/kubernetes"
       weight = 1
       parent = "Dev"
+
+    [[Languages.en.menu.main]]
+      name = "Cloud"
+      url = "/categories/cloud"
+      weight = 2
+      parent = "Dev"
+
+      [[Languages.en.menu.main]]
+        name = "Design patterns"
+        url = "/categories/cloud-design-patterns"
+        parent = "Cloud"
+
+    [[Languages.en.menu.main]]
+      name = "SRE"
+      url = "/categories/sre"
+      weight = 3
+      parent = "Dev"
+
   [[Languages.en.menu.main]]
     name = "Photos"
     pre = '<i class="fa fa-heart"></i>'
@@ -111,6 +129,24 @@ author = "Ugur Elveren"
       url = "/tr/categories/kubernetes"
       weight = 1
       parent = "Geliştirme"
+
+    [[Languages.tr.menu.main]]
+      name = "Bulut"
+      url = "/tr/categories/cloud"
+      weight = 2
+      parent = "Geliştirme"
+
+      [[Languages.tr.menu.main]]
+        name = "Tasarım Kalıpları"
+        url = "/tr/categories/cloud-design-patterns"
+        parent = "Bulut"
+
+    [[Languages.tr.menu.main]]
+      name = "SRE"
+      url = "/tr/categories/sre"
+      weight = 3
+      parent = "Geliştirme"
+
   [[Languages.tr.menu.main]]
     name = "Fotoğraflar"
     pre = '<i class="fa fa-heart"></i>'

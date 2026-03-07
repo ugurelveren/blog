@@ -2,7 +2,7 @@
 title: "What is Cloud Native, really?"
 date: "2025-05-15"
 author: "Ugur Elveren"
-categories: ["Technical","Cloud Native","Kubernetes"]
+categories: ["Technical","Cloud","Cloud Native","Kubernetes"]
 tags: ["Cloud Native Design", "Cloud Native Computing Foundation"]
 description: "Learn what cloud-native design really means beyond just Kubernetes. This guide breaks down software architecture vs. design, explains the evolution of cloud-native thinking, and explores key principles like resilience, observability, and scalability using real-world examples from AWS, Azure, and Google Cloud."
 ---
