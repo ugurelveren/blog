@@ -79,15 +79,9 @@ author = "Ugur Elveren"
       weight = 2
       parent = "Dev"
 
-      [[Languages.en.menu.main]]
-        name = "Design patterns"
-        url = "/categories/cloud-design-patterns"
-        parent = "Cloud"
-
     [[Languages.en.menu.main]]
-      name = "SRE"
-      url = "/categories/sre"
-      weight = 3
+      name = "Design patterns"
+      url = "/categories/cloud-design-patterns"
       parent = "Dev"
 
   [[Languages.en.menu.main]]
@@ -136,16 +130,10 @@ author = "Ugur Elveren"
       weight = 2
       parent = "Geliştirme"
 
-      [[Languages.tr.menu.main]]
-        name = "Tasarım Kalıpları"
-        url = "/tr/categories/cloud-design-patterns"
-        parent = "Bulut"
-
     [[Languages.tr.menu.main]]
-      name = "SRE"
-      url = "/tr/categories/sre"
-      weight = 3
-      parent = "Geliştirme"
+      name = "Tasarım Kalıpları"
+      url = "/tr/categories/cloud-design-patterns"
+      parent = "Bulut"
 
   [[Languages.tr.menu.main]]
     name = "Fotoğraflar"

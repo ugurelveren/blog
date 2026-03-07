@@ -2,7 +2,7 @@
 title: "Spotting and Fixing Monitoring Smells: A Guide to Reliable Systems"
 date: "2024-11-18"
 author: "Ugur Elveren"
-categories: ["Technical","SRE", "DevOps"]
+categories: ["Technical","Cloud","SRE", "DevOps"]
 tags: ["Monitoring", "Observability", "Monitoring Smells", "SRE", "DevOps"]
 description: "Learn how to identify and fix common monitoring smells that can hurt your system's reliability. Discover actionable strategies for smarter alerts, better visibility, and faster problem resolution to keep your production systems running smoothly."
 mastocomments:
