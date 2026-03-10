@@ -152,3 +152,10 @@ author = "Ugur Elveren"
   category = "categories"
   tag = "tags"
   series = "series"
+
+# Configure Google Analytics using Hugo's services API.
+# The expresslane theme includes the internal google_analytics template
+# which will insert the proper script when this ID is set.
+[services]
+  [services.googleAnalytics]
+    ID = "G-MF95PG61YN"
