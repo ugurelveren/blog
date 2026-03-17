@@ -8,7 +8,8 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
-| The Art of Happiness                                   | `Dalai Lama & Howard C. Cutler` | Self-help/Philosophy   | 2026-02-19  | In-Progress |
+| My Life (Hayatım)                                     | `Kazım Karabekir`          | Memoir/Biography        | 2026-03-17  | In-Progress |
+| The Art of Happiness                                   | `Dalai Lama & Howard C. Cutler` | Self-help/Philosophy   | 2026-02-19  | 2026-03-10 |
 | Serenade                                              | `Zülfü Livaneli`           | Fiction                 | 2026-01-20  | 2026-02-18 |
 | Colorless Tsukuru Tazaki and His Years of Pilgrimage (audio) | `Haruki Murakami`          | Fiction                 | 2026-02-18  | In-Progress |
 | Don Quixote (audio)                                   | `Miguel de Cervantes`      | Fiction/Classics        | 2026-01-16  | 2026-02-17 |
