@@ -8,10 +8,12 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
-| My Life (Hayatım)                                     | `Kazım Karabekir`          | Memoir/Biography        | 2026-03-17  | In-Progress |
+| The Yes Brain Child                                  | `Dr. Daniel J. Siegel & Dr. Tina Payne Bryson` | Parenting/Non-Fiction   | 2026-03-17  | In-Progress |
+| Peaceful Parent, Happy Kids (audio)                   | `Dr. Laura Markham`        | Parenting/Non-Fiction   | 2026-03-17  | In-Progress |
+| My Life (Hayatım)                                     | `Kazım Karabekir`          | Memoir/Biography        | 2026-03-10  | In-Progress |
 | The Art of Happiness                                   | `Dalai Lama & Howard C. Cutler` | Self-help/Philosophy   | 2026-02-19  | 2026-03-10 |
 | Serenade                                              | `Zülfü Livaneli`           | Fiction                 | 2026-01-20  | 2026-02-18 |
-| Colorless Tsukuru Tazaki and His Years of Pilgrimage (audio) | `Haruki Murakami`          | Fiction                 | 2026-02-18  | In-Progress |
+| Colorless Tsukuru Tazaki and His Years of Pilgrimage (audio) | `Haruki Murakami`          | Fiction                 | 2026-02-18  | 2026-03-18 |
 | Don Quixote (audio)                                   | `Miguel de Cervantes`      | Fiction/Classics        | 2026-01-16  | 2026-02-17 |
 | Socrates' Defence (audio)                             | `Plato`                    | Non-Fiction             | 2026-01-14  | 2026-01-15 |
 | Don't Believe Everything You Think: Why Your Thinking Is the Beginning & End of Suffering | `Joseph Nguyen` | Non-Fiction | 2026-01-19  | 2026-01-30 |
