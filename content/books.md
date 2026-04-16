@@ -8,8 +8,10 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
-| The Yes Brain Child                                  | `Dr. Daniel J. Siegel & Dr. Tina Payne Bryson` | Parenting/Non-Fiction   | 2026-03-17  | In-Progress |
-| Peaceful Parent, Happy Kids (audio)                   | `Dr. Laura Markham`        | Parenting/Non-Fiction   | 2026-03-17  | In-Progress |
+| Ow Crap! Potty Training                                | `Maddie Brooks`           | Parenting/Non-Fiction   | 2026-04-16  | In-Progress |
+| The Yes Brain Child                                  | `Dr. Daniel J. Siegel & Dr. Tina Payne Bryson` | Parenting/Non-Fiction   | 2026-03-17  | 2026-04-14 |
+| No-Drama Discipline (audio)                           | `Dr. Daniel J. Siegel & Dr. Tina Payne Bryson` | Parenting/Non-Fiction   | 2026-04-03  | In-Progress |
+| Peaceful Parent, Happy Kids (audio)                   | `Dr. Laura Markham`        | Parenting/Non-Fiction   | 2026-03-17  | 2026-04-02 |
 | My Life (Hayatım)                                     | `Kazım Karabekir`          | Memoir/Biography        | 2026-03-10  | In-Progress |
 | The Art of Happiness                                   | `Dalai Lama & Howard C. Cutler` | Self-help/Philosophy   | 2026-02-19  | 2026-03-10 |
 | Serenade                                              | `Zülfü Livaneli`           | Fiction                 | 2026-01-20  | 2026-02-18 |
