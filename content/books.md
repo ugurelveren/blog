@@ -8,8 +8,9 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
+| Man's Search for Meaning                              | `Viktor E. Frankl`        | Memoir/Psychology       | 2026-05-04  | In-Progress |
 | The Housemaid Is Watching (audio)                    | `Fredia McFadden`         | Fiction/Thriller        | 2026-04-30  | In-Progress |
-| Ow Crap! Potty Training                                | `Maddie Brooks`           | Parenting/Non-Fiction   | 2026-04-16  | In-Progress |
+| Ow Crap! Potty Training                                | `Maddie Brooks`           | Parenting/Non-Fiction   | 2026-04-16  | 2026-05-09 |
 | The Yes Brain Child                                  | `Dr. Daniel J. Siegel & Dr. Tina Payne Bryson` | Parenting/Non-Fiction   | 2026-03-17  | 2026-04-14 |
 | No-Drama Discipline (audio)                           | `Dr. Daniel J. Siegel & Dr. Tina Payne Bryson` | Parenting/Non-Fiction   | 2026-04-03  | 2026-04-28 |
 | Peaceful Parent, Happy Kids (audio)                   | `Dr. Laura Markham`        | Parenting/Non-Fiction   | 2026-03-17  | 2026-04-02 |
