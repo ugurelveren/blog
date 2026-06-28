@@ -8,9 +8,11 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
-| Just Mercy (audio)                                    | `Bryan Stevenson`         | Memoir/Legal            | 2026-05-19  | In-Progress |
+| Notes from Underground (audio)                        | `Fyodor Dostoevsky`       | Fiction/Classic         | 2026-06-24  | In-Progress |
+| Wait for Me (Bekle Beni)                              | `Zülfü Livaneli`          | Fiction                 | 2026-06-22  | In-Progress |
+| Just Mercy (audio)                                    | `Bryan Stevenson`         | Memoir/Legal            | 2026-05-19  | 2026-06-23 |
 | Outliers                                              | `Malcolm Gladwell`        | Non-Fiction/Psychology  | 2026-05-16  | In-Progress |
-| Man's Search for Meaning                              | `Viktor E. Frankl`        | Memoir/Psychology       | 2026-05-04  | 2026-05-16 |
+| Man's Search for Meaning                              | `Viktor E. Frankl`        | Memoir/Psychology       | 2026-05-04  | 2026-06-21 |
 | The Housemaid Is Watching (audio)                    | `Fredia McFadden`         | Fiction/Thriller        | 2026-04-30  | 2026-05-14 |
 | Ow Crap! Potty Training                                | `Maddie Brooks`           | Parenting/Non-Fiction   | 2026-04-16  | 2026-05-09 |
 | The Yes Brain Child                                  | `Dr. Daniel J. Siegel & Dr. Tina Payne Bryson` | Parenting/Non-Fiction   | 2026-03-17  | 2026-04-14 |
