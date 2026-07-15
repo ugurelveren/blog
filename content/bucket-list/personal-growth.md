@@ -15,6 +15,7 @@ tags: ["Bucket List"]
 | Kubernetes and Cloud Native Associate (KCNA) | [Pluralsight](https://app.pluralsight.com/ilx/kubernetes-and-cloud-native-associate-(kcna)/course-overview) | Course | 2026-02-01 | 2026-02-15         | ✅ |
 | Designing Data-Intensive Applications | [O'Reilly](https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/) | Book           | 2026-02-01     |                    | ❌           |
 | Site Reliability Engineering: How Google Runs Production  | [Google](https://sre.google/sre-book/table-of-contents/)       | Book         | 2025-02-01     |       2026-02-01           | ✅          |
+| The Platform Engineer's Handbook | | Book | 2026-07-01 | 2026-07-15 | ✅ |
 
 ---
 

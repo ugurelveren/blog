@@ -8,7 +8,7 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
-| Notes from Underground (audio)                        | `Fyodor Dostoevsky`       | Fiction/Classic         | 2026-06-24  | In-Progress |
+| Notes from Underground (audio)                        | `Fyodor Dostoevsky`       | Fiction/Classic         | 2026-06-24  | 2026-07-08 |
 | Wait for Me (Bekle Beni)                              | `Zülfü Livaneli`          | Fiction                 | 2026-06-22  | In-Progress |
 | Just Mercy (audio)                                    | `Bryan Stevenson`         | Memoir/Legal            | 2026-05-19  | 2026-06-23 |
 | Outliers                                              | `Malcolm Gladwell`        | Non-Fiction/Psychology  | 2026-05-16  | In-Progress |
