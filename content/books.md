@@ -8,6 +8,7 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
+| Dangerous, Dirty, Violent & Young (audio)            | `Zayd Ayers Dohrn`        | Non-Fiction/Sociology   | 2026-08-20  | In-Progress |
 | Kaplanın Sırtında                                     | `Zülfü Livaneli`          | Fiction                 | 2026-07-21  | In-Progress |
 | Utopia (audio)                                        | `Thomas More`             | Fiction/Classic         | 2026-07-01  | 2026-07-22 |
 | Notes from Underground (audio)                        | `Fyodor Dostoevsky`       | Fiction/Classic         | 2026-06-24  | 2026-07-08 |
