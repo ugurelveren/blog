@@ -8,8 +8,10 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
-| Dangerous, Dirty, Violent & Young (audio)            | `Zayd Ayers Dohrn`        | Non-Fiction/Sociology   | 2026-08-20  | In-Progress |
-| Kaplanın Sırtında                                     | `Zülfü Livaneli`          | Fiction                 | 2026-07-21  | In-Progress |
+| The Last Great Dream: How Bohemians Became Hippies and Created the Sixties | `Dennis McNally` | Non-Fiction/History | 2026-08-25 | In-Progress |
+| Dangerous, Dirty, Violent & Young (audio)            | `Zayd Ayers Dohrn`        | Non-Fiction/Sociology   | 2026-08-20  | 2026-09-01 |
+| Plato and a Platypus Walk into a Bar...               | `Daniel Klein & Thomas Cathcart` | Philosophy/Humor    | 2026-08-18  | 2026-08-24 |
+| Kaplanın Sırtında                                     | `Zülfü Livaneli`          | Fiction                 | 2026-07-21  | 2026-08-17 |
 | Utopia (audio)                                        | `Thomas More`             | Fiction/Classic         | 2026-07-01  | 2026-07-22 |
 | Notes from Underground (audio)                        | `Fyodor Dostoevsky`       | Fiction/Classic         | 2026-06-24  | 2026-07-08 |
 | Wait for Me (Bekle Beni)                              | `Zülfü Livaneli`          | Fiction                 | 2026-06-22  | 2026-07-20 |
