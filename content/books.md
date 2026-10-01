@@ -8,8 +8,12 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
-| The Last Great Dream: How Bohemians Became Hippies and Created the Sixties | `Dennis McNally` | Non-Fiction/History | 2026-08-25 | In-Progress |
-| Dangerous, Dirty, Violent & Young (audio)            | `Zayd Ayers Dohrn`        | Non-Fiction/Sociology   | 2026-08-20  | 2026-09-01 |
+| And Then We Hit the Rock (audio) | `Patrice D. M.` | Non-Fiction/Travel | 2026-09-30 | In-Progress |
+| Salt Sugar Fat: How the Food Giants Hooked Us (audio) | `Michael Moss` | Non-Fiction/Health | 2026-09-22 | 2026-09-30 |
+| Nomadland: Surviving America in the Twenty-First Century (audio) | `Jessica Bruder` | Non-Fiction/Sociology | 2026-09-04 | 2026-09-21 |
+| Crime and Punishment (Suç ve Ceza)                   | `Fyodor Dostoevsky`        | Fiction/Classic         | 2026-09-18  | In-Progress |
+| The Last Great Dream: How Bohemians Became Hippies and Created the Sixties | `Dennis McNally` | Non-Fiction/History | 2026-08-25 | 2026-09-17 |
+| Dangerous, Dirty, Violent & Young (audio)            | `Zayd Ayers Dohrn`        | Non-Fiction/Sociology   | 2026-08-20  | 2026-09-3 |
 | Plato and a Platypus Walk into a Bar...               | `Daniel Klein & Thomas Cathcart` | Philosophy/Humor    | 2026-08-18  | 2026-08-24 |
 | Kaplanın Sırtında                                     | `Zülfü Livaneli`          | Fiction                 | 2026-07-21  | 2026-08-17 |
 | Utopia (audio)                                        | `Thomas More`             | Fiction/Classic         | 2026-07-01  | 2026-07-22 |
