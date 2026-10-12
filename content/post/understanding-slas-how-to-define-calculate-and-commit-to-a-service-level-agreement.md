@@ -9,6 +9,8 @@ mermaid: true
 mathjax: true
 ---
 
+![Man writing on paper - Photo by Scott Graham on Unsplash](/images/man-writing-on-paper-sla.jpg)
+
 An SLA is not only an engineering number. It is part of the product. Sales teams use it to win deals, and customers compare it when they choose between providers. A strong SLA can be the reason a customer signs, especially in enterprise deals where the buyer has to justify the choice to their own management. So the number is usually shaped by product managers, sales, and leadership as much as by engineers.
 
 That is exactly why it often goes wrong. The business side wants a number that sells. The engineering side knows what the system can really do. When these two groups do not talk, the SLA ends up being picked rather than calculated. Someone chooses 99.9% because competitors offer it, or because it looks good in a sales deck. Then an outage happens, and nobody can say for sure whether the promise was broken, or whether it was ever realistic in the first place.
