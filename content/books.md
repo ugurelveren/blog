@@ -8,6 +8,7 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
+| A Lone Rider | `Unknown` | Fiction/Adventure | 2026-10-09 | In-Progress |
 | And Then We Hit the Rock (audio) | `Patrice D. M.` | Non-Fiction/Travel | 2026-09-30 | In-Progress |
 | Salt Sugar Fat: How the Food Giants Hooked Us (audio) | `Michael Moss` | Non-Fiction/Health | 2026-09-22 | 2026-09-30 |
 | Nomadland: Surviving America in the Twenty-First Century (audio) | `Jessica Bruder` | Non-Fiction/Sociology | 2026-09-04 | 2026-09-21 |
