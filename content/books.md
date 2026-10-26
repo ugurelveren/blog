@@ -8,8 +8,10 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
-| The Stranger in the Woods (audio) | `Michael Finkel` | Non-Fiction/Nature | 2026-10-13 | In-Progress |
-| Lone Rider | `Elspeth Beard` | Memoir/Travel | 2026-10-09 | In-Progress |
+| The Sultan of the Elephants and the Red-Bearded Lame Ant | `Yaşar Kemal` | Fiction/Classic | 2026-10-22 | In-Progress |
+| Düşmemiş Bir Uçağın Kara Kutusu | `Tülay German` | Memoir/Non-Fiction | 2026-10-16 | 2026-10-21 |
+| The Stranger in the Woods (audio) | `Michael Finkel` | Non-Fiction/Nature | 2026-10-13 | 2026-10-22 |
+| Lone Rider | `Elspeth Beard` | Memoir/Travel | 2026-10-09 | 2026-10-16 |
 | And Then We Hit the Rock (audio) | `Patrice D. M.` | Non-Fiction/Travel | 2026-09-30 | 2026-10-13 |
 | Salt Sugar Fat: How the Food Giants Hooked Us (audio) | `Michael Moss` | Non-Fiction/Health | 2026-09-22 | 2026-09-30 |
 | Nomadland: Surviving America in the Twenty-First Century (audio) | `Jessica Bruder` | Non-Fiction/Sociology | 2026-09-04 | 2026-09-21 |
