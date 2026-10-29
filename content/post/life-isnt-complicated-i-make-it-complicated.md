@@ -1,5 +1,8 @@
 ---
 title: "Life Isn't Complicated. I Make It Complicated."
+slug: "life-isnt-complicated-i-make-it-complicated"
+lang: en
+translationKey: life-isnt-complicated-i-make-it-complicated
 date: "2026-10-29"
 author: "Ugur Elveren"
 categories: ["Personal"]
