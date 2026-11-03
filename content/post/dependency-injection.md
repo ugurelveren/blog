@@ -7,7 +7,7 @@ tags: ["dependency injection", ".net"]
 description: "An overview of Dependency Injection (DI), its types (Constructor, Property, Method Injection), and the benefits of using DI in software design."
 ---
 
-At my company, we hold a weekly “Lunch and Learn” event that I really like. It lets us share our experiences and expertise. Recently, during a chat with my colleagues, I got some basic questions about dependency injection (DI). This made me think that it would be a good idea to use one of these sessions to go over DI with the team. Also, I plan to write an article about dependency injection and its best practices. In the article, I'll explain what DI is, how to use it effectively, and what the best practices are.
+A weekly “Lunch and Learn” event is a format I really like. It lets people share their experiences and expertise. Recently, during a chat with my colleagues, I got some basic questions about dependency injection (DI). This made me think that it would be a good idea to use one of these sessions to go over DI with a team. Also, I plan to write an article about dependency injection and its best practices. In the article, I'll explain what DI is, how to use it effectively, and what the best practices are.
 
 ## What is dependency injection?
 
