@@ -33,9 +33,9 @@ If you only ask one group of people, you will miss important information. And mi
 
 A very common example is feature planning. A product idea can look simple in a document. Add export to CSV. Many people might say yes quickly. But the support team might know that customers do not want any CSV, they want a specific format for their workflows. A security person might warn that exporting data increases the chance of data leaks. An SRE might point out that large exports can create heavy load and slow down the system. The team can still build the feature but now the decision is more realistic, and the design will be better.
 
-As a manager, I think diversity means I should invite the right voices early. If we wait until late stages, diversity becomes feedback, and feedback is often too late to change the plan without stress.
+I think diversity means inviting the right voices early. If we wait until late stages, diversity becomes feedback, and feedback is often too late to change the plan without stress.
 
-In practice, when my team is making a big decision, I want to ask myself who is not in the room, but should be? Sometimes that person is in support. Sometimes it is in QA. Sometimes it is the engineer who is on-call most often. Their input is not a nice to have. It can prevent serious problems.
+In practice, when a team is making a big decision, I want to ask myself who is not in the room, but should be? Sometimes that person is in support. Sometimes it is in QA. Sometimes it is the engineer who is on-call most often. Their input is not a nice to have. It can prevent serious problems.
 
 ## Independence: Protect Thinking From Copying and Pressure
 
@@ -111,7 +111,7 @@ In incidents, decentralize the technical decisions. Give clear roles, support th
 
 In hiring and performance decisions, protect independence as well. Ask interviewers to submit feedback before discussion. In calibration meetings, collect written examples before opinions spread. This reduces bias and helps you make fairer decisions.
 
-Finally, one personal habit matters more than most tools. Speak Last. As a manager, your opinion is heavy. If you speak first, you may accidentally end the discussion. If you speak last, you collect more truth. You can still lead strongly by setting goals, asking good questions, and making the final call when needed. But you let the group intelligence appear before you shape it.
+Finally, one personal habit matters more than most tools. Speak Last. If you lead a team, your opinion is heavy. If you speak first, you may accidentally end the discussion. If you speak last, you collect more truth. You can still lead strongly by setting goals, asking good questions, and making the final call when needed. But you let the group intelligence appear before you shape it.
 
 ## Closing Thoughts
 
@@ -119,6 +119,6 @@ The Wisdom of Crowds helped me see management as decision system design. Good ma
 
 In software development, this matters a lot because complexity and uncertainty are normal. A team becomes stronger when it uses diversity of viewpoints, protects independent thinking, pushes decisions closer to where the work happens, and has clear ways to turn input into action.
 
-Crowd wisdom is not magic. It is not everyone is right. It is a structure. And as a manager, you can build that structure.
+Crowd wisdom is not magic. It is not everyone is right. It is a structure. And if you lead a team, you can build that structure.
 
 If you do, you will likely see fewer surprises, fewer hidden disagreements, and stronger ownership. You will still make mistakes, but you will make fewer mistakes for the same reasons. Over time, your team will not only deliver more they will think better together.
