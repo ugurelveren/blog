@@ -30,6 +30,6 @@ tags: ["Bucket List"]
 ## Short-Term Goals
 | **Goal**               | **Description**                                  | **Added Date**  | **Completed Date** | **Status** |
 |------------------------|--------------------------------------------------|---------------:|-------------------:|-----------:|
-| KCNA certification     | Prepare for and obtain the KCNA certification    | 2026-02-01     | 2026-02-15         | ✅         |
+| KCNA certification     | Prepare for and obtain the KCNA certification    | 2026-02-01     |                    | ❌         |
 | Professional sailing   | Train and obtain professional sailing qualification| 2026-02-01     |                    | ❌         |
 
