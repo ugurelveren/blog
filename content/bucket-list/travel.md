@@ -19,5 +19,5 @@ tags: ["Bucket List", "Personal"]
 | 16    | Nice, France                         | [OpenStreetMap](https://www.openstreetmap.org/#map=13/43.7102/7.2620)    | ✅          |
 | 17    | York, UK                             | [OpenStreetMap](https://www.openstreetmap.org/#map=14/53.9590/-1.0815)   | ✅          |
 | 18    | Antarctica                           | [OpenStreetMap](https://www.openstreetmap.org/#map=4/-61.14/-64.60)      | ❌          |
-
+| 19    | Annapurna Circuit, Nepal             | [OpenStreetMap](https://www.openstreetmap.org/#map=8/28.6/84.0)          | ❌          |
 
