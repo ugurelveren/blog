@@ -8,7 +8,9 @@ tags: ["Fiction", "Non-fiction", "Self-help", "Classics", "Parenting", "Sleep"]
 
 | Book Title                                            | Author                     | Genre                   | Start Date  | End Date   |
 |-------------------------------------------------------|----------------------------|-------------------------|-------------|------------|
-| The Absent Father Effect on Daughters (audio) | `Susan E. Schwartz` | Psychology/Non-Fiction | 2026-10-29 | In-Progress |
+| Getting High: The Annapurna Circuit in Nepal | `Bill Walker` | Travel/Non-Fiction | 2026-11-02 | In-Progress |
+| Little Princes: One Man's Promise to Bring Home the Lost Children of Nepal | `Conor Grennan` | Memoir/Non-Fiction | 2026-11-06 | In-Progress |
+| The Absent Father Effect on Daughters (audio) | `Susan E. Schwartz` | Psychology/Non-Fiction | 2026-10-29 | 2026-11-06 |
 | Trash!: A Garbageman's Story (audio) | `Simon Paré-Poupart` | Memoir | 2026-10-27 | 2026-10-29 |
 | The Sultan of the Elephants and the Red-Bearded Lame Ant | `Yaşar Kemal` | Fiction/Classic | 2026-10-22 | In-Progress |
 | Düşmemiş Bir Uçağın Kara Kutusu | `Tülay German` | Memoir/Non-Fiction | 2026-10-16 | 2026-10-21 |
